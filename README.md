@@ -1,5 +1,5 @@
 # Support Software Inc
-
+![PyPI - Django Version](https://img.shields.io/badge/Django-3.0-green)
 ## UX/UI Design
 
 ### Wireframes
