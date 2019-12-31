@@ -8,11 +8,24 @@
     </head>
     <body>
         <div class="container-fluid">
-            {% include 'partials/navbar.html' %}
-            <div id="main">
-                {% block content %}
+            <div id="header" class="col-lg-12">
+                <div class="row">
+                    <p class="btn" id="toggle_sidebar">
+                        <span class="fa fa-bars"></span>
+                    </p>
+                    &nbsp;
+                    <h1>Support Software Inc</h1>
+                </div>
+            </div>
+            <div class="wrapper">
+                {% include 'partials/navbar.html' %}
                 
-                {% endblock  %}
+                <div id="main">
+                    {% block content %}
+                    
+                    {% endblock  %}
+                </div>
+                
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

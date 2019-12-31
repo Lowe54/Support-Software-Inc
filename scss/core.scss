@@ -4,6 +4,27 @@ $text-white: #FFF;
 html,
 body {
   overflow: hidden;
-  max-width: 100%
+  max-width: 100%;
+    .container-fluid{
+        padding: 0px 0px;
+    }
+  }
+
+@import "navbar";
+
+.wrapper{
+  width:100%;
+  display:flex;
+  
 }
-@import "navbar"
+#header{
+  padding-left:15px;
+  display:inline-flex;
+  background-color: $primary;
+  color:$text-white;
+  p{
+      font-size:24px;
+      padding-top:12px;
+      padding-bottom:0px;
+  }
+}
