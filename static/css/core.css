@@ -31,6 +31,7 @@ body .container-fluid {
   background-color: #1a535c;
   overflow: hidden;
   color: #FFF;
+  height: 100%;
 }
 
 #navbar-wrapper #sidebar-navigation.open {

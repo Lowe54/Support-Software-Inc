@@ -22,6 +22,7 @@ body{
         background-color: $primary;
         overflow: hidden;
         color:$text-white;
+        height:100%;
         &.open{
            display:block;   
         }
