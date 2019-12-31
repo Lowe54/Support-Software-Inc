@@ -4,3 +4,5 @@ __pycache__
 .pyc
 .vscode/
 db.sqlite3
+bootstrap
+static/css/bootstrap-*
