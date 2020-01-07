@@ -18,3 +18,19 @@ class Organisation(models.Model):
         max_length=255,
         name="Organisation Name"
         )
+
+class User(AbstractUser):
+    '''
+    User Table - Extends the base User model via Abstract User
+    profile_picture - Image Field that holds the user's profile image
+    organisation - One to Many relationship - Organisation table id
+    '''
+    profile_picture = models.ImageField(
+        name="Profile Picture",
+        upload_to=''
+        )
+    organisation = models.ForeignKey(
+        Organisation,
+        on_delete=models.CASCADE
+        )
+        
