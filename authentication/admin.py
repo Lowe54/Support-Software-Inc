@@ -1,9 +1,8 @@
 from django.contrib import admin
-from .models import MyUser, Organisation
 from django.contrib.auth.models import User
+from .models import MyUser, Organisation
 
-from .models import MyUser
-# Register your models here.
+
 class User_Inline(admin.TabularInline):
     model = MyUser
 
