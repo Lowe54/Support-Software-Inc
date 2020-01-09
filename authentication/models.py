@@ -14,10 +14,15 @@ class Organisation(models.Model):
         default=uuid.uuid4,
         editable=False
         )
-    name = models.TextField(
+    Organisation_Name = models.CharField(
         max_length=255,
-        name="Organisation Name"
+        name="Organisation_Name"
         )
+    def __str__(self):
+        '''
+        Returns the Organisation's Name
+        '''
+        return self.Organisation_Name
 
 class MyUser(models.Model):
     '''
@@ -31,9 +36,13 @@ class MyUser(models.Model):
         )
     profile_picture = models.ImageField(
         name="Profile Picture",
-        upload_to=''
+        upload_to='',
+        null=True,
+        blank=True
         )
     organisation = models.ForeignKey(
         Organisation,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True
         )
