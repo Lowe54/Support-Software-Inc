@@ -1,5 +1,14 @@
+@import "colors";
+@import "breakpoints";
 #login_form_section{
-    form{
-        justify-items: center;
-    }
+	@media(max-width: $md){
+		margin-left:35vw;
+	}
+	@media(max-width: $sm){
+		margin-left:7vw;
+	}
+	
+	margin-left:50vw;
+	
+
 }
