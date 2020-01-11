@@ -5,10 +5,13 @@
     <link rel="stylesheet" href="{% static 'css\authentication.css' %}" type="text/css"/>
 {% endblock %}
 {% block content %}
-<div id="login_form_section">
-    <form>
-        {{loginForm | crispy}}
-        <button type="submit" class="btn btn-success">Login</button>
-    </form>
+<div id="form_wrapper" class="row">
+	<div id="login_form_section" class="col-lg-6">
+		<form>
+			{{loginForm | crispy}}
+			<button type="submit" class="btn btn-success">Login</button>
+		</form>
+	</div>
 </div>
+
 {% endblock %}
