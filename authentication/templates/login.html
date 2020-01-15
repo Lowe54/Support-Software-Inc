@@ -6,12 +6,13 @@
 {% endblock %}
 {% block content %}
 <div id="form_wrapper" class="row">
-	<div id="login_form_section" class="col-lg-6">
-		<form>
-			{{loginForm | crispy}}
-			<button type="submit" class="btn btn-success">Login</button>
-		</form>
-	</div>
+	<div id="login_form_section">
+        <form method="POST" action="/">
+            {{loginForm | crispy}}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success">Login</button>
+        </form>
+    </div>
 </div>
 
 {% endblock %}
