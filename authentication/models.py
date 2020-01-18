@@ -1,3 +1,11 @@
+'''
+Models.py file for authentication model
+
+Tables
+Organisation - Hold organisation info
+MyUser - extends django default user model
+with extra fields
+'''
 import uuid
 from django.db import models
 from django.contrib.auth.models import User
