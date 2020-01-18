@@ -13,6 +13,7 @@ from django.contrib.auth.decorators import login_required
 
 from authentication.models import MyUser
 from .models import Ticket
+from .forms import FilterForm
 
 
 @login_required
@@ -90,10 +91,13 @@ def results(request):
     else:
 
         ticket_list = Ticket.objects.all()
+
+    filter_form = FilterForm()
     return render(
         request,
         'results.html',
         {
-            'ticket_list': ticket_list
+            'ticket_list': ticket_list,
+            'filter_form': filter_form
         }
         )
