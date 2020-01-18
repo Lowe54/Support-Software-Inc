@@ -5,10 +5,10 @@
     <link rel="stylesheet" href="{% static 'css/agent.css' %}">
 {% endblock %}
 {% block content %}
-
-<div class="agn_ContentWrapper">
+{% if user.role == 'AGN'%}
+<div class="agn_ContentWrapper row">
     <h1 class="agn_WelcomeHeader col-lg-12">Welcome {{user.user.username}}</h1>
-    <div class="agn_TicketStat--wrapper row col-lg-offset-1">
+    <div class="agn_TicketStat--wrapper row col-lg-12">
         <div class="agn_Ticketstat--Item col-lg-4 col-md-6 col-sm-12">
             <h2>Unassigned Tickets</h2>
                 <p class="agn_TicketStat--Count">{{unassigned}}</p>
@@ -16,7 +16,7 @@
         </div>
 
         <div class="agn_Ticketstat--Item col-lg-4 col-md-6 col-sm-12">
-            <h2>Tickets Assigned to You</h2>
+            <h2>Assigned to You</h2>
                     <p class="agn_TicketStat--Count">{{assigned}}</p>
                 <a class="btn agn_TicketstatLink" href="/">View Assigned</a>
         </div>
@@ -28,5 +28,8 @@
         </div>
     </div>
 </div>
+{% else %}
+
+{% endif %}
 
 {% endblock %}
