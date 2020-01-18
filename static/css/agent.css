@@ -4,16 +4,24 @@
   margin: 0;
 }
 
+.agn_TicketStat--wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-right: 0;
+}
+
 .agn_TicketStat--Item {
   border: 1px solid #4ecdc4;
   color: #f7fff7;
   background-color: #1a535c;
-}
-
-@media (768px) {
-  .agn_TicketStat--Item {
-    margin-right: 1vw;
-  }
 }
 
 .agn_TicketStat--Item .agn_TicketStat--Count {

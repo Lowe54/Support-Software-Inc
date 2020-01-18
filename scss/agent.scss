@@ -7,13 +7,18 @@
     padding-bottom: 1vh;
     margin: 0;
 }
+.agn_TicketStat--wrapper{
+    display:flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    padding-right:0
+    
+}
 .agn_TicketStat--Item{
     border: 1px solid $secondary;
     color: $off-white;
     background-color: $primary;
-   @media ( $md ) {
-       margin-right: 1vw;
-   }
+    
 
    .agn_TicketStat--Count{
        font-weight: 600;
