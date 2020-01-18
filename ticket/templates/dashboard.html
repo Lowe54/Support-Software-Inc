@@ -24,7 +24,7 @@
         <div class="agn_Ticketstat--Item col-lg-4 col-md-6 col-sm-12">
             <h2>Total Open Tickets</h2>
                     <p class="agn_TicketStat--Count">{{open_tickets}}</p>
-                <a class="btn agn_TicketstatLink" href="/">View All Open Tickets</a>
+                <a class="btn agn_TicketstatLink" href="{% url 'results' %}?status=OPN">View All Open Tickets</a>
         </div>
     </div>
 </div>
