@@ -1,7 +1,7 @@
 import uuid
 from django.db import models
 
-from authentication.models import User as Users
+from authentication.models import MyUser as Users
 # Create your models here.
 
 
@@ -45,6 +45,13 @@ class Ticket(models.Model):
     raised_on = models.DateTimeField(
         auto_now=True,
         name="Raised On",
+    )
+    assigned_to = models.ForeignKey(
+        to=Users,
+        on_delete=models.CASCADE,
+        limit_choices_to={'role': 'AGN'},
+        null=True,
+        blank=True,
     )
     raised_by = models.ForeignKey(
         to=Users,
