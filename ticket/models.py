@@ -4,22 +4,23 @@ from django.db import models
 from authentication.models import MyUser as Users
 # Create your models here.
 
-
-class Ticket(models.Model):
-    '''
-    Table to hold core ticket information.
-    '''
-    PRIORITY_CHOICES = [
-        ('LOW', 'Low'),
-        ('MED', 'Medium'),
-        ('HGH', 'High'),
-    ]
-    STATUS_CHOICES = [
+STATUS_CHOICES = (
         ('OPN', 'Open'),
         ('PEN', 'Pending'),
         ('ONH', 'On Hold'),
         ('CLS', 'Closed'),
-    ]
+)
+
+PRIORITY_CHOICES = (
+    ('LOW', 'Low'),
+    ('MED', 'Medium'),
+    ('HGH', 'High'),
+)
+class Ticket(models.Model):
+    '''
+    Table to hold core ticket information.
+    '''
+
     id = models.UUIDField(
         primary_key=True,
         db_index=True,
