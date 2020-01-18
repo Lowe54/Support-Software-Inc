@@ -60,9 +60,14 @@ def results(request):
     View that returns the results page + filters
     '''
     if request.method == 'GET':
-        pass
+        for key, value in request.GET.items():
+            if key == 'status':
+                ticket_list = Ticket.objects.filter(
+                    status=value
+                )
+    else:
 
-    ticket_list = Ticket.objects.all()
+        ticket_list = Ticket.objects.all()
     return render(
         request,
         'results.html',
