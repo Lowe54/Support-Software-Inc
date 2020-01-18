@@ -44,7 +44,8 @@ class Ticket(models.Model):
     )
     raised_on = models.DateTimeField(
         auto_now=True,
-        name="Raised On",
+        null=False,
+        blank=False
     )
     assigned_to = models.ForeignKey(
         to=Users,
