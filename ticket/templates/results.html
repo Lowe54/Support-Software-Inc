@@ -1,9 +1,19 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block content %}
     <div class="res_ResultWrapper">
         <h2>Found {{ticket_list|length}} {% if ticket_list|length > 1 %} ticket's {% else %} ticket {% endif %}</h2>
-        <div class="res_TicketResultWrapper">
+        <div class="res_TicketResultWrapper row">
+        <div class="res_Filters col-lg-4">
+            <h3>Filter By</h3>
+            <form method="GET" action="{% url 'results' %}">
+                {{filter_form | crispy}}
+                <button type="submit" class="btn btn-info">Filter</button>
+            </form>
+        </div>
+        <div class="res_Results col-lg-8">
         {% for t in ticket_list %}
             <div class="res_Ticket">
                 <h3>{{t.title}}</h3>
@@ -21,6 +31,7 @@
                 </div>
             </div>
         {% endfor %}
+        </div>
         </div>
     </div>
 {% endblock %}
