@@ -56,7 +56,9 @@ def dashboard(request):
 
 @login_required
 def results(request):
-
+    '''
+    View that returns the results page + filters
+    '''
     if request.method == 'GET':
         pass
 
