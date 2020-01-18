@@ -1,6 +1,11 @@
+'''
+Views.py page for Core module
+
+Index
+'''
 from django.shortcuts import render
 
-# Create your views here.
+
 def index(request):
     """
     Function that returns the index page
