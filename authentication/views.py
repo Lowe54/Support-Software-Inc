@@ -37,7 +37,7 @@ def login(request):
                     messages.SUCCESS,
                     "You have successfully logged in"
                     )
-                return redirect('/')
+                return redirect('dashboard')
 
             login_form.add_error(
                 None,
