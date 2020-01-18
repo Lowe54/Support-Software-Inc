@@ -32,8 +32,8 @@ def dashboard(request):
             assigned_tickets = len(Ticket.objects.filter(
                 assigned_to=MyUser.objects.get(user_id=request.user.id)
                 ))
-            open_tickets = len(Ticket.objects.filter(
-                status='OPN'
+            open_tickets = len(Ticket.objects.exclude(
+                status='CLS'
             ))
         # Catch any DoesNotExist errors, which means the count would be 0
         except Ticket.DoesNotExist:
@@ -60,11 +60,33 @@ def results(request):
     View that returns the results page + filters
     '''
     if request.method == 'GET':
+        print(request.GET)
         for key, value in request.GET.items():
             if key == 'status':
-                ticket_list = Ticket.objects.filter(
+                status = Ticket.objects.filter(
                     status=value
                 )
+            else:
+                status = Ticket.objects.none()
+
+            if key == 'statusexclude':
+                statusexclude = Ticket.objects.exclude(
+                    status=value
+                )
+            else:
+                statusexclude = Ticket.objects.none()
+            
+            if key == 'assigned_to':
+                if int(value) > 0:
+                    assigned_to = Ticket.objects.filter(
+                        assigned_to=MyUser.objects.get(user_id=value)
+                        )
+                else:
+                    assigned_to = Ticket.objects.filter(assigned_to=None)
+
+            else:
+                assigned_to = Ticket.objects.none()
+            ticket_list = status | statusexclude | assigned_to
     else:
 
         ticket_list = Ticket.objects.all()
