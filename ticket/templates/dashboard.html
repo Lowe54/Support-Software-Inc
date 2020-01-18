@@ -12,19 +12,19 @@
         <div class="agn_Ticketstat--Item col-lg-4 col-md-6 col-sm-12">
             <h2>Unassigned Tickets</h2>
                 <p class="agn_TicketStat--Count">{{unassigned}}</p>
-            <a class="btn agn_TicketstatLink" href="/">View Unassigned</a>
+            <a class="btn agn_TicketstatLink" href="{% url 'results' %}?assigned_to=-1">View Unassigned</a>
         </div>
 
         <div class="agn_Ticketstat--Item col-lg-4 col-md-6 col-sm-12">
             <h2>Assigned to You</h2>
                     <p class="agn_TicketStat--Count">{{assigned}}</p>
-                <a class="btn agn_TicketstatLink" href="/">View Assigned</a>
+                <a class="btn agn_TicketstatLink" href="{% url 'results' %}?assigned_to={{request.user.id}}">View Assigned</a>
         </div>
             
         <div class="agn_Ticketstat--Item col-lg-4 col-md-6 col-sm-12">
             <h2>Total Open Tickets</h2>
                     <p class="agn_TicketStat--Count">{{open_tickets}}</p>
-                <a class="btn agn_TicketstatLink" href="{% url 'results' %}?status=OPN">View All Open Tickets</a>
+                <a class="btn agn_TicketstatLink" href="{% url 'results' %}?statusexclude=CLS">View All Open Tickets</a>
         </div>
     </div>
 </div>
