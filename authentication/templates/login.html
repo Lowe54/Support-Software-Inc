@@ -7,7 +7,7 @@
 {% block content %}
 <div id="form_wrapper" class="row">
 	<div id="login_form_section">
-        <form method="POST" action="/">
+        <form method="POST" action="{% url 'login' %}">
             {{loginForm | crispy}}
             {% csrf_token %}
             <button type="submit" class="btn btn-success">Login</button>
