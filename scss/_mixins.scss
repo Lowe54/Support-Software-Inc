@@ -1,0 +1,9 @@
+@mixin button-Silver {
+    background-color: silver;
+    border: 2px solid darken(silver, 10%);
+    &:hover{
+        background-color: darken(silver, 10%);
+        border-color: darken(silver, 20%);
+    }
+    
+}
