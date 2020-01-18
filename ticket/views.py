@@ -24,5 +24,5 @@ def dashboard(request):
         custom_user = MyUser.objects.get(user_id=request.user.id)
         if custom_user.role != 'AGN':
             return redirect('/')
-        return render(request, 'agent_dashboard.html', {'user': custom_user})
+        return render(request, 'dashboard.html', {'user': custom_user})
     return redirect('login')
