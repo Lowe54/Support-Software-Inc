@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="res_ResultWrapper">
-        <h2>Found {{ticket_list|length}} {% if tickets|length > 2 %} ticket's {% else %} ticket {% endif %}</h2>
+        <h2>Found {{ticket_list|length}} {% if ticket_list|length > 1 %} ticket's {% else %} ticket {% endif %}</h2>
         <div class="res_TicketResultWrapper">
         {% for t in ticket_list %}
             <div class="res_Ticket">
