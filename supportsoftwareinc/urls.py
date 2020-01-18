@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 import core.urls as core_urls
 import authentication.urls as auth_urls
+import ticket.urls as ticket_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include(auth_urls)),
+    path('', include(ticket_urls)),
     path('', include(core_urls))
 ]
