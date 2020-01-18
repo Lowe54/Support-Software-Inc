@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="res_ResultWrapper">
+        <h2>Found {{ticket_list|length}} {% if tickets|length > 2 %} ticket's {% else %} ticket {% endif %}</h2>
+        <div class="res_TicketResultWrapper">
+        {% for t in ticket_list %}
+            <div class="res_Ticket">
+                <h3>{{t.title}}</h3>
+                <hr/>
+                <div class="res_TicketSplitWrapper row">
+                    <div class="res_TicketSplit col-lg-6">
+                        {% autoescape off %}
+                            <p>{{t.description}}</p>
+                        {% endautoescape %}
+                    </div>
+                    <div class="res_TicketSplit col-lg-6">
+                        <p>Raised On: {{t.raised_on}}</p>
+                        <p>Raised By: {{t.raised_by}}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}
