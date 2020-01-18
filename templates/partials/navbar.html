@@ -1,8 +1,12 @@
 <div id="navbar-wrapper">
     <nav id="sidebar-navigation" class="closed">
         <ul class="list-unstyled components">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Page</a></li>
+            {% if request.user.is_authenticated %}
+                <li><a class="fa fa-home" href="{% url 'dashboard' %}">&nbsp;Home</a></li>
+                <li><a href="#">Request List</a></li>
+            {% else %}
+                <li><a class="fa fa-home" href="{% url '/' %}">&nbsp;Home</a></li>    
+            {% endif %}
             <li>
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -12,6 +16,9 @@
                 </ul>
             <li><a href="#">Page</a></li>
             <li><a href="#">Page</a></li>
+            {% if request.user.is_staff %}
+                <li><a class="fa fa-gear" href="{% url 'admin:index' %}">&nbsp;Admin</a></li>
+            {% endif %}
         </ul>  
     </nav>
     
