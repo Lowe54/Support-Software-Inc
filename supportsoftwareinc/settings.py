@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'core',
-    'authentication'
+    'authentication',
+    'ticket',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -113,11 +114,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Message Storage
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 MESSAGE_TAGS = {
-messages.DEBUG: 'alert-info',
-messages.INFO: 'alert-info',
-messages.SUCCESS: 'alert-success',
-messages.WARNING: 'alert-warning',
-messages.ERROR: 'alert-danger',
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
 }
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
