@@ -51,3 +51,19 @@ def dashboard(request):
             }
         )
     return redirect('login')
+
+
+@login_required
+def results(request):
+
+    if request.method == 'GET':
+        pass
+
+    ticket_list = Ticket.objects.all()
+    return render(
+        request,
+        'results.html',
+        {
+            'ticket_list': ticket_list
+        }
+        )
