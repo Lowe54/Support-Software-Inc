@@ -20,7 +20,11 @@
                 </div>
                 {% comment %} Right hand side of header {% endcomment %}
                 <div id="header_right_side" class="row pull-right">
-                    <a class="btn btn-secondary" href="{% url 'login' %}">Login</a>
+                    {% if not request.user.is_authenticated %}
+                        <a class="btn btn-secondary" href="{% url 'login' %}">Login</a>
+                    {% else %}
+                        <a class="btn btn-secondary" href="{% url 'logout'%}">Logout</a>
+                    {% endif %}
                 </div>
             </div>
             <div class="wrapper">
