@@ -2,9 +2,27 @@
 
 {% block content %}
 
-<div class="agn-ContentWrapper">
-    <h1>Welcome {{user.user.username}}</h1>
+<div class="agn_ContentWrapper">
+    <h1 class="agn_WelcomeHeader">Welcome {{user.user.username}}</h1>
+    <div class="agn_TicketStat--wrapper row col-lg-offset-1">
+        <div class="agn_Ticketstat--Item col-lg-4 col-md-6 col-sm-12">
+            <h2>Unassigned Tickets</h2>
+                <p class="agn_TicketStat--Count">{{unassigned}}</p>
+            <a class="agn_TicketstatLink" href="/">View Unassigned</a>
+        </div>
 
+        <div class="agn_Ticketstat--Item col-lg-4 col-md-6 col-sm-12">
+            <h2>Tickets Assigned to You</h2>
+                    <p class="agn_TicketStat--Count">{{assigned}}</p>
+                <a class="agn_TicketstatLink" href="/">View Assigned</a>
+        </div>
+            
+        <div class="agn_Ticketstat--Item col-lg-4 col-md-6 col-sm-12">
+            <h2>Total Open Tickets</h2>
+                    <p class="agn_TicketStat--Count">{{open_tickets}}</p>
+                <a class="agn_TicketstatLink" href="/">View All Open Tickets</a>
+        </div>
+    </div>
 </div>
 
 {% endblock %}
