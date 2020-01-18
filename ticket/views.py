@@ -27,13 +27,13 @@ def dashboard(request):
             return redirect('/')
         # Try to get a count for each of the 3 counters
         try:
-            unassigned_tickets = Ticket.objects.get(assigned_to=None)
-            assigned_tickets = Ticket.objects.get(
+            unassigned_tickets = len(Ticket.objects.filter(assigned_to=None))
+            assigned_tickets = len(Ticket.objects.filter(
                 assigned_to=custom_user.user_id
-                )
-            open_tickets = Ticket.objects.get(
+                ))
+            open_tickets = len(Ticket.objects.filter(
                 status='OPN'
-            )
+            ))
         # Catch any DoesNotExist errors, which means the count would be 0
         except Ticket.DoesNotExist:
             unassigned_tickets = 0
