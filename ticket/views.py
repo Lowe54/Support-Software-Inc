@@ -76,7 +76,7 @@ def results(request):
                 )
             else:
                 statusexclude = Ticket.objects.none()
-            
+
             if key == 'assigned_to':
                 if int(value) > 0:
                     assigned_to = Ticket.objects.filter(
