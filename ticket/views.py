@@ -29,7 +29,6 @@ def dashboard(request):
         # Try to get a count for each of the 3 counters
         try:
             unassigned_tickets = len(Ticket.objects.filter(assigned_to=None))
-            print(custom_user.user_id)
             assigned_tickets = len(Ticket.objects.filter(
                 assigned_to=MyUser.objects.get(user_id=request.user.id)
                 ))
