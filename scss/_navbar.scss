@@ -6,6 +6,10 @@
     overflow: hidden;
     color:$text-white;
     min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     &.open{
         display:block;   
     }
@@ -17,6 +21,33 @@
     &.closed{
         display:none;
     }
+
+    ul
+        li {
+            border-color:$secondary;
+            border: 1px solid $secondary;
+            padding: 0 5px;
+            margin: 15px 0;
+            border-radius: 15px;
+        
+            a{
+                color:$text-white;
+
+                &.expandable{
+                    width:100%;
+                    text-align: left;
+                }
+                
+                &:hover{
+                    background-color: silver;
+                }
+                
+            }
+            &:hover:not(.expandable){
+                border-color:$text-white;
+                background-color: silver;
+            }
+        }
 }
     
 
