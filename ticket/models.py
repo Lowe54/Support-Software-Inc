@@ -16,6 +16,8 @@ PRIORITY_CHOICES = (
     ('MED', 'Medium'),
     ('HGH', 'High'),
 )
+
+
 class Ticket(models.Model):
     '''
     Table to hold core ticket information.
