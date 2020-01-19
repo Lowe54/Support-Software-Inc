@@ -63,6 +63,13 @@ def results(request):
     if request.method == 'GET':
         print(request.GET)
         for key, value in request.GET.items():
+            if key == 'Keyword':
+                keyword = Ticket.objects.filter(
+                    title__contains=value
+                )
+            else:
+                keyword = Ticket.objects.none()
+
             if key == 'priority':
                 priority = Ticket.objects.filter(
                     priority=value
@@ -93,7 +100,9 @@ def results(request):
 
             else:
                 assigned_to = Ticket.objects.none()
-            ticket_list = status | statusexclude | assigned_to | priority
+
+            ticket_list = keyword | status |\
+                statusexclude | assigned_to | priority
     else:
 
         ticket_list = Ticket.objects.all()
