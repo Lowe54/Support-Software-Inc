@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 if os.getenv('DEV'):
     DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'supportsoftwareinc.herokuapp.com']
 
 
 # Application definition
