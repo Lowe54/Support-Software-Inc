@@ -71,11 +71,21 @@ def results(request):
                 keyword = Ticket.objects.none()
 
             if key == 'priority':
-                priority = Ticket.objects.filter(
-                    priority=value
-                )
+                if len(request.GET.getlist(key)) > 1:
+                    priority = Ticket.objects.none()
+                    value = request.GET.getlist(key)
+                    for val in value:
+                        pri = Ticket.objects.filter(
+                            priority=val
+                        )
+                        priority = priority | pri
+                else:
+                    priority = Ticket.objects.filter(
+                        priority=value
+                    )
             else:
                 priority = Ticket.objects.none()
+
             if key == 'status':
                 status = Ticket.objects.filter(
                     status=value
