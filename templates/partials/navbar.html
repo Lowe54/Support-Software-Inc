@@ -2,22 +2,22 @@
     <nav id="sidebar-navigation" class="closed">
         <ul class="list-unstyled components">
             {% if request.user.is_authenticated %}
-                <li><a class="fa fa-home" href="{% url 'dashboard' %}">&nbsp;Home</a></li>
-                <li><a href="#">Request List</a></li>
+                <li><a class="fa fa-home btn" href="{% url 'dashboard' %}">&nbsp;Home</a></li>
+                <li><a class="fa fa-file btn" href="#">&nbsp;Request List</a></li>
             {% else %}
-                <li><a class="fa fa-home" href="{% url 'index' %}">&nbsp;Home</a></li>    
+                <li><a class="fa fa-home btn" href="{% url 'index' %}">&nbsp;Home</a></li>    
             {% endif %}
-            <li>
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
+            <li class="expandable">
+                <a class="expandable btn fa fa-window-maximize" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">&nbsp;Views &nbsp;<span class="fa fa-chevron-right"</span></a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li><a href="#">Page</a></li>
-                    <li><a href="#">Page</a></li>
-                    <li><a href="#">Page</a></li>
+                    <li><a class="btn" href="#">Page</a></li>
+                    <li><a class="btn" href="#">Page</a></li>
+                    <li><a class="btn" href="#">Page</a></li>
                 </ul>
-            <li><a href="#">Page</a></li>
-            <li><a href="#">Page</a></li>
+            <li><a class="btn fa fa-building" href="#">&nbsp;Organisations</a></li>
+            <li><a class="btn fa fa-users" href="#">&nbsp;Users</a></li>
             {% if request.user.is_staff %}
-                <li><a class="fa fa-gear" href="{% url 'admin:index' %}">&nbsp;Admin</a></li>
+                <li><a class="fa fa-gear btn" href="{% url 'admin:index' %}">&nbsp;Admin</a></li>
             {% endif %}
         </ul>  
     </nav>
