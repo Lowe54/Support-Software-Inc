@@ -5,10 +5,10 @@ from authentication.models import MyUser as Users
 # Create your models here.
 
 STATUS_CHOICES = (
-        ('OPN', 'Open'),
-        ('PEN', 'Pending'),
-        ('ONH', 'On Hold'),
-        ('CLS', 'Closed'),
+    ('OPN', 'Open'),
+    ('PEN', 'Pending'),
+    ('ONH', 'On Hold'),
+    ('CLS', 'Closed'),
 )
 
 PRIORITY_CHOICES = (
