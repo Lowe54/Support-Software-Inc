@@ -1,9 +1,7 @@
-html,
 body {
   max-width: 100%;
 }
 
-html .container-fluid,
 body .container-fluid {
   padding: 0px 0px;
 }
