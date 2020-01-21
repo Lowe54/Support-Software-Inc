@@ -2,37 +2,14 @@
 Models.py file for authentication model
 
 Tables
-Organisation - Hold organisation info
+
 MyUser - extends django default user model
 with extra fields
 '''
-import uuid
+
 from django.db import models
 from django.contrib.auth.models import User
-
-
-class Organisation(models.Model):
-    '''
-    Organisation Table
-
-    id - Organisations ID
-    name - Organisations Name (Max length of 255 characters)
-    '''
-    id = models.UUIDField(
-        primary_key=True,
-        default=uuid.uuid4,
-        editable=False
-        )
-    Organisation_Name = models.CharField(
-        max_length=255,
-        name="Organisation_Name"
-        )
-
-    def __str__(self):
-        '''
-        Returns the Organisation's Name
-        '''
-        return self.Organisation_Name
+from organisations.models import Organisation as Org
 
 
 class MyUser(models.Model):
@@ -61,8 +38,8 @@ class MyUser(models.Model):
         blank=True
         )
     organisation = models.ForeignKey(
-        Organisation,
-        on_delete=models.CASCADE,
+        Org,
+        on_delete=models.SET_NULL,
         null=True,
         blank=True
         )

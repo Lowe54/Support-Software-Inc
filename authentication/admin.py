@@ -4,7 +4,8 @@ Admin.py file for Authentication module
 from django.contrib import admin
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin as UA
-from .models import MyUser, Organisation
+from .models import MyUser
+from organisations.models import Organisation
 
 
 class UserInline(admin.TabularInline):
