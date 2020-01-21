@@ -23,9 +23,13 @@ def dashboard(request):
     they sign in
     '''
     if request.user.is_authenticated:
-        custom_user = MyUser.objects.get(user_id=request.user.id)
+        try:
+            custom_user = MyUser.objects.get(user_id=request.user.id)    
+        except MyUser.DoesNotExist:
+            return redirect('index')
+        
         if custom_user.role != 'AGN':
-            return redirect('/')
+            return redirect('index')
         # Try to get a count for each of the 3 counters
         try:
             unassigned_tickets = len(Ticket.objects.filter(assigned_to=None))
