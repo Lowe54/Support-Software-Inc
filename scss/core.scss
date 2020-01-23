@@ -1,36 +1,12 @@
 @import "colors";
-
-body {
-  max-width: 100%;
-    .container-fluid{
-        padding: 0px 0px;
-    }
-  }
-
 @import "navbar";
 
-.wrapper{
-  width:100%;
-  display:flex;
-  
-}
-#header{
-  padding-left:15px;
-  display:inline-flex;
+#header {
   background-color: $primary;
-  color:$text-white;
-  p{
-      font-size:24px;
-      padding-top:12px;
-      padding-bottom:0px;
+  a {
+    color: #fff;
+    &:hover {
+      background-color: $secondary;
+    }
   }
-  #header_right_side{
-    margin-left:auto;
-    margin-right:5px;
-  }
-}
-#main-wrapper{
-  margin-left:0px;
-  padding-right: 0;
-  display:block;
 }

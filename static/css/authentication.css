@@ -1,15 +1,1 @@
-#login_form_section {
-  margin-left: 50vw;
-}
-
-@media (max-width: 768px) {
-  #login_form_section {
-    margin-left: 35vw;
-  }
-}
-
-@media (max-width: 576px) {
-  #login_form_section {
-    margin-left: 7vw;
-  }
-}
+/* No CSS */
