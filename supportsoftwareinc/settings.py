@@ -152,7 +152,9 @@ STATICFILES_DIRS = [
 ]
 STATICFILES_LOCATION = 'static'
 #   STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+if os.getenv("DEV") == '0':
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+
 
 # AWS
 AWS_S3_OBJECT_PARAMETERS = {
