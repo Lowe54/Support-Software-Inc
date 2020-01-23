@@ -5,14 +5,13 @@
     <link rel="stylesheet" href="{% static 'css\authentication.css' %}" type="text/css"/>
 {% endblock %}
 {% block content %}
-<div id="form_wrapper" class="row">
-	<div id="login_form_section">
-        <form method="POST" action="{% url 'login' %}">
-            {{loginForm | crispy}}
-            {% csrf_token %}
-            <button type="submit" class="btn btn-success">Login</button>
-        </form>
+	<div id="login-form_wrapper" class="col-lg-10">
+        <div id="login-form-inner" class="col-lg-5 lg-offset-2">
+            <form method="POST" action="{% url 'login' %}">
+                {{loginForm | crispy}}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-success">Login</button>
+            </form>
+        </div>
     </div>
-</div>
-
 {% endblock %}
