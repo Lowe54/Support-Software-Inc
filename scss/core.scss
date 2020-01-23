@@ -3,6 +3,13 @@
 
 #header {
   background-color: $primary;
+  color: #fff;
+  
+  #toggle_sidebar {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
   a {
     color: #fff;
     &:hover {

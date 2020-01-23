@@ -20,6 +20,12 @@
 
 #header {
   background-color: #1a535c;
+  color: #fff;
+}
+
+#header #toggle_sidebar {
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 #header a {
