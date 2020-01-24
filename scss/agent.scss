@@ -2,24 +2,25 @@
 @import "breakpoints";
 @import "mixins";
 
-.agn_WelcomeHeader{
+.agn-ContentHeader h1{
     background-color: $secondary;
     padding-bottom: 1vh;
     margin: 0;
 }
-.agn_TicketStat--wrapper{
-    display:flex;
+.agn-TicketStat-Wrapper{
+    display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-    padding-right:0
+    padding-right:0;
     
+    @media (max-width: $sm) {
+        flex-direction: column;
+    }
 }
 .agn_TicketStat--Item{
-    border: 1px solid $secondary;
     color: $off-white;
     background-color: $primary;
-    
-
+    flex-grow: 1;
    .agn_TicketStat--Count{
        font-weight: 600;
        font-size: 28px;
