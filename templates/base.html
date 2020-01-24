@@ -42,7 +42,9 @@
             </div>
             <div id="main-content-wrapper" class="row">
                 {% include 'partials/navbar.html' %}
-                {% block content %} {% endblock %}
+                <div id="content-wrapper" class="no-padding">
+                    {% block content %} {% endblock %}
+                </div>
             </div>
 
         </div>
