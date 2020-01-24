@@ -2,6 +2,7 @@
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   background-color: #1a535c;
+  padding-right: 0;
 }
 
 #sidebar-navigation.open {
@@ -34,4 +35,8 @@
 
 #header a:hover {
   background-color: #4ecdc4;
+}
+
+.no-padding {
+  padding: 0;
 }
