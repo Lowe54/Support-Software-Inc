@@ -21,7 +21,26 @@
                        <li class="navbar-brand">
                             Support Software Inc
                        </li>
-                       <ul class="navbar-nav ml-auto">
+                    
+                    <ul class="nav ml-auto">
+                       {% if request.user.is_authenticated %}
+                       <li class="nav-item dropdown auth-link">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {% if user_profile.profile_picture %}
+                                    <span class="profile-img img-circle"><img src=""></span>
+                                    {{ user_profile }}
+                                {% else %}
+                                    <span class="fas fa-user-circle"></span>
+                                    {{ user_profile }}
+                                {% endif %}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">My Profile</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                       {% endif %}
                         <li class="nav-item auth-link">
                             {% if not request.user.is_authenticated %}
                                 <a class="nav-link" href="{% url 'login' %}">
@@ -34,11 +53,10 @@
                                     Logout
                                 </a>
                             {% endif %}
-                        </li>
+                        </li> 
                     </ul>
-                   </ul>
+                </ul>   
                 </div>
-               
             </div>
             <div id="main-content-wrapper" class="row">
                 {% include 'partials/navbar.html' %}

@@ -29,11 +29,11 @@
   padding-bottom: 12px;
 }
 
-#header a {
+#header a:not(.dropdown-item) {
   color: #fff;
 }
 
-#header a:hover {
+#header a:not(.dropdown-item):hover {
   background-color: #4ecdc4;
 }
 
