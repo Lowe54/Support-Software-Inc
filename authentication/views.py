@@ -5,9 +5,11 @@ Login
 Logout
 '''
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from django.contrib import auth
 from django.contrib import messages
 from .forms import LoginForm
+from .models import MyUser
 
 
 def login(request):
@@ -60,3 +62,11 @@ def logout(request):
         "You have successfully signed out"
         )
     return redirect('/')
+
+
+@login_required
+def profile_view(request):
+
+    user = MyUser.objects.get(user_id=request.user.id)
+    print(user.user.email)
+    return render(request, 'profile_view.html', {'user': user})

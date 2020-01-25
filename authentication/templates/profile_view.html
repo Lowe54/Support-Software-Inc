@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="usr-profile-container row">
+        <div class="usr-profile_image col-lg-3">
+
+        </div>
+        <div class="usr-profile-core-info">
+            <h1>Your Information</h1>
+            <dl class="no-bullet dl-horizonal">
+                <dt>Username :</dt>
+                <dd>{{ user.user.username }}</dd>
+                <dt>Email :</dt>
+                <dd>{{ user.user.email }}</dd>
+                <dt>Role :</dt>
+                <dd>{{ user.role }}</dd>
+            </dl>
+        </div>
+
+    </div>
+{% endblock %}
