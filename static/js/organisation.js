@@ -1,5 +1,6 @@
-$('.org-edit').on('click', function(e) {
+$('table').on('click', '.org-edit', function(e) {
     e.preventDefault();
+    console.log('Editing Organisation')
     let id = $(this).data('id');
     get_organisation_info(id);
 })
@@ -9,7 +10,7 @@ $('.addOrg').on('click', function(e){
     add_organisation_form()
 })
 
-$('.org-users').on('click', function(e) {
+$('table').on('click', '.org-users', function(e) {
     e.preventDefault();
     let id = $(this).data('id');
     get_organisation_users(id);
