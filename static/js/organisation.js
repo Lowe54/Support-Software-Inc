@@ -8,7 +8,7 @@ $('.org-edit').on('click', function(e) {
 function get_organisation_info(id) {
     console.info("Get Organisation info called with id " + id);
     $.ajax({
-        url: 'http://127.0.0.1:8000/organisations/edit/',
+        url: '/organisations/edit/',
         type: "POST",
         data: { 'org_id' : id },
         success: function(response){
