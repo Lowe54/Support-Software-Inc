@@ -1,0 +1,31 @@
+<div id="user-list-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">User list for {{ org.Organisation_Name }} </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {% for user in user_list %}
+        <div class="org-modal-userrow row">
+            <div class="org-modal-username col-lg-4">
+                {{user.user.username}}
+            </div>
+            <div class="org-modal-useremail col-lg-4">
+                {% if user.user.email %} {{user.user.email}} {% else %} No Email listed {% endif %}
+            </div>
+            <div class="org-modal-useractions col-lg-4">
+                <a class="btn btn-danger modal-remove col-lg-12" href="#" data-id={{ user.user.id }}>Remove from organisation</a>
+            </div>
+        </div>
+        {% endfor %}
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

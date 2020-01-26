@@ -3,6 +3,7 @@ Organisation model views.py
 '''
 from django.shortcuts import render
 from .models import Organisation
+from authentication.models import MyUser
 from .forms import OrganisationForm
 
 
@@ -30,13 +31,31 @@ def add_or_edit_organisation(request, org_id=None):
             form = OrganisationForm(instance=org)
             return render(
                 request,
-                'partials/edit_organisation.html',
+                'edit_organisation.html',
                 {'org': org, 'form': form}
             )
         else:
             form = OrganisationForm()
             return render(
                 request,
-                'partials/edit_organisation.html',
+                'edit_organisation.html',
                 {'org': org}
             )
+
+
+def get_user_list(request, org_id=None):
+    '''
+    Returns the list of users associated with a particular organisation
+    '''
+    if request.method == 'POST':
+        organisation = Organisation.objects.get(id=request.POST['org_id'])
+        user_list = MyUser.objects.filter(organisation=request.POST['org_id'])
+        print(user_list)
+        return render(
+            request,
+            'organisation_user_list.html',
+            {
+                'org': organisation,
+                'user_list': user_list
+            }
+        )

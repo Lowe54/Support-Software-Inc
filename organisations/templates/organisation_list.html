@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block page_specific_stylesheets %}
+    <link rel="stylesheet" href="{% static 'css\modals.css' %}" type="text/css"/>
+{% endblock %}
 {% block content %}
     <div class="org-OrganisationTableWrapper">
         <table class="table-responsive table-striped">
@@ -12,7 +15,7 @@
                     <td>{{ org.Organisation_Name }}</td>
                     <td colspan="2">
                         <a href="#" class="org-edit btn btn-info" data-id={{ org.id }}>Edit</a>
-                        <a href="#" class="btn btn-info" data-id={{ org.id }}>Show all Users</a>
+                        <a href="#" class="org-users btn btn-info" data-id={{ org.id }}>Show all Users</a>
                     </td>
                 </tr>
             {% endfor %}
