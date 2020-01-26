@@ -2,8 +2,8 @@
 Organisation model views.py
 '''
 from django.shortcuts import render, HttpResponse
-from .models import Organisation
 from authentication.models import MyUser
+from .models import Organisation
 from .forms import OrganisationForm
 
 
