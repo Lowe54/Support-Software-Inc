@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block page_specific_stylesheets %}
+    <link rel="stylesheet" href="{% static 'css\organisation.css' %}" type="text/css"/>
     <link rel="stylesheet" href="{% static 'css\modals.css' %}" type="text/css"/>
 {% endblock %}
 {% block content %}
     <div class="org-OrganisationTableWrapper">
-        <table class="table-responsive table-striped">
+        <div class="org-Organisation-AddButton">
+            
+        </div>
+        <table class="table table-striped">
             <thead>
                 <th>Organisation name</th>
-                <th>Actions</th>
+                <th colspan="2">Actions</th>
+                <th><a href="#" class="btn-small btn-success addOrg fas fa-building"> Add an organisation</a></th>
             </thead>
             {% for org in organisation_list %}
                 <tr>
