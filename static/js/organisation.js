@@ -1,7 +1,6 @@
 $('.org-edit').on('click', function(e) {
     e.preventDefault();
     let id = $(this).data('id');
-    console.log(id);
     get_organisation_info(id);
 })
 
@@ -13,7 +12,6 @@ $('.addOrg').on('click', function(e){
 $('.org-users').on('click', function(e) {
     e.preventDefault();
     let id = $(this).data('id');
-    console.log(id);
     get_organisation_users(id);
 })
 
@@ -30,7 +28,6 @@ function add_organisation_form() {
 }
 
 function get_organisation_info(id=None) {
-    console.info("Get Organisation info called with id " + id);
     $.ajax({
         url: '/organisations/edit/',
         type: "POST",
@@ -44,7 +41,6 @@ function get_organisation_info(id=None) {
 }
 
 function get_organisation_users(id) {
-    console.info("Get Organisation Users called with id " + id);
     $.ajax({
         url: '/organisations/userlist/',
         type: "POST",
