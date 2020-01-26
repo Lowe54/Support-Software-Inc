@@ -9,7 +9,7 @@
                 <li><a class="btn" href="#">Page</a></li>
                 <li><a class="btn" href="#">Page</a></li>
             </ul>
-        <li class="nav-item"><a class="btn fa fa-building" href="#">&nbsp;Organisations</a></li>
+        <li class="nav-item"><a class="btn fa fa-building" href="{% url 'show_organisation_list' %} ">&nbsp;Organisations</a></li>
         <li class="nav-item"><a class="btn fa fa-users" href="#">&nbsp;Users</a></li>
     {% else %}
         <li class="nav-item"><a class="fa fa-home btn" href="{% url 'index' %}">&nbsp;Home</a></li>    
