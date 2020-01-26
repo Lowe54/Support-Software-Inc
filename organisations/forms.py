@@ -1,12 +1,9 @@
-from django import forms
+from django.forms import ModelForm
+from .models import Organisation
 
 
-class editOrganisationForm(forms.Form):
+class OrganisationForm(ModelForm):
 
-    id = forms.CharField(
-        widget= forms.HiddenInput()
-    )
-    name = forms.CharField(
-        required=True,
-        label="Organisation Name"
-    )
+    class Meta:
+        model = Organisation
+        fields = ['Organisation_Name']

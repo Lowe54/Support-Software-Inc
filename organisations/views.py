@@ -1,7 +1,7 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, get_object_or_404, HttpResponse
 from .models import Organisation
-from .forms import editOrganisationForm
+from .forms import OrganisationForm
+
 
 def show_organisation_list(request):
     '''
@@ -16,9 +16,15 @@ def show_organisation_list(request):
         )
 
 
-# def edit_organisation(request, org_id):
-#     if request.method == 'POST':
-#         edit_org_form = editOrganisationForm(request.POST)
-
-#         if edit_org_form.is_valid():
-#     edit_org_form = edit_o
+def add_or_edit_organisation(request, org_id=None):
+    print('Edit organisation called')
+    print(request.POST['org_id'])
+    if request.method == 'POST':
+        
+        org = Organisation.objects.get(id=request.POST['org_id'])
+        if org:
+            form = OrganisationForm(instance=org)
+            return render(request, 'partials/edit_organisation.html', {'org': org, 'form': form})
+        else:
+            form = OrganisationForm()
+            return render(request, 'partials/edit_organisation.html', {'org': org})

@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
     <div class="org-OrganisationTableWrapper">
         <table class="table-responsive table-striped">
@@ -11,7 +11,7 @@
                 <tr>
                     <td>{{ org.Organisation_Name }}</td>
                     <td colspan="2">
-                        <a href="#" class="btn btn-info" data-id={{ org.id }}>Edit</a>
+                        <a href="#" class="org-edit btn btn-info" data-id={{ org.id }}>Edit</a>
                         <a href="#" class="btn btn-info" data-id={{ org.id }}>Show all Users</a>
                     </td>
                 </tr>
@@ -20,3 +20,6 @@
     </div>
 {% endblock %}
 
+{% block page_js %}
+   <script src="{% static 'js/organisation.js' %} "></script>
+{% endblock %}
