@@ -84,6 +84,3 @@ def save_organisation(request, org_id=None, action='create'):
                         <a href="#" class="org-users btn btn-info" data-id={}>Show all Users</a>\
                         </td><tr>'.format(new_org.Organisation_Name, new_org.id, new_org.id)
             return HttpResponse(response)
-            
-
-        
