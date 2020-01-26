@@ -9,7 +9,7 @@
       </div>
       <div class="modal-body">
         {% for user in user_list %}
-        <div class="org-modal-userrow row">
+        <div class="org-modal-userrow row" data-user={{ user.user.id }}>
             <div class="org-modal-username col-lg-4">
                 {{user.user.username}}
             </div>

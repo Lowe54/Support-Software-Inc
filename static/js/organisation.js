@@ -29,7 +29,7 @@ function get_organisation_info(id) {
 function get_organisation_users(id) {
     console.info("Get Organisation Users called with id " + id);
     $.ajax({
-        url: '/organisations/users/',
+        url: '/organisations/userlist/',
         type: "POST",
         data: { 'org_id' : id },
         success: function(response){
