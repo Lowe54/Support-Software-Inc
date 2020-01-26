@@ -8,6 +8,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import auth
 from django.contrib import messages
+import sweetify
 from .forms import LoginForm
 from .models import MyUser
 
@@ -16,7 +17,7 @@ def login(request):
     '''
     Login functionality
     '''
-    # If user is already logged in, redirect to index with a page
+    # If user is already logged in, redirect to index
     if request.user.is_authenticated:
         messages.add_message(
             request,
@@ -34,11 +35,12 @@ def login(request):
             )
             if user:
                 auth.login(user=user, request=request)
-                messages.add_message(
+                sweetify.success(
                     request,
-                    messages.SUCCESS,
-                    "You have successfully logged in"
-                    )
+                    "You have successfully signed in",
+                    button='Ok',
+                    timer=5000
+                )
                 return redirect('dashboard')
 
             login_form.add_error(
@@ -55,18 +57,22 @@ def logout(request):
     '''
         Signs the user out of the site
     '''
+    
     auth.logout(request)
-    messages.add_message(
+    sweetify.success(
         request,
-        messages.SUCCESS,
-        "You have successfully signed out"
-        )
+        "You have successfully signed out",
+        button='Ok',
+        timer=5000
+    )
     return redirect('/')
 
 
 @login_required
 def profile_view(request):
-
+    '''
+    Shows the logged in user their profile
+    '''
     user = MyUser.objects.get(user_id=request.user.id)
     print(user.user.email)
     return render(request, 'profile_view.html', {'user': user})
