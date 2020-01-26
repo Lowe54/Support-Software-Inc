@@ -1,4 +1,7 @@
-from django.shortcuts import render, get_object_or_404, HttpResponse
+'''
+Organisation model views.py
+'''
+from django.shortcuts import render
 from .models import Organisation
 from .forms import OrganisationForm
 
@@ -17,14 +20,23 @@ def show_organisation_list(request):
 
 
 def add_or_edit_organisation(request, org_id=None):
-    print('Edit organisation called')
-    print(request.POST['org_id'])
+    '''
+    Returns the modal that allows addition or editing of
+    an organisation
+    '''
     if request.method == 'POST':
-        
         org = Organisation.objects.get(id=request.POST['org_id'])
         if org:
             form = OrganisationForm(instance=org)
-            return render(request, 'partials/edit_organisation.html', {'org': org, 'form': form})
+            return render(
+                request,
+                'partials/edit_organisation.html',
+                {'org': org, 'form': form}
+            )
         else:
             form = OrganisationForm()
-            return render(request, 'partials/edit_organisation.html', {'org': org})
+            return render(
+                request,
+                'partials/edit_organisation.html',
+                {'org': org}
+            )
