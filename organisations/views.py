@@ -80,7 +80,12 @@ def save_organisation(request, org_id=None, action='create'):
             new_org = edit_org.save()
             response = '<tr><td>{}</td>\
                         <td colspan="2">\
-                        <a href="#" class="org-edit btn btn-info" data-id={}>Edit</a>\
-                        <a href="#" class="org-users btn btn-info" data-id={}>Show all Users</a>\
-                        </td><tr>'.format(new_org.Organisation_Name, new_org.id, new_org.id)
+                        <a href="#" class="org-edit btn btn-info" data-id={}>\
+                        Edit</a><a href="#" class="org-users btn btn-info"\
+                        data-id={}>Show all Users</a>\
+                        </td><tr>'.format(
+                            new_org.Organisation_Name,
+                            new_org.id,
+                            new_org.id
+                            )
             return HttpResponse(response)
