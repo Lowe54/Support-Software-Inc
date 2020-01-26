@@ -6,14 +6,12 @@
 {% endblock %}
 {% block content %}
     <div class="org-OrganisationTableWrapper">
-        <div class="org-Organisation-AddButton">
-            
-        </div>
+        <a href="#" class="col-lg-12 btn btn-success addOrg fas fa-building"> Add an organisation</a>
         <table class="table table-striped">
             <thead>
                 <th>Organisation name</th>
                 <th colspan="2">Actions</th>
-                <th><a href="#" class="btn-small btn-success addOrg fas fa-building"> Add an organisation</a></th>
+                <th class=""></th>
             </thead>
             {% for org in organisation_list %}
                 <tr>
