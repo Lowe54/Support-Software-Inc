@@ -8,15 +8,19 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <form action="" method="POST">
-            {{ form | crispy }}
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+      <form id="organisation_form" action="" method="POST">
+        <div class="modal-body">
+            
+                {{ form | crispy }}
+                <input type="hidden" id="org_id" value="{{ org.id }}"/>
+                <input type="hidden" id="action" value="{% if org.id %}update{% else %}create{% endif %}"/> 
+                {% csrf_token %}
+        </div>
+        <div class="modal-footer">
+            <button type="button" onClick="save_organisation()" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

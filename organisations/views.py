@@ -1,7 +1,7 @@
 '''
 Organisation model views.py
 '''
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from .models import Organisation
 from authentication.models import MyUser
 from .forms import OrganisationForm
@@ -38,8 +38,7 @@ def add_or_edit_organisation(request, org_id=None):
             form = OrganisationForm()
             return render(
                 request,
-                'edit_organisation.html',
-                {'org': org}
+                'edit_organisation.html'
             )
 
 
@@ -59,3 +58,20 @@ def get_user_list(request, org_id=None):
                 'user_list': user_list
             }
         )
+
+
+def save_organisation(request, org_id=None, action='create'):
+    '''
+    Saves the organisation
+    '''
+    if request.method == 'POST':
+        action = request.POST['action']
+        if action == 'update':
+            org_ins = Organisation.objects.get(id=request.POST['org_id'])
+            edit_org = OrganisationForm(request.POST, instance=org_ins)
+            edit_org.save()
+        else:
+            edit_org = OrganisationForm(request.POST)
+            edit_org.save()
+
+        return HttpResponse(request.POST['Organisation_Name'])
