@@ -8,6 +8,8 @@ Ticket_View
 
 Edit_Ticket
 '''
+from datetime import datetime
+
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
@@ -185,3 +187,18 @@ def save_ticket(request, t_id=None):
                 'priority': ticket_data.get_priority_display(),
             }
             return JsonResponse(data)
+
+
+def close_ticket(request, t_id=None):
+    if request.method == 'POST':
+        ticket = Ticket.objects.get(id=request.POST['t_id'])
+        if ticket:
+            now = datetime.now()
+            ticket.closure_message = request.POST['closure_message']
+            ticket.closed_on = now
+            ticket.status = 'CLS'
+            ticket.save()
+
+            response = "Ticket closed at {} with the following reason '{}'".format(now.strftime("%d/%m/%Y %H:%M:%S"), request.POST['closure_message'])
+            return HttpResponse(response, status=200)
+    return HttpResponse('Unauthorised', status=403)

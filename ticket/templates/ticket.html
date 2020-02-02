@@ -3,6 +3,9 @@
 {% block content %}
     <div class="tck-Ticket_wrapper row">
         <div class="tck-Ticket_main col-lg-9">
+            {% if ticket.status == 'CLS' %}
+                <div id="ticket-closure-banner" class="alert alert-dark">Ticket closed at {{ ticket.closed_on }} with the following reason '{{ ticket.closure_message }}'</div> 
+            {% endif %}
             <div class="tck-Ticket_Header">
                 <h1 class="ticket-header">{{ ticket.title }}</h1>
             </div>
@@ -13,10 +16,12 @@
             </div>
         </div>
         <div class="tck-Ticket_coreInfo col-lg-3">
+            {% if ticket.status != 'CLS' %}
             <div class="row">
                     <a href="#" class="btn btn-success col-lg-6" id="edit-ticket" data-id={{ ticket.id }}><i class="fas fa-edit"> </i>Edit Request Details</a>
-                    <a href="#" class="btn btn-secondary col-lg-6" id="mark-ticket-closed" data-id= {{ticket.id }}><i class="fas fa-window-close"> </i>Close Request</a>
+                    <a href="#" class="btn btn-secondary col-lg-6" id="mark-ticket-closed" data-id= {{ticket.id }} onclick="close_ticket()"><i class="fas fa-window-close"> </i>Close Request</a>
             </div>
+            {% endif %}
             <dl class="dl-horizontal">
                 <dt>Raised On:</dt><dd>{{ ticket.raised_on }}<dd>
                 <dt>Raised By:</dt><dd>{{ ticket.raised_by}}</dd>

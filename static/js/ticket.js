@@ -82,3 +82,41 @@ function save_ticket(){
         }
     })
 }
+
+function close_ticket(){
+    Swal.mixin({
+        confirmButtonText: 'Next &rarr;',
+        showCancelButton: true,
+      }).queue([
+        {
+            title: 'Please enter the closure reason',
+            input: 'textarea',  
+        },
+        { 
+            title: 'Confirm Closure',
+            text: "Closed tickets can no longer be edited or updated",
+            icon: 'warning',
+            confirmButtonText: 'Confirm',
+        },
+      ]).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    url: '/ticket/close/',
+                    type: "POST",
+                    data: {
+                        't_id': $('#mark-ticket-closed').data('id'),
+                        'closure_message': result.value[0]
+                    },
+                    success: function(response){
+                        $('.tck-Ticket_Header').prepend('<div id="ticket-closure-banner" class="alert alert-dark">' + response + '</div>')
+                        $('#edit-ticket, #mark-ticket-closed').remove()
+                        Swal.fire({
+                            title: 'Request closed',
+                            text: response,
+                            confirmButtonText: 'Ok'
+                        })
+                    }
+                })
+            }
+      })
+}
