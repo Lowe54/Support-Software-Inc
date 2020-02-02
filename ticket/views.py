@@ -8,12 +8,13 @@ Ticket_View
 
 Edit_Ticket
 '''
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 
 from authentication.models import MyUser
 from .models import Ticket
-from .forms import FilterForm
+from .forms import FilterForm, TicketForm
 
 
 @login_required
@@ -129,3 +130,57 @@ def results(request):
             'filter_form': filter_form
         }
         )
+
+
+def ticket_detail(request, t_id):
+    ticket = Ticket.objects.get(id=t_id)
+    return render(request, 'ticket.html', {'ticket': ticket})
+
+
+def ticket_assign(request, t_id=None):
+    if request.method == 'POST':
+        user = MyUser.objects.get(user_id=request.POST['assignee'])
+        if user:
+            ticket = Ticket.objects.get(id=request.POST['t_id'])
+            if ticket:
+                ticket.assigned_to = user
+                ticket.save()
+                response = user.user.username
+                return HttpResponse(response, status=200)
+            return HttpResponse("Error assigning user", status=400)
+        return HttpResponse("Error assigning user", status=400)
+
+    return HttpResponse('', status=400)
+
+
+def edit_ticket(request, t_id=None):
+    '''
+    Returns the modal containing editable core ticket information
+    '''
+    if request.method == 'POST':
+        if request.POST:
+            ticket = Ticket.objects.get(id=request.POST['t_id'])
+            if ticket:
+                form = TicketForm(instance=ticket)
+                return render(
+                    request,
+                    'edit_ticket_details.html',
+                    {'ticket': ticket, 'form': form}
+                )
+            
+    return HttpResponse(status=400, reason="Bad ticket ID or ticket not found")
+
+
+def save_ticket(request, t_id=None):
+    if request.method == 'POST':
+        ticket = Ticket.objects.get(id=request.POST['t_id'])
+        if ticket:
+            ticket_to_save = TicketForm(request.POST, instance=ticket)
+            ticket_data = ticket_to_save.save()
+            data = {
+                'title': ticket_data.title,
+                'description': ticket_data.description,
+                'status': ticket_data.get_status_display(),
+                'priority': ticket_data.get_priority_display(),
+            }
+            return JsonResponse(data)

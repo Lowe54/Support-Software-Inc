@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="tck-Ticket_wrapper row">
+        <div class="tck-Ticket_main col-lg-9">
+            <div class="tck-Ticket_Header">
+                <h1 class="ticket-header">{{ ticket.title }}</h1>
+            </div>
+            <div class="tck-Ticket_description">
+                {% autoescape off %}
+                    <p class="ticket-description">{{ ticket.description }}</p>
+                {% endautoescape %}
+            </div>
+        </div>
+        <div class="tck-Ticket_coreInfo col-lg-3">
+            <div class="row">
+                    <a href="#" class="btn btn-success col-lg-6" id="edit-ticket" data-id={{ ticket.id }}><i class="fas fa-edit"> </i>Edit Request Details</a>
+                    <a href="#" class="btn btn-secondary col-lg-6" id="mark-ticket-closed" data-id= {{ticket.id }}><i class="fas fa-window-close"> </i>Close Request</a>
+            </div>
+            <dl class="dl-horizontal">
+                <dt>Raised On:</dt><dd>{{ ticket.raised_on }}<dd>
+                <dt>Raised By:</dt><dd>{{ ticket.raised_by}}</dd>
+                <dt>Assignee:</dt><dd class="ticket-assigned-to">{{ ticket.assigned_to}} {% if ticket.assigned_to != user_profile %}<br/><a href="#" id="request-take-me" data-id="{{ticket.id}}" data-user="{{ user_profile.user.id }}">Take it</a> {% endif %} </dd>
+
+            </dl>
+        </div>        
+        <div class="tck-Ticket_Sidebar">
+
+        <div>
+    </div>
+    </div>
+    
+{% endblock %}
+
+{% block page_js %}
+   <script src="{% static 'js/ticket.js' %} "></script>
+{% endblock %}

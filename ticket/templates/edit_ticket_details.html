@@ -1,0 +1,25 @@
+{% load crispy_forms_tags %}
+<div id="edit-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Editing {{ ticket.title }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form id="ticket_form" action="" method="POST">
+        <div class="modal-body">
+            
+                {{ form | crispy }}
+                {% csrf_token %}
+        </div>
+        <div class="modal-footer">
+            <input type="hidden" id="id_t_id" name="t_id" value="{{ ticket.id }}"/>
+            <button type="button" onClick="save_ticket()" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

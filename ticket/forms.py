@@ -3,7 +3,8 @@ Forms.py file for Ticket module
 '''
 
 from django import forms
-from .models import STATUS_CHOICES, PRIORITY_CHOICES
+from django.forms import ModelForm
+from .models import STATUS_CHOICES, PRIORITY_CHOICES, Ticket
 
 
 class FilterForm(forms.Form):
@@ -25,3 +26,10 @@ class FilterForm(forms.Form):
         choices=PRIORITY_CHOICES,
         widget=forms.CheckboxSelectMultiple
     )
+
+
+class TicketForm(ModelForm):
+    class Meta:
+        model = Ticket
+        fields = (['title', 'description', 'status',
+                   'priority', 'associated_users'])
