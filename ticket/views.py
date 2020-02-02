@@ -38,7 +38,7 @@ def dashboard(request):
             unassigned_tickets = len(Ticket.objects.filter(assigned_to=None))
             assigned_tickets = len(Ticket.objects.filter(
                 assigned_to=MyUser.objects.get(user_id=request.user.id)
-                ))
+                ).exclude(status='CLS'))
             open_tickets = len(Ticket.objects.exclude(
                 status='CLS'
             ))
