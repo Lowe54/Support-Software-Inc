@@ -199,6 +199,10 @@ def close_ticket(request, t_id=None):
             ticket.status = 'CLS'
             ticket.save()
 
-            response = "Ticket closed at {} with the following reason '{}'".format(now.strftime("%d/%m/%Y %H:%M:%S"), request.POST['closure_message'])
+            response = "Ticket closed at {} with the following\
+                reason '{}'".format(
+                    now.strftime("%d/%m/%Y %H:%M:%S"),
+                    request.POST['closure_message']
+                )
             return HttpResponse(response, status=200)
     return HttpResponse('Unauthorised', status=403)
