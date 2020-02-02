@@ -25,10 +25,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if os.getenv('DEV'):
+if os.getenv('DEV') == '1':
     DEBUG = True
-
-ALLOWED_HOSTS = ['127.0.0.1', 'supportsoftwareinc.herokuapp.com']
+    ALLOWED_HOSTS = ['*']
+else:
+    DEBUG = False
+    ALLOWED_HOSTS = ['supportsoftwareinc.herokuapp.com']
 
 
 # Application definition
@@ -49,6 +51,7 @@ INSTALLED_APPS = [
     'sweetify',
 ]
 
+LOGIN_URL = '/auth/login'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
 
