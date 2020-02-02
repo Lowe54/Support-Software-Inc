@@ -19,6 +19,14 @@
   display: none;
 }
 
+#sidebar-navigation li a {
+  color: #fff;
+}
+
+#sidebar-navigation li:hover:not(.expandable) {
+  background-color: #949494;
+}
+
 #header {
   background-color: #1a535c;
   color: #fff;
