@@ -132,6 +132,7 @@ def results(request):
         )
 
 
+@login_required
 def ticket_detail(request, t_id):
     ticket = Ticket.objects.get(id=t_id)
     return render(request, 'ticket.html', {'ticket': ticket})
