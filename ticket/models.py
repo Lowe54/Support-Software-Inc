@@ -43,7 +43,7 @@ class Ticket(models.Model):
         choices=STATUS_CHOICES,
         null=False,
         blank=False,
-        default='NEW'
+        default='OPN'
     )
     raised_on = models.DateTimeField(
         auto_now=True,
