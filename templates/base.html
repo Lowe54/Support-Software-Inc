@@ -63,8 +63,11 @@
                 {% include 'partials/navbar.html' %}
                 <div id="content-wrapper" class="col-sm-12 no-padding">
                         {% include 'partials/messages.html' %}
+                        <div id="demobanner" class="alert-warning">
+                            <h2>DEMO VERSION - EMAIL'S ARE DISABLED</h2>
+                        </div>
                         {% block content %}
-                        
+
                         {% endblock  %}
                 </div>   
             </div>

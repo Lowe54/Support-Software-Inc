@@ -45,6 +45,10 @@
   background-color: #4ecdc4;
 }
 
+#demobanner {
+  text-align: center;
+}
+
 .no-padding {
   padding: 0;
 }
