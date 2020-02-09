@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'ticket',
     'storages',
     'sweetify',
+    'payments'
 ]
 
 LOGIN_URL = '/auth/login'
