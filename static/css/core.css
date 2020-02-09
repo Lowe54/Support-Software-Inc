@@ -49,6 +49,13 @@
   text-align: center;
 }
 
+#purchase-toggle {
+  position: absolute;
+  bottom: 0;
+  background-color: green;
+  color: #fff;
+}
+
 .no-padding {
   padding: 0;
 }
