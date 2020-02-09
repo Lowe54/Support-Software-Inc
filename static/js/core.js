@@ -29,7 +29,20 @@ $('#toggle_sidebar').on('click', function(){
     }
 });
 
+$('#purchase-toggle').on('click', function(e){
+    e.preventDefault()
 
+    $.ajax({
+        url: '/payment/form/',
+        type: "POST",
+        success: function(response){
+            $('#payment-modal').remove();
+            $('body').append(response);
+            $('#payment-modal').modal();
+            stripe_init()
+        }
+    })
+})
 
 // CSRF PROTECTION - REQUIRED FOR AJAX CALLS
 
