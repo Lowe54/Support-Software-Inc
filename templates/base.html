@@ -37,8 +37,6 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
                             </div>
                         </li>
                        {% endif %}
@@ -62,22 +60,31 @@
             <div id="main-content-wrapper" class="row">
                 {% include 'partials/navbar.html' %}
                 <div id="content-wrapper" class="col-sm-12 no-padding">
-                        {% include 'partials/messages.html' %}
-                        <div id="demobanner" class="alert-warning">
-                            <h2>DEMO VERSION - EMAIL'S ARE DISABLED</h2>
-                        </div>
-                        {% block content %}
+                    {% include 'partials/messages.html' %}
+                    <div id="demobanner" class="alert-warning">
+                        <h2>DEMO VERSION - EMAIL'S ARE DISABLED</h2>
+                    </div>
+                    {% block content %}
 
-                        {% endblock  %}
-                </div>   
+                    {% endblock  %}
+                </div>    
             </div>
-
+            <div class="row">
+                <a id="purchase-toggle" class="btn btn-success" href="#">
+                    <div class="payment_modal">
+                        <i class="fas fa-pound-sign"> Purchase</i>
+                    </div>
+                </a>
+            </div>   
         </div>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="{% static 'js/core.js' %}"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.6.1/dist/sweetalert2.all.min.js"></script>
+        <script src="https://js.stripe.com/v3/"></script>
+        <script src="{% static 'js/stripe.js' %}"></script>
+
         {% block page_js %}{% endblock %}
         
         {% load sweetify %}
