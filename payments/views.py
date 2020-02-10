@@ -2,6 +2,7 @@
 Views.py file for Payments app
 '''
 import os
+import logging
 from datetime import date
 from django.shortcuts import render, HttpResponse
 import stripe
@@ -32,7 +33,10 @@ def render_payment_form(request):
 
 
 def add_order(request):
+    logger = logging.getLogger(__name__)
+    logger.info('Add Order Called, checking request method')
     if request.method == 'POST':
+        logger.info('Method is Post, now checking for logged in user')
         if request.user:
             Order.objects.create(
                 user=MyUser.objects.get(user_id=request.user.id),
