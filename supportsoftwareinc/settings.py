@@ -160,16 +160,6 @@ LOGGING = {
             'include_html': True,
         }  
     },
-    'loggers': {
-        '': {
-            'handlers': ['console'],
-            'level': 'INFO',
-        },
-        'django': {
-            'handlers': ['console'],
-            'level': 'INFO',
-        },
-    },
 }
 
 
