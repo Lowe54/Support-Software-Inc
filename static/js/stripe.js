@@ -36,8 +36,11 @@ var style = {
       }
     }).then(function(result) {
       if (result.error) {
-        // Show error to your customer (e.g., insufficient funds)
-        console.log(result.error.message);
+        Swal.fire({
+          icon: 'error',
+          title: 'Uh-Oh',
+          html: '<p>'+ result.error.message + '</p>'
+        })
       } else {
         // The payment has been processed!
         if (result.paymentIntent.status === 'succeeded') {
@@ -54,7 +57,6 @@ var style = {
                     'country': $('#id_country').val(),
                     'confirmation_code': result.paymentIntent.id,
                     'amount': result.paymentIntent.amount,
-                    'postcode': result.paymentIntent,
                     'phone_number': $('#id_phone_number').val()
                 },
                 success: function(){
