@@ -170,9 +170,6 @@ LOGGING = {
             'level': 'INFO',
         },
     },
-    'handlers': {
-    
-}
 }
 
 
