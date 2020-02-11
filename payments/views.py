@@ -33,7 +33,7 @@ def render_payment_form(request):
 
 def add_order(request):
     if request.method == 'POST':
-        if request.user.is_active():
+        if request.user:
             try:
                 user = MyUser.objects.get(user_id=request.user.id)
                 Order.objects.create(
