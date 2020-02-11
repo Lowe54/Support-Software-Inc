@@ -50,6 +50,8 @@ def add_order(request):
                     confirmation_code=request.POST['confirmation_code']
                 )
             except MyUser.DoesNotExist:
+                pass
+            finally:
                 Order.objects.create(
                     full_name=request.POST['full_name'],
                     street_address1=request.POST['street_address_1'],
