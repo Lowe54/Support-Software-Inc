@@ -33,20 +33,35 @@ def render_payment_form(request):
 
 def add_order(request):
     if request.method == 'POST':
-        if request.user:
-            Order.objects.create(
-                user=MyUser.objects.get(user_id=request.user.id),
-                full_name=request.POST['full_name'],
-                street_address1=request.POST['street_address_1'],
-                street_address2=request.POST['street_address_2'],
-                town_or_city=request.POST['town_or_city'],
-                county=request.POST['county'],
-                country=request.POST['country'],
-                phone_number=request.POST['phone_number'],
-                date=date.today(),
-                amount=request.POST['amount'],
-                confirmation_code=request.POST['confirmation_code']
-            )
+        if request.user.is_active():
+            try:
+                user = MyUser.objects.get(user_id=request.user.id)
+                Order.objects.create(
+                    user=user,
+                    full_name=request.POST['full_name'],
+                    street_address1=request.POST['street_address_1'],
+                    street_address2=request.POST['street_address_2'],
+                    town_or_city=request.POST['town_or_city'],
+                    county=request.POST['county'],
+                    country=request.POST['country'],
+                    phone_number=request.POST['phone_number'],
+                    date=date.today(),
+                    amount=request.POST['amount'],
+                    confirmation_code=request.POST['confirmation_code']
+                )
+            except MyUser.DoesNotExist:
+                Order.objects.create(
+                    full_name=request.POST['full_name'],
+                    street_address1=request.POST['street_address_1'],
+                    street_address2=request.POST['street_address_2'],
+                    town_or_city=request.POST['town_or_city'],
+                    county=request.POST['county'],
+                    country=request.POST['country'],
+                    phone_number=request.POST['phone_number'],
+                    date=date.today(),
+                    amount=request.POST['amount'],
+                    confirmation_code=request.POST['confirmation_code']
+                )
         else:
             Order.objects.create(
                 full_name=request.POST['full_name'],
