@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'ticket',
     'storages',
     'sweetify',
-    'payments'
+    'payments',
+    'django_nose',
 ]
 
 LOGIN_URL = '/auth/login'
@@ -90,6 +91,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'supportsoftwareinc.wsgi.application'
 
+# Test Runner
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=ticket',
+    '--cover-html',
+]
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases

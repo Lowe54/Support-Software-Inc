@@ -1,0 +1,10 @@
+[run]
+omit = 
+    */migrations*
+    __init__
+
+
+[report]
+omit =
+    */migrations*
+    __init__
