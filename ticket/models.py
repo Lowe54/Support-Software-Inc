@@ -71,7 +71,8 @@ class Ticket(models.Model):
         max_length=3,
         choices=PRIORITY_CHOICES,
         null=False,
-        blank=False
+        blank=False,
+        default='LOW'
     )
     closed_on = models.DateTimeField(
         blank=True,
