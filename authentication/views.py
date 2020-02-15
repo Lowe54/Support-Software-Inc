@@ -1,15 +1,14 @@
 '''
-Authentication Views
+Views.py file for authentication app
 
-Login
-Logout
 '''
-from django.shortcuts import render, redirect
+import sweetify
+from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import auth
 from django.contrib import messages
-import sweetify
-from .forms import LoginForm
+from django.contrib.auth.models import User
+from .forms import LoginForm, RegisterForm1
 from .models import MyUser
 
 
@@ -57,7 +56,6 @@ def logout(request):
     '''
         Signs the user out of the site
     '''
-    
     auth.logout(request)
     sweetify.success(
         request,
@@ -76,3 +74,44 @@ def profile_view(request):
     user = MyUser.objects.get(user_id=request.user.id)
     print(user.user.email)
     return render(request, 'profile_view.html', {'user': user})
+
+
+def register(request):
+
+    """ Render the registration page """
+    if request.user.is_authenticated:
+        return redirect(reverse('index'))
+
+    if request.method == "POST":
+        registration_form = RegisterForm1(request.POST)
+
+        if registration_form.is_valid():
+            user = registration_form.save()
+            MyUser.objects.create(
+                user=User.objects.get(pk=user.id),
+                role='USR',
+
+            )
+
+            user = auth.authenticate(username=request.POST['username'],
+                                     password=request.POST['password1'])
+            if user:
+                auth.login(user=user, request=request)
+                sweetify.success(
+                    request,
+                    "You have successfully registered",
+                    button='Ok',
+                    timer=5000
+                )
+                return redirect(reverse('dashboard'))
+            else:
+                sweetify.error(
+                    request,
+                    "Unable to register at this time",
+                    button='Ok',
+                    timer=5000
+                )
+    else:
+        registration_form = RegisterForm1()
+    return render(request, 'register.html', {
+        "registration_form": registration_form})
