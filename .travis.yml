@@ -7,4 +7,4 @@ script:
 before_install:
   - chmod +x manage.py
 before_script:
-  - isort --skip_glob=migrations 
+  - isort --skip migrations --diff 
