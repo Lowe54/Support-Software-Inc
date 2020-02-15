@@ -1,21 +1,55 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% block page_specific_stylesheets %}
+    <link rel="stylesheet" href="{% static 'css\authentication.css' %}" type="text/css"/>
+{% endblock %}
 {% block content %}
     <div class="usr-profile-container row">
         <div class="usr-profile_image col-lg-3">
 
         </div>
-        <div class="usr-profile-core-info">
+        <div class="usr-profile-core-info col-lg-6">
             <h1>Your Information</h1>
-            <dl class="no-bullet dl-horizonal">
-                <dt>Username :</dt>
-                <dd>{{ user.user.username }}</dd>
-                <dt>Email :</dt>
-                <dd>{{ user.user.email }}</dd>
-                <dt>Role :</dt>
-                <dd>{{ user.role }}</dd>
-            </dl>
+            <div class="usr-profile-core-info-wrapper row">
+                <div class="user-profile-core-info col-lg-6 corecol">
+                    <dl class="no-bullet row">
+                        <dt class="col-sm-3">Username :</dt>
+                        <dd class="col-sm-9">{{ user.user.username }}</dd>
+                        <dt class="col-sm-3">Email :</dt>
+                        <dd class="col-sm-9">{{ user.user.email }}</dd>
+                        <dt class="col-sm-3">First Name :</dt>
+                        <dd class="col-sm-9">{{ user.user.first_name }}</dd>
+                        <dt class="col-sm-3">Last Name :</dt>
+                        <dd class="col-sm-9">{{ user.user.last_name }}</dd>  
+                    </dl>
+                </div>
+                <div class="user-profile-core-info col-lg-6">
+                    <dl class="no-bullet row">
+                        <dt class="col-sm-3">Role :</dt>
+                        <dd class="col-sm-9">{{ user.get_role_display }}</dd>
+                        <dt class="col-sm-3">Organisation:</dt>
+                        <dd class="col-sm-9">
+                        {% if user.organisation %}
+                            {{ user.organisation }}
+                        {% else %}
+                            Not associated
+                        {% endif %}
+                        </dd>
+                    </dl>
+                </div>
+                <div class="user-profile-core-info-footer col-lg-12">
+                    <p class="light italic">Date Joined: {{ user.user.date_joined }} </p>
+                </div>
+            </div>   
+        </div>
+         <div class="user-profile-sidebar col-lg-3">
+            <h2>Actions</h2>
+            <a href="#" id="edit" data-id={{ user.user.id }} class="btn btn-info">Edit my profile</a>
         </div>
 
     </div>
+{% endblock %}
+
+{% block page_js %}
+   <script src="{% static 'js/profile.js' %} "></script>
 {% endblock %}

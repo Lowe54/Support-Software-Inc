@@ -4,6 +4,7 @@ Forms.py file for the authentication app
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.forms import ModelForm
 
 
 class LoginForm(forms.Form):
@@ -54,3 +55,9 @@ class RegisterForm1(UserCreationForm):
             raise forms.ValidationError("Passwords must match")
 
         return password2
+
+
+class ProfileForm(ModelForm):
+    class Meta:
+        model = User
+        fields = ['email', 'username', 'first_name', 'last_name']

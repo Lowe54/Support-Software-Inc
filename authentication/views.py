@@ -6,9 +6,9 @@ import sweetify
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.shortcuts import redirect, render, reverse
+from django.shortcuts import HttpResponse, redirect, render, reverse
 
-from .forms import LoginForm, RegisterForm1
+from .forms import LoginForm, ProfileForm, RegisterForm1
 from .models import MyUser
 
 
@@ -74,6 +74,51 @@ def profile_view(request):
     user = MyUser.objects.get(user_id=request.user.id)
     print(user.user.email)
     return render(request, 'profile_view.html', {'user': user})
+
+
+def get_profile_edit_form(request):
+    '''
+    Returns a form instance allowing the user to edit their profile
+    '''
+    profile_id = request.POST['profile_id']
+    if profile_id is not None:
+        user = User.objects.get(id=profile_id)
+        profile_form = ProfileForm(instance=user)
+        return render(
+                        request,
+                        'profile_form.html',
+                        {
+                            'profile_form': profile_form
+                        }
+                     )
+
+
+def save_profile(request):
+    '''
+    Save the users profile (Core details)
+    '''
+
+    if request.method == 'POST':
+        profile_id = request.POST['user_id']
+        user = User.objects.get(id=profile_id)
+        profile = ProfileForm(request.POST, instance=user)
+        profile_completed = profile.save()
+        response = '<dl class="no-bullet row">\
+                        <dt class="col-sm-3">Username :</dt>\
+                        <dd class="col-sm-9">{}</dd>\
+                        <dt class="col-sm-3">Email :</dt>\
+                        <dd class="col-sm-9">{}</dd>\
+                        <dt class="col-sm-3">First Name :</dt>\
+                        <dd class="col-sm-9">{}</dd>\
+                        <dt class="col-sm-3">Last Name :</dt>\
+                        <dd class="col-sm-9">{}</dd>\
+                    </dl>'.format(profile_completed.username,
+                                  profile_completed.email,
+                                  profile_completed.first_name,
+                                  profile_completed.last_name)
+        return HttpResponse(status=200, content=response)
+
+    return HttpResponse(status=403)
 
 
 def register(request):
