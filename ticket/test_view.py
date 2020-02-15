@@ -2,7 +2,6 @@ from django.test import Client, TestCase
 from django.contrib.auth.models import User
 from authentication.models import MyUser
 
-# Create your tests here.
 
 class TestTicketViews(TestCase):
     '''
