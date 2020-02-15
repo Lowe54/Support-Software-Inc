@@ -1,0 +1,10 @@
+[MASTER]
+load-plugins=pylint_json2html, pylint_django
+ignore=migrations
+
+[REPORTS]
+output-format=jsonextended
+
+[FORMAT]
+
+max-line-length=80
