@@ -3,11 +3,11 @@ Views.py file for authentication app
 
 '''
 import sweetify
-from django.shortcuts import render, redirect, reverse
+from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
-from django.contrib import auth
-from django.contrib import messages
 from django.contrib.auth.models import User
+from django.shortcuts import redirect, render, reverse
+
 from .forms import LoginForm, RegisterForm1
 from .models import MyUser
 

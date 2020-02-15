@@ -3,11 +3,14 @@ Views.py file for Payments app
 '''
 import os
 from datetime import date
-from django.shortcuts import render, HttpResponse
+
 import stripe
+from django.shortcuts import HttpResponse, render
+
 from authentication.models import MyUser
-from .models import Order
+
 from .forms import OrderForm
+from .models import Order
 
 
 def render_payment_form(request):

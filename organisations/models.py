@@ -1,4 +1,5 @@
 import uuid
+
 from django.db import models
 
 
@@ -24,4 +25,3 @@ class Organisation(models.Model):
         Returns the Organisation's Name
         '''
         return self.Organisation_Name
-        

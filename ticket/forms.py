@@ -4,7 +4,8 @@ Forms.py file for Ticket module
 
 from django import forms
 from django.forms import ModelForm
-from .models import STATUS_CHOICES, PRIORITY_CHOICES, Ticket
+
+from .models import PRIORITY_CHOICES, STATUS_CHOICES, Ticket
 
 
 class FilterForm(forms.Form):

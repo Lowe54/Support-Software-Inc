@@ -1,10 +1,13 @@
 '''
 Test suite for Ticket Module
 '''
-from django.test import RequestFactory, TestCase
 from django.contrib.auth.models import User
+from django.test import RequestFactory, TestCase
+
 from authentication.models import MyUser
+
 from .models import Ticket
+
 # Create your tests here.
 
 class TestTicketModel(TestCase):
@@ -52,4 +55,3 @@ class TestTicketModel(TestCase):
         test_ticket.save()
 
         self.assertEqual(test_ticket.priority, 'LOW')
-        

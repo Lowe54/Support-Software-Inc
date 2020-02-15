@@ -3,8 +3,11 @@ Urls.py file for ticket module
 '''
 
 from django.urls import path
-from .views import (dashboard, results, ticket_detail, ticket_assign,
-                    edit_ticket, save_ticket, close_ticket)
+
+from .views import (
+    close_ticket, dashboard, edit_ticket, results, save_ticket, ticket_assign,
+    ticket_detail)
+
 urlpatterns = [
     path(r'dashboard', dashboard, name="dashboard"),
     path(r'results', results, name="results"),

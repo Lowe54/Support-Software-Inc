@@ -7,8 +7,9 @@ MyUser - extends django default user model
 with extra fields
 '''
 
-from django.db import models
 from django.contrib.auth.models import User
+from django.db import models
+
 from organisations.models import Organisation as Org
 
 

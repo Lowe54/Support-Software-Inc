@@ -1,7 +1,9 @@
 import uuid
+
 from django.db import models
 
 from authentication.models import MyUser as Users
+
 # Create your models here.
 
 STATUS_CHOICES = (

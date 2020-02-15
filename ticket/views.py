@@ -10,13 +10,14 @@ Edit_Ticket
 '''
 from datetime import datetime
 
-from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
+from django.shortcuts import HttpResponse, redirect, render
 
 from authentication.models import MyUser
-from .models import Ticket
+
 from .forms import FilterForm, TicketForm
+from .models import Ticket
 
 
 @login_required

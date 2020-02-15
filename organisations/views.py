@@ -1,10 +1,12 @@
 '''
 Organisation model views.py
 '''
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import HttpResponse, render
+
 from authentication.models import MyUser
-from .models import Organisation
+
 from .forms import OrganisationForm
+from .models import Organisation
 
 
 def show_organisation_list(request):
