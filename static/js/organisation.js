@@ -86,3 +86,42 @@ function save_organisation() {
             }
         });
 }
+
+
+function associate_user_modal(id){
+    let org_id =  $('#asoc-user').attr('data-id')
+    $.ajax({
+        url: '/organisations/getunassociated/',
+        type: "POST",
+        data: {
+            'org_id': org_id
+        },
+        success: function(response){
+            $('#unassociated-user-list-modal').remove()
+            $('#user-list-modal').append(response)
+            $('#unassociated-user-list-modal').modal()
+        }
+    })
+}
+
+function assocate_user(){
+    let organisation_iden = $('#org_ident').val()
+    console.log(organisation_iden)
+    $.ajax({
+        url: '/organisations/associate/',
+        type: "POST",
+        data: {
+            'org_id': organisation_iden,
+            'users': $('#organisation_form').serialize()
+        },
+        success: function(response){
+            $('#unassociated-user-list-modal').modal('hide')
+            $('#user-list-modal .modal-body').append(response)
+            Swal.fire(
+                'success',
+                'User\'s associated',
+                'success'
+            )
+        }
+    })
+}

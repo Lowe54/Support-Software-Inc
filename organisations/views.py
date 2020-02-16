@@ -5,7 +5,7 @@ from django.shortcuts import HttpResponse, render
 
 from authentication.models import MyUser
 
-from .forms import OrganisationForm
+from .forms import OrganisationForm, UnassociatedUserForm
 from .models import Organisation
 
 
@@ -82,7 +82,8 @@ def save_organisation(request, org_id=None, action='create'):
             new_org = edit_org.save()
             response = '<tr><td>{}</td>\
                         <td colspan="2">\
-                        <a href="#" class="org-edit btn btn-info" data-id="{}">\
+                        <a href="#" class="org-edit btn btn-info"\
+                        data-id="{}">\
                         Edit</a> <a href="#" class="org-users btn btn-info"\
                         data-id="{}">Show all Users</a>\
                         </td></tr>'.format(
@@ -91,3 +92,63 @@ def save_organisation(request, org_id=None, action='create'):
                             new_org.id
                             )
             return HttpResponse(response)
+
+
+def get_unassociated_users(request):
+    if request.method == 'POST':
+        form = UnassociatedUserForm()
+        # userlist = MyUser.objects.filter(organisation_id=None)
+        org_id = request.POST['org_id']
+        print(org_id)
+        return render(request, 'unassociated_users.html',
+                      {'form': form, 'org_id': org_id})
+
+
+def associate_users(request):
+    if request.method == 'POST':
+        organisation_id = request.POST['org_id']
+        organisation = Organisation.objects.get(id=organisation_id)
+        if organisation:
+            list_of_users = request.POST.get('users')
+            user_list = []
+            # Go through each user parameter, and remove all text apart from
+            # '&' characters
+            for letter in list_of_users:
+                if letter == '&' or letter.isdigit():
+                    user_list.append(letter)
+            # Join the resulting array to a string var
+            userstring = ','.join(user_list)
+            # Remove the commas
+            userstring = userstring.replace(',', '')    
+            # Finally split by the '&'
+            user_list = userstring.split('&')
+            response = ''
+            for u in user_list:
+                current_user = MyUser.objects.get(user_id=u)
+                if current_user:
+                    current_user.organisation = organisation
+                    current_user.save()
+                    if current_user.user.email is not None:
+                        user_email_text = current_user.user.email
+                    else:
+                        user_email_text = 'No Email listed'
+                    response = response + \
+                        '<div class="org-modal-userrow row" data-user={}>\
+                            <div class="org-modal-username col-lg-4">\
+                                {}\
+                            </div>\
+                            <div class="org-modal-useremail col-lg-4">\
+                                {}\
+                            </div>\
+                            <div class="org-modal-useractions col-lg-4">\
+                                <a class="btn btn-danger modal-remove\
+                                col-lg-12" href="#" data-id={}>Remove from\
+                                organisation</a>\
+                            </div>\
+                        </div>'.format(
+                                      current_user.user.id,
+                                      current_user.user.username,
+                                      user_email_text,
+                                      current_user.user.id
+                                      )
+            return HttpResponse(content=response, status=200)
