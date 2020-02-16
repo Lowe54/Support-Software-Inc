@@ -18,15 +18,14 @@ The user model extends the default Django User model, adding on a profile pictur
 Version 1
 ![User Model v1](/wireframes/database_design_v1.png)
 
+Version 2
+![User Model v2](/wireframes/db_design_v2.png)
 
+Version 3
+![User Model v3](/wireframes/db_design_v3.png)
 
+Version 4
+![User Model v4](/wireframes/db_design_v4.png)
 
-### Github Branches
-
-#### 3.1-testing
-
-This Branch was created to test an Django version upgrade
-
-#### Organisation-module
-
-This branch was created to test splitting the 'Organisation' Table into it's own module, which means that it would be seperate and able to have its own set of URL's, instead of sharing the Authentication ones.
+Version 5
+![User Model v5](/wireframes/db_design_v5.png)
