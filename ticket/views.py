@@ -14,6 +14,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import HttpResponse, redirect, render
 
+from authentication.models import MyUser
+
 from comments.forms import CommentForm
 from comments.models import Comment
 
