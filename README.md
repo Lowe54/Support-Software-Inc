@@ -47,3 +47,8 @@ This branch was created to test splitting the 'Organisation' Table into it's own
 This project has a CI implementation with [Travis CI](https://travis-ci.com/), the only enforcement is for the import order, which is determined via the `.travis.yml` file. This is enforced via the `isort --check-only --diff --skip-glob=*/migrations/*` command.
 
 
+#### Github Branches
+
+##### 3.1-testing
+
+This Branch was created to test a minor Django version upgrade
