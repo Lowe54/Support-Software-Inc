@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="{% static 'css\core.css' %}" type="text/css"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.6.1/dist/sweetalert2.min.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"/>
+        <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
         {% block page_specific_stylesheets %} {% endblock %}
     </head>
     <body>
@@ -69,14 +70,15 @@
                     {% endblock  %}
                 </div>    
             </div>
-            <div class="row">
-                <a id="purchase-toggle" class="btn btn-success" href="#">
-                    <div class="payment_modal">
-                        <i class="fas fa-pound-sign"> Purchase</i>
-                    </div>
-                </a>
-            </div>   
+             
         </div>
+        <div>
+            <a id="purchase-toggle" class="btn btn-success" href="#">
+                <div class="payment_modal">
+                    <i class="fas fa-pound-sign"> Purchase</i>
+                </div>
+            </a>
+        </div>  
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -84,6 +86,7 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.6.1/dist/sweetalert2.all.min.js"></script>
         <script src="https://js.stripe.com/v3/"></script>
         <script src="{% static 'js/stripe.js' %}"></script>
+        <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
         {% block page_js %}{% endblock %}
         
