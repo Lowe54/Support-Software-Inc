@@ -1,7 +1,9 @@
+import uuid
+
 from django.db import models
+
 from authentication.models import MyUser
 from ticket.models import Ticket
-import uuid
 
 
 class Comment(models.Model):

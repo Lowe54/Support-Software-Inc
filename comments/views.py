@@ -1,7 +1,8 @@
 from django.shortcuts import HttpResponse
-from authentication.models import MyUser
 
+from authentication.models import MyUser
 from ticket.models import Ticket
+
 from .models import Comment
 
 

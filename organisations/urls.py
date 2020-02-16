@@ -3,10 +3,9 @@ Url's.py file for Organisation App
 '''
 from django.urls import path
 
-from .views import (associate_users, add_or_edit_organisation,
-                    unassocate_user, get_unassociated_users,
-                    get_user_list, save_organisation,
-                    show_organisation_list)
+from .views import (add_or_edit_organisation, associate_users,
+                    get_unassociated_users, get_user_list, save_organisation,
+                    show_organisation_list, unassocate_user)
 
 urlpatterns = [
     path(r'list', show_organisation_list, name="show_organisation_list"),

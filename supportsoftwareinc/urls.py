@@ -17,11 +17,11 @@ from django.contrib import admin
 from django.urls import include, path
 
 import authentication.urls as auth_urls
+import comments.urls as comment_urls
 import core.urls as core_urls
 import organisations.urls as org_urls
 import payments.urls as payment_urls
 import ticket.urls as ticket_urls
-import comments.urls as comment_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),

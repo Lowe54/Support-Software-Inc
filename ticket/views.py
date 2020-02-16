@@ -14,10 +14,10 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import HttpResponse, redirect, render
 
-from authentication.models import MyUser
-from comments.models import Comment
 from comments.forms import CommentForm
-from .forms import FilterForm, TicketForm, AddTicketForm
+from comments.models import Comment
+
+from .forms import AddTicketForm, FilterForm, TicketForm
 from .models import Ticket
 
 
