@@ -10,8 +10,20 @@ class CommentForm(ModelForm):
         label="Content",
         widget=forms.Textarea()
     )
-    is_request_update = forms.BooleanField()
+    is_internal_comment = forms.NullBooleanField(
+        widget=forms.CheckboxInput(
+           attrs={
+               'required': False,
+               'data-toggle': 'toggle',
+               'data-on': 'Yes',
+               'data-off': 'No',
+               'data-onstyle': 'success',
+               'data-offstyle': 'danger',
+            }
+        )
+        
+    )
 
     class Meta:
         model = Comment
-        fields = ['comment_content', 'posted_by', 'is_internal_comment']
+        fields = ['comment_content', 'is_internal_comment']

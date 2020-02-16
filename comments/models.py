@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth import get_user_model
+from authentication.models import MyUser
 from ticket.models import Ticket
 import uuid
 
@@ -15,7 +15,7 @@ class Comment(models.Model):
     comment_content = models.TextField()
 
     posted_by = models.ForeignKey(
-        get_user_model(),
+        MyUser,
         on_delete=models.CASCADE,
         null=True,
         blank=True

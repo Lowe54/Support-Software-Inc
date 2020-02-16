@@ -15,7 +15,8 @@ from django.http import JsonResponse
 from django.shortcuts import HttpResponse, redirect, render
 
 from authentication.models import MyUser
-
+from comments.models import Comment
+from comments.forms import CommentForm
 from .forms import FilterForm, TicketForm, AddTicketForm
 from .models import Ticket
 
@@ -165,7 +166,9 @@ def results(request):
 @login_required
 def ticket_detail(request, t_id):
     ticket = Ticket.objects.get(id=t_id)
-    return render(request, 'ticket.html', {'ticket': ticket})
+    comment_form = CommentForm()
+    related_comments = Comment.objects.filter(related_ticket=t_id)
+    return render(request, 'ticket.html', {'ticket': ticket, 'commentform': comment_form, 'relatedcomments': related_comments})
 
 
 def ticket_assign(request, t_id=None):

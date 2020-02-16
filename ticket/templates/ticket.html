@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 {% block content %}
     <div class="tck-Ticket_wrapper row">
         <div class="tck-Ticket_main col-lg-9">
@@ -13,6 +14,21 @@
                 {% autoescape off %}
                     <p class="ticket-description">{{ ticket.description }}</p>
                 {% endautoescape %}
+            </div>
+            <div class="tck-Ticket-CommentSection">
+                {% for comment in relatedcomments %}
+                    <div class="comment">
+                        <p class="comment-title">{{ comment.posted_by }} posted on {{ comment.date_posted }}</p>
+                        <p>{{ comment.comment_content }}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="tck-Ticket_CommentForm">
+                <form id="comment-form" method="POST" action='#'>
+                    {{ commentform | crispy }}
+                    <input type="hidden" id="id_related_ticket" value="{{ticket.id}}"/>
+                    <button type="submit" class="btn btn-secondary">Post comment</button>
+                </form>
             </div>
         </div>
         <div class="tck-Ticket_coreInfo col-lg-3">

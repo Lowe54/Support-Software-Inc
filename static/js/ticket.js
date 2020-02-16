@@ -120,3 +120,33 @@ function close_ticket(){
             }
       })
 }
+
+
+$('#comment-form').on('submit', function(e){
+    e.preventDefault()
+
+    $.ajax({
+        url: '/comment/post/',
+        method: 'POST',
+        data: {
+            'comment_content': $('#id_comment_content').val(),
+            'is_internal_comment': $('#id_is_internal_comment').val(),
+            'rel_ticket': $('#id_related_ticket').val()
+        },
+        success: function(response){
+            $('.tck-Ticket-CommentSection').append(response)
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 10000,
+                timerProgressBar: true,
+            })
+            Toast.fire(
+                'success',
+                'Comment Posted',
+                'success'
+            )
+        }
+    })
+})

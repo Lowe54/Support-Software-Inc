@@ -21,6 +21,7 @@ import core.urls as core_urls
 import organisations.urls as org_urls
 import payments.urls as payment_urls
 import ticket.urls as ticket_urls
+import comments.urls as comment_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,5 +29,6 @@ urlpatterns = [
     path('', include(ticket_urls)),
     path('', include(core_urls)),
     path('organisations/', include(org_urls)),
-    path('payment/', include(payment_urls))
+    path('payment/', include(payment_urls)),
+    path('comment/', include(comment_urls))
 ]
