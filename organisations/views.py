@@ -146,9 +146,9 @@ def associate_users(request):
                                 organisation</a>\
                             </div>\
                         </div>'.format(
-                                      current_user.user.id,
-                                      current_user.user.username,
-                                      user_email_text,
-                                      current_user.user.id
-                                      )
+                            current_user.user.id,
+                            current_user.user.username,
+                            user_email_text,
+                            current_user.user.id
+                            )
             return HttpResponse(content=response, status=200)
