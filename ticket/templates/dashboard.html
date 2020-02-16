@@ -31,7 +31,24 @@
         </div>
     </div>
 {% else %}
-
+    <div class="agn-Dashboard">
+        <div class="agn-ContentHeader">
+            <h1>Welcome {{user.user.username}}</h1>
+        </div>
+        <div class="agn-TicketStat-Wrapper">
+            <div class="agn_Ticketstat--Item">
+                <h2>My Open Requests</h2>
+                    <p class="agn_TicketStat--Count">{{open_tickets}}</p>
+                <a class="btn agn_TicketstatLink" href="{% url 'results' %}?raised_by={{request.user.id}}&amp;status=OPN">View my Open requestts</a>
+            </div>
+    
+            <div class="agn_Ticketstat--Item">
+                <h2>Requests requiring feedback</h2>
+                    <p class="agn_TicketStat--Count">{{tickets_feedback}}</p>
+                <a class="btn agn_TicketstatLink" href="{% url 'results' %}?raised_by={{request.user.id}}&amp;status=PEN">View my requests needing a reply</a>
+            </div>
+        </div>
+    </div>
 {% endif %}
 
 {% endblock %}

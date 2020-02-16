@@ -33,32 +33,56 @@ def dashboard(request):
             return redirect('index')
 
         if custom_user.role != 'AGN':
-            return redirect('index')
-        # Try to get a count for each of the 3 counters
-        try:
-            unassigned_tickets = len(Ticket.objects.filter(assigned_to=None))
-            assigned_tickets = len(Ticket.objects.filter(
-                assigned_to=MyUser.objects.get(user_id=request.user.id)
-                ).exclude(status='CLS'))
-            open_tickets = len(Ticket.objects.exclude(
-                status='CLS'
-            ))
-        # Catch any DoesNotExist errors, which means the count would be 0
-        except Ticket.DoesNotExist:
-            unassigned_tickets = 0
-            assigned_tickets = 0
-            open_tickets = 0
+            try:
+                my_open_tickets = len(
+                    Ticket.objects.filter(
+                        status='OPN',
+                        raised_by=custom_user))
 
-        return render(
-            request,
-            'dashboard.html',
-            {
-                'user': custom_user,
-                'unassigned': unassigned_tickets,
-                'assigned': assigned_tickets,
-                'open_tickets': open_tickets
-            }
-        )
+                tickets_awaiting_feedback = len(Ticket.objects.filter(
+                    raised_by=custom_user, status='PEN'
+                ))
+            except Ticket.DoesNotExist:
+                my_open_tickets = 0
+                tickets_awaiting_feedback = 0
+
+            return render(
+                request,
+                'dashboard.html',
+                {
+                    'user': custom_user,
+                    'open_tickets': my_open_tickets,
+                    'tickets_feedback': tickets_awaiting_feedback
+                }
+            )
+
+        else:
+            # Try to get a count for each of the 3 counters
+            try:
+                unassigned_tickets = len(Ticket.objects.filter(
+                    assigned_to=None))
+                assigned_tickets = len(Ticket.objects.filter(
+                    assigned_to=MyUser.objects.get(user_id=request.user.id)
+                    ).exclude(status='CLS'))
+                open_tickets = len(Ticket.objects.exclude(
+                    status='CLS'
+                ))
+            # Catch any DoesNotExist errors, which means the count would be 0
+            except Ticket.DoesNotExist:
+                unassigned_tickets = 0
+                assigned_tickets = 0
+                open_tickets = 0
+
+            return render(
+                request,
+                'dashboard.html',
+                {
+                    'user': custom_user,
+                    'unassigned': unassigned_tickets,
+                    'assigned': assigned_tickets,
+                    'open_tickets': open_tickets
+                }
+            )
     return redirect('login')
 
 
@@ -67,15 +91,22 @@ def results(request):
     '''
     View that returns the results page + filters
     '''
+    try:
+        custom_user = MyUser.objects.get(user_id=request.user.id)
+    except MyUser.DoesNotExist:
+        return redirect('index')
+
     if request.method == 'GET':
-        print(request.GET)
+        ticket_list = Ticket.objects.all()
+        if custom_user.role == 'USR':
+            user_id = Ticket.objects.filter(raised_by=custom_user)
+            ticket_list = ticket_list & user_id
         for key, value in request.GET.items():
             if key == 'Keyword':
                 keyword = Ticket.objects.filter(
                     title__contains=value
                 )
-            else:
-                keyword = Ticket.objects.none()
+                ticket_list = ticket_list & keyword
 
             if key == 'priority':
                 if len(request.GET.getlist(key)) > 1:
@@ -90,38 +121,34 @@ def results(request):
                     priority = Ticket.objects.filter(
                         priority=value
                     )
-            else:
-                priority = Ticket.objects.none()
+                ticket_list = ticket_list & priority
 
             if key == 'status':
                 status = Ticket.objects.filter(
                     status=value
                 )
-            else:
-                status = Ticket.objects.none()
+                ticket_list = ticket_list & status
 
             if key == 'statusexclude':
                 statusexclude = Ticket.objects.exclude(
                     status=value
                 )
-            else:
-                statusexclude = Ticket.objects.none()
+                ticket_list = ticket_list & statusexclude
 
             if key == 'assigned_to':
                 if int(value) > 0:
                     assigned_to = Ticket.objects.filter(
                         assigned_to=MyUser.objects.get(user_id=value)
                         )
-                else:
-                    assigned_to = Ticket.objects.filter(assigned_to=None)
+                ticket_list = ticket_list & assigned_to
 
-            else:
-                assigned_to = Ticket.objects.none()
-
-            ticket_list = keyword | status |\
-                statusexclude | assigned_to | priority
+            if key == 'raised_by':
+                if int(value) > 0:
+                    raised_by = Ticket.objects.filter(
+                        raised_by=MyUser.objects.get(user_id=value)
+                        )
+                ticket_list = ticket_list & raised_by
     else:
-
         ticket_list = Ticket.objects.all()
 
     filter_form = FilterForm()
