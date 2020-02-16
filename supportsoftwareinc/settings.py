@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'sweetify',
     'payments',
     'django_nose',
+    'comments'
 ]
 
 LOGIN_URL = '/auth/login'
