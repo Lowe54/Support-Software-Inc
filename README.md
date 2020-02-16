@@ -1,5 +1,6 @@
 # Support Software Inc
-![PyPI - Django Version](https://img.shields.io/badge/Django-3.0-green)
+![PyPI - Django Version](https://img.shields.io/badge/Django-3.0.1-green)
+![Build Status](https://travis-ci.org/Lowe54/Support-Software-Inc.svg?branch=master)
 ## UX/UI Design
 
 ### Wireframes
@@ -35,5 +36,14 @@ Version 5
 #### Organisation-module
 
 This branch was created to test splitting the 'Organisation' Table into it's own module, which means that it would be seperate and able to have its own set of URL's, instead of sharing the Authentication ones.
+
+
+### Testing
+
+#### Automated Testing
+
+##### Continuous Integration
+
+This project has a CI implementation with [Travis CI](https://travis-ci.com/), the only enforcement is for the import order, which is determined via the `.travis.yml` file. This is enforced via the `isort --check-only --diff --skip-glob=*/migrations/*` command.
 
 
