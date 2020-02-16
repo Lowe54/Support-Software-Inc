@@ -29,3 +29,11 @@ Version 4
 
 Version 5
 ![User Model v5](/wireframes/db_design_v5.png)
+
+### Github Branches
+
+#### Organisation-module
+
+This branch was created to test splitting the 'Organisation' Table into it's own module, which means that it would be seperate and able to have its own set of URL's, instead of sharing the Authentication ones.
+
+
