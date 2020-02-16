@@ -1,6 +1,5 @@
 $('table').on('click', '.org-edit', function(e) {
     e.preventDefault();
-    console.log('Editing Organisation')
     let id = $(this).data('id');
     get_organisation_info(id);
 })
@@ -89,7 +88,7 @@ function save_organisation() {
 
 
 function associate_user_modal(id){
-    let org_id =  $('#asoc-user').attr('data-id')
+    let org_id = $('#asoc-user').attr('data-id')
     $.ajax({
         url: '/organisations/getunassociated/',
         type: "POST",
@@ -106,7 +105,6 @@ function associate_user_modal(id){
 
 function assocate_user(){
     let organisation_iden = $('#org_ident').val()
-    console.log(organisation_iden)
     $.ajax({
         url: '/organisations/associate/',
         type: "POST",
@@ -124,4 +122,37 @@ function assocate_user(){
             )
         }
     })
+}
+
+$('div').on('click', '.modal-remove', function(){
+    let organisation_ident = $(this).data('orgid')
+    let user = $(this).data('id')
+    $.ajax({
+        url: '/organisations/unassociate/',
+        type: "POST",
+        data: {
+            'org_id': organisation_ident,
+            'user': user
+        },
+        success: function(){
+            $('#user-'+user).remove()
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 10000,
+                timerProgressBar: true,
+            })
+            Toast.fire(
+                'success',
+                'User disassociated',
+                'success'
+            )
+        }
+    })
+})
+function disassocate_user(){
+    let organisation_iden = $('#org_ident').val()
+    console.log(organisation_iden)
+    
 }

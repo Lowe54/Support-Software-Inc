@@ -4,7 +4,8 @@ Url's.py file for Organisation App
 from django.urls import path
 
 from .views import (associate_users, add_or_edit_organisation,
-                    get_unassociated_users, get_user_list, save_organisation,
+                    unassocate_user, get_unassociated_users,
+                    get_user_list, save_organisation,
                     show_organisation_list)
 
 urlpatterns = [
@@ -14,5 +15,6 @@ urlpatterns = [
     path(r'userlist/', get_user_list, name="get_organisation_users"),
     path(r'save/', save_organisation, name="save_organisation"),
     path(r'getunassociated/', get_unassociated_users),
-    path(r'associate/', associate_users)
+    path(r'associate/', associate_users),
+    path(r'unassociate/', unassocate_user)
 ]

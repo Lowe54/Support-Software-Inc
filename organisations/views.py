@@ -123,8 +123,8 @@ def associate_users(request):
             # Finally split by the '&'
             user_list = userstring.split('&')
             response = ''
-            for u in user_list:
-                current_user = MyUser.objects.get(user_id=u)
+            for assoc_user in user_list:
+                current_user = MyUser.objects.get(user_id=assoc_user)
                 if current_user:
                     current_user.organisation = organisation
                     current_user.save()
@@ -133,7 +133,7 @@ def associate_users(request):
                     else:
                         user_email_text = 'No Email listed'
                     response = response + \
-                        '<div class="org-modal-userrow row" data-user={}>\
+                        '<div id="user-{}" class="org-modal-userrow row" data-user="{}">\
                             <div class="org-modal-username col-lg-4">\
                                 {}\
                             </div>\
@@ -147,8 +147,23 @@ def associate_users(request):
                             </div>\
                         </div>'.format(
                             current_user.user.id,
+                            current_user.user.id,
                             current_user.user.username,
                             user_email_text,
                             current_user.user.id
                             )
             return HttpResponse(content=response, status=200)
+        return HttpResponse(status=403)
+
+
+def unassocate_user(request):
+    if request.method == 'POST':
+        user_to_be_unassociated = request.POST['user']
+        if user_to_be_unassociated:
+            Affected_User = MyUser.objects.get(user_id=user_to_be_unassociated)
+            Affected_User.organisation = None
+            Affected_User.save()
+
+        return HttpResponse(status=200)
+
+    return HttpResponse(status=403)
