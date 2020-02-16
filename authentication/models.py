@@ -47,3 +47,9 @@ class MyUser(models.Model):
 
     def __str__(self):
         return self.user.username
+
+    def get_email(self):
+        return self.user.email
+
+    def get_username_and_email(self):
+        return self.user.username + ' (' + self.user.email + ')'
