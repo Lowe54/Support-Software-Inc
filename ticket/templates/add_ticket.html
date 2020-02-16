@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+	<div id="ticket-form_wrapper" class="col-lg-10">
+        <div id="ticket-form-inner" class="col-lg-5 lg-offset-2">
+            <form method="POST" action="{% url 'add_ticket' %}">
+                {{ form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

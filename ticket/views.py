@@ -16,7 +16,7 @@ from django.shortcuts import HttpResponse, redirect, render
 
 from authentication.models import MyUser
 
-from .forms import FilterForm, TicketForm
+from .forms import FilterForm, TicketForm, AddTicketForm
 from .models import Ticket
 
 
@@ -28,10 +28,10 @@ def dashboard(request):
     '''
     if request.user.is_authenticated:
         try:
-            custom_user = MyUser.objects.get(user_id=request.user.id)    
+            custom_user = MyUser.objects.get(user_id=request.user.id)
         except MyUser.DoesNotExist:
             return redirect('index')
-        
+
         if custom_user.role != 'AGN':
             return redirect('index')
         # Try to get a count for each of the 3 counters
@@ -171,7 +171,7 @@ def edit_ticket(request, t_id=None):
                     'edit_ticket_details.html',
                     {'ticket': ticket, 'form': form}
                 )
-            
+
     return HttpResponse(status=400, reason="Bad ticket ID or ticket not found")
 
 
@@ -207,3 +207,22 @@ def close_ticket(request, t_id=None):
                 )
             return HttpResponse(response, status=200)
     return HttpResponse('Unauthorised', status=403)
+
+
+@login_required
+def add_ticket(request):
+    if request.method == 'POST':
+        ticket_form = AddTicketForm(request.POST)
+        if ticket_form.is_valid():
+            ticket = Ticket(
+                title=request.POST['title'],
+                description=request.POST['description'],
+                priority=request.POST['priority'],
+                raised_by=MyUser.objects.get(user_id=request.user.id)
+            )
+            ticket.save()
+            return redirect('dashboard')
+    else:
+        ticket_form = AddTicketForm()
+
+    return render(request, 'add_ticket.html', {'form': ticket_form})

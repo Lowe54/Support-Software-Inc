@@ -68,6 +68,7 @@ class Ticket(models.Model):
         to=Users,
         related_name='+',
         blank=True,
+        null=True
     )
     priority = models.CharField(
         max_length=3,
