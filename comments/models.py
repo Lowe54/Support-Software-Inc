@@ -5,6 +5,7 @@ from django.db import models
 from authentication.models import MyUser
 from ticket.models import Ticket
 
+
 class Comment(models.Model):
     comment_id = models.UUIDField(
         'Issue ID',
