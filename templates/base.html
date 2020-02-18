@@ -53,7 +53,15 @@
                                     Logout
                                 </a>
                             {% endif %}
-                        </li> 
+                        </li>
+                        {% if not request.user.is_authenticated %}
+                            <li class="nav-item auth-link">
+                                <a class="nav-link" href="{% url 'register' %}">
+                                    <span class="fas fa-sticky-note"></span>
+                                    Register
+                                </a>
+                            </li>
+                        {% endif %} 
                     </ul>
                 </ul>   
                 </div>

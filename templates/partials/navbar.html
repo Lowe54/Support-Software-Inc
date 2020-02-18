@@ -1,14 +1,22 @@
 <ul id="sidebar-navigation" class="closed col-lg-2 nav flex-column">
     {% if request.user.is_authenticated %}
+        <li class="nav-item"><a class="fas fa-file btn" href="{% url 'add_ticket' %}">&nbsp;Add Ticket</a></li>
         <li class="nav-item"><a class="fas fa-chalkboard btn" href="{% url 'dashboard' %}">&nbsp;Dashboard</a></li>
-        <li class="nav-item"><a class="fas fa-file btn" href="#">&nbsp;Request List</a></li>
+        <li class="nav-item"><a class="fas fa-file btn" href="{% url 'results' %}">&nbsp;Request List</a></li>
         <li class="expandable">
             <a class="expandable btn fa fa-window-maximize" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">&nbsp;Views &nbsp;<span class="fa fa-chevron-right"</span></a>
-            <ul class="collapse list-unstyled" id="homeSubmenu">
-                <li><a class="btn" href="#">Page</a></li>
-                <li><a class="btn" href="#">Page</a></li>
-                <li><a class="btn" href="#">Page</a></li>
-            </ul>
+            {% if user_profile.role == 'USR' %}
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li><a class="btn" href="{% url 'results' %}?raised_by={{request.user.id}}&amp;status=OPN">View my Open requests</a></li>
+                    <li><a class="btn" href="{% url 'results' %}?raised_by={{request.user.id}}&amp;status=PEN">View my Pending requests</a></li>
+                </ul>
+            {% else %}
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li><a class="btn" href="{% url 'results' %}?assigned_to=-1">View Unassigned</a></li>
+                    <li><a class="btn" href="{% url 'results' %}?assigned_to={{request.user.id}}">View requests assigned to me</a></li>
+                    <li><a class="btn" href="{% url 'results' %}?statusexclude=CLS">View all Open requests</a></li>
+                </ul>
+            {% endif %}
         <li class="nav-item"><a class="btn fa fa-building" href="{% url 'show_organisation_list' %} ">&nbsp;Organisations</a></li>
         <li class="nav-item"><a class="btn fa fa-users" href="#">&nbsp;Users</a></li>
     {% else %}

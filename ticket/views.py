@@ -142,6 +142,8 @@ def results(request):
                     assigned_to = Ticket.objects.filter(
                         assigned_to=MyUser.objects.get(user_id=value)
                         )
+                else:
+                    assigned_to = Ticket.objects.filter(assigned_to=None)
                 ticket_list = ticket_list & assigned_to
 
             if key == 'raised_by':
