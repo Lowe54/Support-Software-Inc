@@ -1,10 +1,10 @@
 <ul id="sidebar-navigation" class="closed col-lg-2 nav flex-column">
     {% if request.user.is_authenticated %}
-        <li class="nav-item"><a class="fas fa-file btn" href="{% url 'add_ticket' %}">&nbsp;Add Ticket</a></li>
-        <li class="nav-item"><a class="fas fa-chalkboard btn" href="{% url 'dashboard' %}">&nbsp;Dashboard</a></li>
-        <li class="nav-item"><a class="fas fa-file btn" href="{% url 'results' %}">&nbsp;Request List</a></li>
+        <li class="nav-item"><a class="btn" href="{% url 'add_ticket' %}"><i class="fas fa-file"> Add Ticket</i></a></li>
+        <li class="nav-item"><a class="btn" href="{% url 'dashboard' %}"><i class="fas fa-chalkboard"> Dashboard</i></a></li>
+        <li class="nav-item"><a class="btn" href="{% url 'results' %}"><i class="fas fa-file"> Request List</i></a></li>
         <li class="expandable">
-            <a class="expandable btn fa fa-window-maximize" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">&nbsp;Views &nbsp;<span class="fa fa-chevron-right"</span></a>
+            <a class="expandable btn" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="fas fa-window-maximize">  Views</i> </a>
             {% if user_profile.role == 'USR' %}
                 <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li><a class="btn" href="{% url 'results' %}?raised_by={{request.user.id}}&amp;status=OPN">View my Open requests</a></li>
@@ -17,13 +17,13 @@
                     <li><a class="btn" href="{% url 'results' %}?statusexclude=CLS">View all Open requests</a></li>
                 </ul>
             {% endif %}
-        <li class="nav-item"><a class="btn fa fa-building" href="{% url 'show_organisation_list' %} ">&nbsp;Organisations</a></li>
-        <li class="nav-item"><a class="btn fa fa-users" href="#">&nbsp;Users</a></li>
+        <li class="nav-item"><a class="btn" href="{% url 'show_organisation_list' %} "><i class="fas fa-building"> Organisations</i></a></li>
+        <li class="nav-item"><a class="btn" href="#"><i class="fas fa-users"> Users</i></a></li>
     {% else %}
-        <li class="nav-item"><a class="fa fa-home btn" href="{% url 'index' %}">&nbsp;Home</a></li>    
+        <li class="nav-item"><a class="btn" href="{% url 'index' %}"><i class="fas fa-home"> Home</i></a></li>    
     {% endif %}
     
     {% if request.user.is_staff %}
-        <li class="nav-item"><a class="fa fa-gear btn" href="{% url 'admin:index' %}">&nbsp;Admin</a></li>
+        <li class="nav-item"><a class="btn" href="{% url 'admin:index' %}"><i class="fas fa-gear"> Admin</i></a></li>
     {% endif %}
 </ul>
