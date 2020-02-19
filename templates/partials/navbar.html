@@ -1,7 +1,7 @@
 <ul id="sidebar-navigation" class="closed col-lg-2 nav flex-column">
     {% if request.user.is_authenticated %}
+    <li class="nav-item"><a class="btn" href="{% url 'dashboard' %}"><i class="fas fa-chalkboard"> Dashboard</i></a></li>
         <li class="nav-item"><a class="btn" href="{% url 'add_ticket' %}"><i class="fas fa-file"> Add Ticket</i></a></li>
-        <li class="nav-item"><a class="btn" href="{% url 'dashboard' %}"><i class="fas fa-chalkboard"> Dashboard</i></a></li>
         <li class="nav-item"><a class="btn" href="{% url 'results' %}"><i class="fas fa-file"> Request List</i></a></li>
         <li class="expandable">
             <a class="expandable btn" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="fas fa-window-maximize">  Views</i> </a>
