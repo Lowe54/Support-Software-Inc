@@ -1,8 +1,13 @@
+@import "breakpoints";
+
 #sidebar-navigation{
     transition:all 0.5s ease-in-out;
     background-color: $primary;
     padding-right: 0;
     
+    @media(max-width: $lg) {
+        height:100vh;
+    }
 
     &.open{
         display:block;   
