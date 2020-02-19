@@ -8,6 +8,8 @@ $('#toggle_sidebar').on('click', function(){
     if (sidebar.hasClass('closed')){
         $(sidebar).removeClass('closed');
         $(sidebar).addClass('transition');
+        $('#toggle_sidebar i').addClass('fa-times')
+        $('#toggle_sidebar i').removeClass('fa-bars')
         $('#content-wrapper').removeClass('col-lg-12').addClass('col-lg-10'); 
                
         setTimeout(function(){
@@ -21,6 +23,8 @@ $('#toggle_sidebar').on('click', function(){
         setTimeout(function(){
                 $(sidebar).removeClass('transition');
                 $(sidebar).addClass('closed');
+                $('#toggle_sidebar i').addClass('fab fa-bars')
+                $('#toggle_sidebar i').removeClass('fa-times')
                 $('#content-wrapper').removeClass('col-lg-10').addClass('col-lg-12'); 
         }, 500);
         
