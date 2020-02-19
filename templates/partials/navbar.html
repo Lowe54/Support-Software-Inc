@@ -4,7 +4,7 @@
         <li class="nav-item"><a class="btn" href="{% url 'add_ticket' %}"><i class="fas fa-file"> Add Ticket</i></a></li>
         <li class="nav-item"><a class="btn" href="{% url 'results' %}"><i class="fas fa-file"> Request List</i></a></li>
         <li class="expandable">
-            <a class="expandable btn" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="fas fa-window-maximize">  Views</i> </a>
+            <a class="expandable btn" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="fas fa-window-maximize">  Views</i> <i class="fas fa-chevron-down"></i></a>
             {% if user_profile.role == 'USR' %}
                 <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li><a class="btn" href="{% url 'results' %}?raised_by={{request.user.id}}&amp;status=OPN">View my Open requests</a></li>
