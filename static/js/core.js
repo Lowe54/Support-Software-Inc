@@ -1,5 +1,19 @@
 $(document).ready(function(){
     $('#content-wrapper').addClass('col-lg-12');
+    if (!localStorage.getItem('demositeagreed')) {
+        Swal.fire({
+            title: 'Demo Site',
+            text: 'This is a demo version of the site, emails are DISABLED',
+            icon: 'warning',
+            allowOutsideClick: false,
+            confirmButtonText: 'Understood'
+
+        }).then((result) => {
+            if (result.value) {
+              localStorage.setItem('demositeagreed', '1')
+            }
+          });
+    }
 });
 
 $('#toggle_sidebar').on('click', function(){
