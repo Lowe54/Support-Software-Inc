@@ -19,8 +19,23 @@
             {% endif %}
         <li class="nav-item"><a class="btn" href="{% url 'show_organisation_list' %} "><i class="fas fa-building"> Organisations</i></a></li>
         <li class="nav-item"><a class="btn" href="#"><i class="fas fa-users"> Users</i></a></li>
+        <li class="nav-item d-sm-flex d-md-none">
+            <a class="btn" href="{% url 'logout' %}">
+                <i class="fas fa-door-open"> Logout</i>
+            </a>
+        </li> 
     {% else %}
-        <li class="nav-item"><a class="btn" href="{% url 'index' %}"><i class="fas fa-home"> Home</i></a></li>    
+        <li class="nav-item"><a class="btn" href="{% url 'index' %}"><i class="fas fa-home"> Home</i></a></li>
+        <li class="nav-item d-sm-flex d-md-none">
+            <a class="btn" href="{% url 'login' %}">
+                <i class="fas fa-user-alt"> Login</i>
+            </a>
+        </li> 
+        <li class="nav-item d-sm-flex d-md-none">
+            <a class="btn" href="{% url 'register' %}">
+                <i class="fas fa-sticky-note"> Register</i>
+            </a>
+        </li>   
     {% endif %}
     
     {% if request.user.is_staff %}
