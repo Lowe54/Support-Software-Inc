@@ -1,5 +1,5 @@
 <div id="sidebar-navigation" class="closed col-lg-2 nav flex-column">
-    <ul>
+    <ul class="sidebar-top-menu">
     {% if request.user.is_authenticated %}
     <li class="nav-item"><a class="" href="{% url 'dashboard' %}"><i class="fas fa-chalkboard"></i><div>Dashboard</div></a></li>
     <li class="nav-item"><a class="" href="{% url 'add_ticket' %}"><i class="fas fa-file"></i> <div>Add Ticket</div></a></li>
@@ -32,7 +32,7 @@
     {% if request.user.is_authenticated %}
         <hr/>
         <h2 class="sidebar-header">Views</h2>
-        <ul>
+        <ul class="sidebar-bottom-menu">
         {% if user_profile.role == 'USR' %}
             <li class="nav-item"><a class="btn" href="{% url 'results' %}?raised_by={{request.user.id}}&amp;status=OPN">View my Open requests</a></li>
             <li class="nav-item"><a class="btn" href="{% url 'results' %}?raised_by={{request.user.id}}&amp;status=PEN">View my Pending requests</a></li>
