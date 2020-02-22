@@ -120,10 +120,6 @@
   -o-transition: border-color 0.5s ease-in-out;
 }
 
-#demobanner {
-  text-align: center;
-}
-
 #purchase-toggle {
   position: fixed;
   bottom: 0;
