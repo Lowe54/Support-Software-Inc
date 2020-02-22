@@ -30,6 +30,19 @@
   color: #fff;
 }
 
+#sidebar-navigation ul.sidebar-top-menu {
+  -webkit-column-count: 2;
+          column-count: 2;
+  padding-left: 0;
+}
+
+@media (min-width: 992px) {
+  #sidebar-navigation ul.sidebar-top-menu {
+    -webkit-column-count: 1;
+            column-count: 1;
+  }
+}
+
 #sidebar-navigation li {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -39,7 +52,6 @@
           justify-content: space-evenly;
   -ms-flex-line-pack: center;
       align-content: center;
-  font-size: 36px;
 }
 
 #sidebar-navigation li a {
@@ -49,26 +61,35 @@
   color: #fff;
 }
 
-#sidebar-navigation li a div {
-  text-indent: -500px;
-  -webkit-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
-  overflow: hidden;
-}
-
-#sidebar-navigation li a:hover div {
-  -webkit-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
-  overflow: hidden;
-  text-indent: 0;
+@media (min-width: 992px) {
+  #sidebar-navigation li {
+    -webkit-column-count: 1;
+            column-count: 1;
+    font-size: 36px;
+  }
+  #sidebar-navigation li a div {
+    text-indent: -500px;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+    overflow: hidden;
+  }
+  #sidebar-navigation li a:hover {
+    text-decoration: none;
+  }
+  #sidebar-navigation li a:hover div {
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+    overflow: hidden;
+    text-indent: 0;
+  }
 }
 
 #header {
