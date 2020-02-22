@@ -20,6 +20,7 @@ $('#toggle_sidebar').on('click', function(){
     let sidebar = $('#sidebar-navigation');
 
     if (sidebar.hasClass('closed')){
+        $(this).addClass('open')
         $(sidebar).removeClass('closed');
         $(sidebar).addClass('transition');
         $('#toggle_sidebar i').addClass('fa-times')
@@ -32,6 +33,7 @@ $('#toggle_sidebar').on('click', function(){
         }, 100);
     }
     else{
+        $(this).removeClass('open')
         $(sidebar).removeClass('open');
         $(sidebar).addClass('transition'); 
         setTimeout(function(){
