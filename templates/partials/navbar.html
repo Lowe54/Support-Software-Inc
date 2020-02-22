@@ -1,29 +1,16 @@
-<ul id="sidebar-navigation" class="closed col-lg-2 nav flex-column">
+<div id="sidebar-navigation" class="closed col-lg-2 nav flex-column">
+    <ul>
     {% if request.user.is_authenticated %}
-    <li class="nav-item"><a class="btn" href="{% url 'dashboard' %}"><i class="fas fa-chalkboard"> Dashboard</i></a></li>
-        <li class="nav-item"><a class="btn" href="{% url 'add_ticket' %}"><i class="fas fa-file"> Add Ticket</i></a></li>
-        <li class="nav-item"><a class="btn" href="{% url 'results' %}"><i class="fas fa-file"> Request List</i></a></li>
-        <li class="expandable">
-            <a class="expandable btn" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="fas fa-window-maximize">  Views</i> <i class="fas fa-chevron-down"></i></a>
-            {% if user_profile.role == 'USR' %}
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li><a class="btn" href="{% url 'results' %}?raised_by={{request.user.id}}&amp;status=OPN">View my Open requests</a></li>
-                    <li><a class="btn" href="{% url 'results' %}?raised_by={{request.user.id}}&amp;status=PEN">View my Pending requests</a></li>
-                </ul>
-            {% else %}
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li><a class="btn" href="{% url 'results' %}?assigned_to=-1">View Unassigned</a></li>
-                    <li><a class="btn" href="{% url 'results' %}?assigned_to={{request.user.id}}">View requests assigned to me</a></li>
-                    <li><a class="btn" href="{% url 'results' %}?statusexclude=CLS">View all Open requests</a></li>
-                </ul>
-            {% endif %}
-        <li class="nav-item"><a class="btn" href="{% url 'show_organisation_list' %} "><i class="fas fa-building"> Organisations</i></a></li>
-        <li class="nav-item"><a class="btn" href="#"><i class="fas fa-users"> Users</i></a></li>
-        <li class="nav-item d-sm-flex d-md-none">
-            <a class="btn" href="{% url 'logout' %}">
-                <i class="fas fa-door-open"> Logout</i>
-            </a>
-        </li> 
+    <li class="nav-item"><a class="" href="{% url 'dashboard' %}"><i class="fas fa-chalkboard"></i><div>Dashboard</div></a></li>
+    <li class="nav-item"><a class="" href="{% url 'add_ticket' %}"><i class="fas fa-file"></i> <div>Add Ticket</div></a></li>
+    <li class="nav-item"><a class="" href="{% url 'results' %}"><i class="fas fa-file"></i> <div>Request List</div></a></li>
+    <li class="nav-item"><a class="" href="{% url 'show_organisation_list' %} "><i class="fas fa-building"></i><div>Organisations</div></a></li>
+    <li class="nav-item"><a class="" href="#"><i class="fas fa-users"></i><div>Users</div></a></li>
+    <li class="nav-item d-sm-flex d-md-none">
+        <a class="" href="{% url 'logout' %}">
+            <i class="fas fa-door-open"> Logout</i>
+        </a>
+    </li> 
     {% else %}
         <li class="nav-item"><a class="btn" href="{% url 'index' %}"><i class="fas fa-home"> Home</i></a></li>
         <li class="nav-item d-sm-flex d-md-none">
@@ -39,6 +26,7 @@
     {% endif %}
     
     {% if request.user.is_staff %}
-        <li class="nav-item"><a class="btn" href="{% url 'admin:index' %}"><i class="fas fa-gear"> Admin</i></a></li>
+        <li class="nav-item"><a class="" href="{% url 'admin:index' %}"><i class="fas fa-cogs"></i><div>Admin</div></a></li>
     {% endif %}
-</ul>
+    </ul>
+</div>
