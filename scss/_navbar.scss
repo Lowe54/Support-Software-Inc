@@ -1,6 +1,7 @@
 @import "breakpoints";
 
 #sidebar-navigation{
+
     transition:all 0.5s ease-in-out;
     background-color: $primary;
     padding-right: 0;
@@ -20,15 +21,43 @@
     &.closed{
         display:none;
     }
+
+    .sidebar-header {
+        text-align: center;
+        color: #fff;
+    }
+
     li{
+        display:flex;
+        justify-content: space-evenly;
+        align-content: center;
+        font-size: 36px;
         a{
-           color: #fff;
-        }
-        &:hover:not(.expandable){
-            background-color: $--Color_DustyGray;
+            display: inline-flex;
+            color: #fff;
+            div {
+                text-indent:-500px;
+                transition-property: all;
+                transition-duration: 0.5s;
+                transition-timing-function: ease-in-out;
+                overflow: hidden; 
+            }
+            
+            &:hover {
+                div{
+                    transition-property: all;
+                    transition-duration: 0.5s;
+                    transition-timing-function: ease-in-out;
+                    overflow:hidden;
+                    text-indent:0;     
+                    
+                }
+            }   
+                
         }
     }
 
 }
+
     
 
