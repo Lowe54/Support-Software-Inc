@@ -119,7 +119,7 @@ def associate_users(request):
             # Join the resulting array to a string var
             userstring = ','.join(user_list)
             # Remove the commas
-            userstring = userstring.replace(',', '')    
+            userstring = userstring.replace(',', '')  
             # Finally split by the '&'
             user_list = userstring.split('&')
             response = ''
@@ -133,25 +133,20 @@ def associate_users(request):
                     else:
                         user_email_text = 'No Email listed'
                     response = response + \
-                        '<div id="user-{}" class="org-modal-userrow row" data-user="{}">\
-                            <div class="org-modal-username col-lg-4">\
-                                {}\
+                        f'<div id="user-{{ user.user.id }}" class="card">\
+                            <div class="card-body">\
+                                <h5 class="card-title">\
+                                    {current_user.user.username}\
+                                </h5>\
+                                <h6 class="card-subtitle mb-2 text-muted">\
+                                    {user_email_text}\
+                                </h6>\
+                                <a class="card-link modal-remove" href="#"\
+                                data-id={ current_user.user.id }>\
+                                    Remove from organisation\
+                                </a>\
                             </div>\
-                            <div class="org-modal-useremail col-lg-4">\
-                                {}\
-                            </div>\
-                            <div class="org-modal-useractions col-lg-4">\
-                                <a class="btn btn-danger modal-remove\
-                                col-lg-12" href="#" data-id={}>Remove from\
-                                organisation</a>\
-                            </div>\
-                        </div>'.format(
-                            current_user.user.id,
-                            current_user.user.id,
-                            current_user.user.username,
-                            user_email_text,
-                            current_user.user.id
-                            )
+                        </div>'
             return HttpResponse(content=response, status=200)
         return HttpResponse(status=403)
 
