@@ -10,10 +10,10 @@
       </div>
       <div class="modal-body">
         <form id="update_organisation_form" action="" method="POST">
-                    {{ form | crispy }}
-                    <input type="hidden" id="org_id" value="{{ org.id }}"/>
-                    <input type="hidden" id="action" value="{% if org.id %}update{% else %}create{% endif %}"/> 
-                    {% csrf_token %}
+            {{ form | crispy }}
+            <input type="hidden" id="org_id" value="{{ org.id }}"/>
+            <input type="hidden" id="action" value="{% if org.id %}update{% else %}create{% endif %}"/> 
+            {% csrf_token %}
         </form>
       </div>
       <div class="modal-footer">
