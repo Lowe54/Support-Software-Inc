@@ -29,7 +29,7 @@
                     
                     <ul class="nav ml-sm-auto">
                        {% if request.user.is_authenticated %}
-                       <li class="nav-item dropdown auth-link">
+                       <li class="nav-item dropdown auth-link d-none d-lg-flex">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {% if user_profile.profile_picture %}
                                     <span class="profile-img img-circle"><img src=""></span>
