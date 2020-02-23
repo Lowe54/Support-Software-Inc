@@ -1,4 +1,55 @@
-.addOrg{
-    border: 2px solid #28a745;
-    border-radius: 3px;
+@import 'colors';
+@import "breakpoints";
+.cardset-wrapper{
+    margin-left: 15px;
+    margin-right: 15px;
+    width:100%;
+
+    .card {
+        margin:15px;
+
+        .card-footer{
+            background: $primary;
+            display:inline-flex;
+            justify-content: space-evenly;
+            a {
+                display: inline-flex;
+                color: #fff;
+                font-size: 18px;
+                border: 3px outset lighten($primary, 10%);
+                border-radius: 25px;
+                padding: 7px;
+                i {
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 24px;
+                    height: 24px;
+                }
+                div {
+                    
+                    text-indent:-500px;
+                    transition-property: all;
+                    transition-duration: 0.5s;
+                    transition-timing-function: ease-in-out;
+                    overflow: hidden; 
+                }
+                
+                &:hover {
+                    text-decoration: none;
+                    border: 3px inset lighten($primary, 10%);
+                    div{
+                        transition-property: all;
+                        transition-duration: 0.5s;
+                        transition-timing-function: ease-in-out;
+                        overflow:hidden;
+                        text-indent:0;     
+                        
+                    }
+                }   
+            }
+
+        }
+    }
+    
 }
