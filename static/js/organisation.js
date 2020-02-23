@@ -67,7 +67,7 @@ function save_organisation() {
         success: function(response){
             $('#edit-modal').modal('hide');
             if (action === 'update'){
-            $('td [data-id="'+org_id+'"]').closest('td').prev().text(response);
+            $('a[data-id="'+org_id+'"]').parent().parent().find('.card-title').text(response);
             Swal.fire(
                 "Success!",
                 "Organisation Updated",
