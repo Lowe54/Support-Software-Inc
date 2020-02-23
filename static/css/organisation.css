@@ -23,49 +23,57 @@
   display: -ms-inline-flexbox;
   display: inline-flex;
   color: #fff;
-  font-size: 18px;
   border: 3px outset #257784;
   border-radius: 25px;
   padding: 7px;
 }
 
 .cardset-wrapper .card .card-footer a i {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 24px;
-  height: 24px;
+  display: none;
 }
 
-.cardset-wrapper .card .card-footer a div {
-  text-indent: -500px;
-  -webkit-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
-  overflow: hidden;
+@media (min-width: 992px) {
+  .cardset-wrapper .card .card-footer a i {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 24px;
+    height: 24px;
+  }
 }
 
-.cardset-wrapper .card .card-footer a:hover {
-  text-decoration: none;
-  border: 3px inset #257784;
-}
-
-.cardset-wrapper .card .card-footer a:hover div {
-  -webkit-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
-  overflow: hidden;
-  text-indent: 0;
+@media (min-width: 992px) {
+  .cardset-wrapper .card .card-footer a {
+    font-size: 18px;
+  }
+  .cardset-wrapper .card .card-footer a div {
+    text-indent: -500px;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+    overflow: hidden;
+  }
+  .cardset-wrapper .card .card-footer a:hover {
+    text-decoration: none;
+    border: 3px inset #257784;
+  }
+  .cardset-wrapper .card .card-footer a:hover div {
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+    overflow: hidden;
+    text-indent: 0;
+  }
 }

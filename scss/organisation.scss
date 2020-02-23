@@ -15,41 +15,53 @@
             a {
                 display: inline-flex;
                 color: #fff;
-                font-size: 18px;
                 border: 3px outset lighten($primary, 10%);
                 border-radius: 25px;
                 padding: 7px;
                 i {
-                    display:flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 24px;
-                    height: 24px;
-                }
-                div {
-                    
-                    text-indent:-500px;
-                    transition-property: all;
-                    transition-duration: 0.5s;
-                    transition-timing-function: ease-in-out;
-                    overflow: hidden; 
+                    display:none;
+                    @media (min-width: $lg) {
+                        display:flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 24px;
+                        height: 24px;
+                    }
                 }
                 
-                &:hover {
-                    text-decoration: none;
-                    border: 3px inset lighten($primary, 10%);
-                    div{
-                        transition-property: all;
-                        transition-duration: 0.5s;
-                        transition-timing-function: ease-in-out;
-                        overflow:hidden;
-                        text-indent:0;     
-                        
+            }
+
+
+
+
+                @media (min-width: $lg) {
+                    a{ 
+                        font-size: 18px;
+                            div {
+                                
+                                text-indent:-500px;
+                                transition-property: all;
+                                transition-duration: 0.5s;
+                                transition-timing-function: ease-in-out;
+                                overflow: hidden; 
+                            }
+                            
+                            &:hover {
+                                text-decoration: none;
+                                border: 3px inset lighten($primary, 10%);
+                                div{
+                                    transition-property: all;
+                                    transition-duration: 0.5s;
+                                    transition-timing-function: ease-in-out;
+                                    overflow:hidden;
+                                    text-indent:0;     
+                                    
+                                }
+                            }
                     }
-                }   
+                }
             }
 
         }
     }
     
-}

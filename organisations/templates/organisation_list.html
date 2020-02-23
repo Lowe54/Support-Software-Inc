@@ -5,8 +5,8 @@
     <link rel="stylesheet" href="{% static 'css\modals.css' %}" type="text/css"/>
 {% endblock %}
 {% block content %}
-    <div class="organisation-content row">
-        <div class="cardset-wrapper card-deck">
+    <div class="organisation-content">
+        <div class="cardset-wrapper row">
             {% for org in organisation_list %}
                 {% include 'partials/_card.html'%}
             {% endfor %}
