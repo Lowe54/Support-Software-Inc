@@ -1,4 +1,4 @@
-$('table').on('click', '.org-edit', function(e) {
+$('.cardset-wrapper').on('click', '.org-edit', function(e) {
     e.preventDefault();
     let id = $(this).data('id');
     get_organisation_info(id);
@@ -9,7 +9,7 @@ $('.addOrg').on('click', function(e){
     add_organisation_form()
 })
 
-$('table').on('click', '.org-users', function(e) {
+$('.cardset-wrapper').on('click', '.org-users', function(e) {
     e.preventDefault();
     let id = $(this).data('id');
     get_organisation_users(id);
@@ -21,7 +21,7 @@ function add_organisation_form() {
         type: "POST",
         success: function(response){
             $('#edit-modal').remove();
-            $('.org-OrganisationTableWrapper').append(response);
+            $('.organisation-content').append(response);
             $('#edit-modal').modal();
         }
     })
@@ -34,7 +34,7 @@ function get_organisation_info(id=None) {
         data: { 'org_id' : id },
         success: function(response){
             $('#edit-modal').remove();
-            $('.org-OrganisationTableWrapper').append(response);
+            $('.organisation-content').append(response);
             $('#edit-modal').modal();
         }
     })
@@ -47,7 +47,7 @@ function get_organisation_users(id) {
         data: { 'org_id' : id },
         success: function(response){
             $('#user-list-modal').remove();
-            $('.org-OrganisationTableWrapper').append(response);
+            $('.organisation-content').append(response);
             $('#user-list-modal').modal();
         }
     })
