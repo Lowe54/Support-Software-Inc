@@ -5,6 +5,10 @@
     background: $primary;
 }
 
+// Custom control override
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: $primary;
+}
 
 .btn-primary {
     background-color: $primary;
