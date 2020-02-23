@@ -64,6 +64,7 @@
   color: #fff;
   margin: 5px 0;
   border: 3px outset #257784;
+  border-radius: 25px;
 }
 
 #sidebar-navigation li a i {
