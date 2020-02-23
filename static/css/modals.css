@@ -1,4 +1,5 @@
-.modal-remove {
+.modal-header,
+.modal-footer {
   color: #fff;
-  white-space: normal;
+  background: #1a535c;
 }

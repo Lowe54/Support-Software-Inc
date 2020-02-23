@@ -1,4 +1,6 @@
-.modal-remove {
+@import 'colors';
+.modal-header,
+.modal-footer {
     color: #fff;
-    white-space: normal;
+    background: $primary;
 }
