@@ -110,7 +110,7 @@ function assocate_user(){
         type: "POST",
         data: {
             'org_id': organisation_iden,
-            'users': $('#organisation_form').serialize()
+            'users': $('#unassociated_user_form').serialize()
         },
         success: function(response){
             $('#unassociated-user-list-modal').modal('hide')
