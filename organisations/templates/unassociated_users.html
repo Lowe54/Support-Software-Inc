@@ -8,13 +8,12 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form id="organisation_form" action="" method="POST">
+      <form id="unassociated_user_form" action="" method="POST">
         <div class="modal-body">
-            {{ form | crispy }}
-            {% comment %} {% csrf_token %} {% endcomment %}
+            {% crispy form %}
         </div>
         <div class="modal-footer">
-            <input type="text" id="org_ident" value="{{ org_id }}"/>
+            <input type="hidden" id="org_ident" value="{{ org_id }}"/>
             <button type="button" onclick="assocate_user()" class="btn btn-primary">Associate user(s)</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
