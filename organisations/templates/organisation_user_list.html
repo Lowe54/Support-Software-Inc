@@ -9,19 +9,8 @@
       </div>
       <div class="modal-body">
         {% for user in user_list %}
-        <div id="user-{{ user.user.id }}" class="org-modal-userrow row" data-user={{ user.user.id }}>
-            <div class="org-modal-username col-lg-4">
-                {{user.user.username}}
-            </div>
-            <div class="org-modal-useremail col-lg-4">
-                {% if user.user.email %} {{user.user.email}} {% else %} No Email listed {% endif %}
-            </div>
-            <div class="org-modal-useractions col-lg-4">
-                <a class="btn btn-danger modal-remove col-lg-12" href="#" data-orgid= {{ org.id }} data-id={{ user.user.id }}>Remove from organisation</a>
-            </div>
-        </div>
+            {% include 'partials/_user_card.html' %}
         {% endfor %}
-
       </div>
       <div class="modal-footer">
         <button id="asoc-user" type="button" class="btn btn-info" data-id={{ org.id }} onclick="associate_user_modal()">Associate a user</button>

@@ -1,0 +1,8 @@
+
+<div id="user-{{ user.user.id }}" class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{user.user.username }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{% if user.user.email %} {{user.user.email}} {% else %} No Email listed {% endif %}</h6>
+            <a class="card-link modal-remove" href="#" data-orgid= {{ org.id }} data-id={{ user.user.id }}>Remove from organisation</a>
+    </div>
+</div>
