@@ -4,10 +4,11 @@
 
     transition:all 0.5s ease-in-out;
     background-color: $primary;
-    padding-right: 0;
+    
     
     @media(min-width: $lg) {
         height:100vh;
+        padding-right: 0;
     }
 
     &.open{
@@ -21,7 +22,9 @@
     &.closed{
         display:none;
     }
-
+    /***********************
+    *SIDEBAR
+    *********************/
     .sidebar-header {
         text-align: center;
         color: #fff;
@@ -40,19 +43,27 @@
 
     li{
         display:flex;
-        justify-content: space-evenly;
-        align-content: center;
+        flex-direction: column;
         
         a {
             display: inline-flex;
             color: #fff;
+            margin: 5px 0;
+            border: 3px outset lighten($primary, 10%);
+            i {
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                width: 36px;
+                height: 36px;
+            }
         }
         @media (min-width: $lg) {
             column-count: 1;
-            font-size: 36px;
+            font-size: 24px;
 
             a{
-               
+                border:none;
                 div {
                     text-indent:-500px;
                     transition-property: all;
