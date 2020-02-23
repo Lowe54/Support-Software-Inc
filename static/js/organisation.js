@@ -87,7 +87,7 @@ function save_organisation() {
 }
 
 
-function associate_user_modal(id){
+function associate_user_modal(){
     let org_id = $('#asoc-user').attr('data-id')
     $.ajax({
         url: '/organisations/getunassociated/',
