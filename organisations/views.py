@@ -109,19 +109,13 @@ def associate_users(request):
         organisation_id = request.POST['org_id']
         organisation = Organisation.objects.get(id=organisation_id)
         if organisation:
-            list_of_users = request.POST.get('users')
+            list_of_users = request.POST.getlist('users')
+            initialstring = list_of_users.pop(0)
+            initial_user_list = initialstring.split('&')
             user_list = []
-            # Go through each user parameter, and remove all text apart from
-            # '&' characters
-            for letter in list_of_users:
-                if letter == '&' or letter.isdigit():
-                    user_list.append(letter)
-            # Join the resulting array to a string var
-            userstring = ','.join(user_list)
-            # Remove the commas
-            userstring = userstring.replace(',', '')
-            # Finally split by the '&'
-            user_list = userstring.split('&')
+            for user in initial_user_list:
+                if 'users=' in user:
+                    user_list.append(user.strip('users='))
             response = ''
             for assoc_user in user_list:
                 current_user = MyUser.objects.get(user_id=assoc_user)
@@ -133,7 +127,7 @@ def associate_users(request):
                     else:
                         user_email_text = 'No Email listed'
                     response = response + \
-                        f'<div id="user-{{ user.user.id }}" class="card">\
+                        f'<div id="user-{ current_user.user.id }" class="card">\
                             <div class="card-body">\
                                 <h5 class="card-title">\
                                     {current_user.user.username}\
@@ -141,7 +135,8 @@ def associate_users(request):
                                 <h6 class="card-subtitle mb-2 text-muted">\
                                     {user_email_text}\
                                 </h6>\
-                                <a class="card-link modal-remove" href="#"\
+                                <a class="card-link modal-remove btn\
+                                btn-remove" href="#" \
                                 data-id={ current_user.user.id }>\
                                     Remove from organisation\
                                 </a>\
