@@ -119,7 +119,7 @@ def associate_users(request):
             # Join the resulting array to a string var
             userstring = ','.join(user_list)
             # Remove the commas
-            userstring = userstring.replace(',', '')  
+            userstring = userstring.replace(',', '')
             # Finally split by the '&'
             user_list = userstring.split('&')
             response = ''
