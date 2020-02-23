@@ -5,24 +5,12 @@
     <link rel="stylesheet" href="{% static 'css\modals.css' %}" type="text/css"/>
 {% endblock %}
 {% block content %}
-    <div class="org-OrganisationTableWrapper">
-        <a href="#" class="col-lg-12 btn btn-success addOrg fas fa-building"> Add an organisation</a>
-        <table class="table table-striped">
-            <thead>
-                <th>Organisation name</th>
-                <th colspan="2">Actions</th>
-                <th class=""></th>
-            </thead>
+    <div class="organisation-content row">
+        <div class="cardset-wrapper card-deck">
             {% for org in organisation_list %}
-                <tr>
-                    <td>{{ org.Organisation_Name }}</td>
-                    <td colspan="2">
-                        <a href="#" class="org-edit btn btn-info" data-id="{{ org.id }}">Edit</a>
-                        <a href="#" class="org-users btn btn-info" data-id="{{ org.id }}">Show all Users</a>
-                    </td>
-                </tr>
+                {% include 'partials/_card.html'%}
             {% endfor %}
-        </table>
+        </div>
     </div>
 {% endblock %}
 
