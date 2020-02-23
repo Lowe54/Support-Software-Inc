@@ -1,7 +1,7 @@
 @import "breakpoints";
 
 #sidebar-navigation{
-
+    z-index: 1;
     transition:all 0.5s ease-in-out;
     background-color: $primary;
     
