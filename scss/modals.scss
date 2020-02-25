@@ -5,21 +5,6 @@
     background: $primary;
 }
 
-// Custom control override
-.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
-    background-color: $primary;
-}
-
-.btn-primary {
-    background-color: $primary;
-    border: 3px outset lighten($primary, 10%);
-
-    &:hover {
-        background-color: $primary;
-        border: 3px inset lighten($primary, 10%);
-    }
-}
-
 .btn-secondary {
     background-color: $secondary;
     color:#000;

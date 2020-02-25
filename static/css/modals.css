@@ -4,20 +4,6 @@
   background: #1a535c;
 }
 
-.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
-  background-color: #1a535c;
-}
-
-.btn-primary {
-  background-color: #1a535c;
-  border: 3px outset #257784;
-}
-
-.btn-primary:hover {
-  background-color: #1a535c;
-  border: 3px inset #257784;
-}
-
 .btn-secondary {
   background-color: #4ecdc4;
   color: #000;
