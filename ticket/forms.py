@@ -1,7 +1,7 @@
 '''
 Forms.py file for Ticket module
 '''
-
+from crispy_forms.helper import FormHelper
 from django import forms
 from django.forms import ModelForm
 
@@ -13,6 +13,11 @@ class FilterForm(forms.Form):
     Form that renders the 'Filters' on the side
     of the results page
     '''
+    def __init__(self, *args, **kwargs):
+        super(FilterForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_class = 'custom-control custom-checkbox'
+        
     Keyword = forms.CharField(
         required=False,
         help_text="Enter Keyword to search for"
