@@ -46,10 +46,12 @@
 {% endblock %}
 
 {% block page-fab-buttons %}
+    
+    {% if ticket.status != 'CLS'%}
     <button id="add-comment" data-id={{ ticket.id }} type="button" class="btn btn-sub btn-dark has-tooltip" data-placement="left" title="Add Comment">
         <i class="fas fa-comment"> </i>
     </button>
-    {% if ticket.status != 'CLS'%}
+    
     <button id="edit-ticket" data-id={{ ticket.id }} type="button" class="btn btn-sub btn-success has-tooltip" data-placement="left" title="Edit Request Details">
         <i class="fas fa-edit"> </i>
     </button>
