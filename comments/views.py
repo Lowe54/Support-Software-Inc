@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import HttpResponse, render
 
 from authentication.models import MyUser
 from ticket.models import Ticket
