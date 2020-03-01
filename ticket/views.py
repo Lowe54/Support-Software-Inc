@@ -17,7 +17,7 @@ from django.shortcuts import HttpResponse, redirect, render
 from authentication.models import MyUser
 from comments.models import Comment
 
-from .forms import AddTicketForm, FilterForm, TicketForm
+from .forms import AddTicketForm, AgentTicketForm, FilterForm, UserTicketForm
 from .models import Ticket
 
 
@@ -206,10 +206,15 @@ def edit_ticket(request, t_id=None):
     Returns the modal containing editable core ticket information
     '''
     if request.method == 'POST':
+        user_profile = MyUser.objects.get(user_id=request.user.id)
+
         if request.POST:
             ticket = Ticket.objects.get(id=request.POST['t_id'])
             if ticket:
-                form = TicketForm(instance=ticket)
+                if user_profile.role == 'AGN':
+                    form = AgentTicketForm(instance=ticket)
+                else:
+                    form = UserTicketForm(instance=ticket)
                 return render(
                     request,
                     'edit_ticket_details.html',
@@ -221,9 +226,13 @@ def edit_ticket(request, t_id=None):
 
 def save_ticket(request, t_id=None):
     if request.method == 'POST':
+        user_profile = MyUser.objects.get(user_id=request.user.id)
         ticket = Ticket.objects.get(id=request.POST['t_id'])
         if ticket:
-            ticket_to_save = TicketForm(request.POST, instance=ticket)
+            if user_profile.role == 'AGN':
+                ticket_to_save = AgentTicketForm(request.POST, instance=ticket)
+            else:
+                ticket_to_save = UserTicketForm(request.POST, instance=ticket)
             ticket_data = ticket_to_save.save()
             data = {
                 'title': ticket_data.title,

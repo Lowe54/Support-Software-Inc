@@ -37,11 +37,17 @@ class FilterForm(forms.Form):
     )
 
 
-class TicketForm(ModelForm):
+class AgentTicketForm(ModelForm):
     class Meta:
         model = Ticket
         fields = (['title', 'description', 'status',
                    'priority', 'associated_users'])
+
+
+class UserTicketForm(ModelForm):
+    class Meta:
+        model = Ticket
+        fields = (['title', 'description'])
 
 
 class AddTicketForm(ModelForm):
