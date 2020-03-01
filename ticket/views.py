@@ -169,9 +169,21 @@ def results(request):
 @login_required
 def ticket_detail(request, t_id):
     ticket = Ticket.objects.get(id=t_id)
-    comment_form = CommentForm()
-    related_comments = Comment.objects.filter(related_ticket=t_id)
-    return render(request, 'ticket.html', {'ticket': ticket, 'commentform': comment_form, 'relatedcomments': related_comments})
+    user_profile = MyUser.objects.get(user_id=request.user.id)
+    if user_profile.role == 'USR':
+        related_comments = Comment.objects.filter(
+            related_ticket=t_id
+        ).exclude(is_internal_comment=True)
+    else:
+        related_comments = Comment.objects.filter(related_ticket=t_id)
+    return render(
+        request,
+        'ticket.html',
+        {
+            'ticket': ticket,
+            'relatedcomments': related_comments
+        }
+    )
 
 
 def ticket_assign(request, t_id=None):
