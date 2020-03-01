@@ -3,8 +3,8 @@ from django.shortcuts import render, HttpResponse
 from authentication.models import MyUser
 from ticket.models import Ticket
 
-from .models import Comment
 from .forms import AgentCommentForm, UserCommentForm
+from .models import Comment
 
 
 def comment_form(request):
