@@ -4,12 +4,16 @@ from authentication.models import MyUser
 from ticket.models import Ticket
 
 from .models import Comment
-from .forms import CommentForm
+from .forms import AgentCommentForm, UserCommentForm
 
 
 def comment_form(request):
+    user_profile = MyUser.objects.get(user_id=request.user.id)
     ticketid = request.POST['t_id']
-    commentform = CommentForm()
+    if user_profile.role == 'AGN':
+        commentform = AgentCommentForm()
+    else:
+        commentform = UserCommentForm()
     return render(
         request,
         'comment_form.html',

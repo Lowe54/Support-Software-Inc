@@ -4,12 +4,13 @@ from django.forms import ModelForm
 from .models import Comment
 
 
-class CommentForm(ModelForm):
+class AgentCommentForm(ModelForm):
 
     comment_content = forms.CharField(
         label="Content",
         widget=forms.Textarea()
     )
+
     is_internal_comment = forms.BooleanField(
         required=False,
         widget=forms.CheckboxInput(
@@ -26,3 +27,15 @@ class CommentForm(ModelForm):
     class Meta:
         model = Comment
         fields = ['comment_content', 'is_internal_comment']
+
+
+class UserCommentForm(ModelForm):
+    
+    comment_content = forms.CharField(
+        label="Content",
+        widget=forms.Textarea()
+    )
+    
+    class Meta:
+        model = Comment
+        fields = ['comment_content']

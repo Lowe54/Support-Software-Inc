@@ -149,12 +149,21 @@ function show_comment_form(id=None){
 
 
 function post_comment() {
+        let internal_comment;
+        
+        if ($('#id_is_internal_comment').prop('checked')) {
+            internal_comment = $('#id_is_internal_comment').prop('checked')
+        }
+        else {
+            internal_comment = false;
+        }
+
         $.ajax({
             url: '/comment/post/',
             method: 'POST',
             data: {
                 'comment_content': $('#id_comment_content').val(),
-                'is_internal_comment': $('#id_is_internal_comment').prop('checked'),
+                'is_internal_comment': internal_comment,
                 'rel_ticket': $('#id_related_ticket').val()
             },
             success: function(response){
