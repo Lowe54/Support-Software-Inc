@@ -16,10 +16,12 @@
                 {% endautoescape %}
             </div>
             <div class="tck-Ticket-CommentSection">
-                <h3>Comments</h3>
-                {% for comment in relatedcomments %}
-                    {% include 'partials/_comment.html'%}
-                {% endfor %}
+                <h3 data-toggle="collapse" href="#commentsSectionCollapse" role="button" aria-expanded="false" aria-controls="commentsSectionCollapse">Comments<i class="fas fa-chevron-down"></i></h3>
+                <div id="commentsSectionCollapse" class="collapse">
+                    {% for comment in relatedcomments %}
+                        {% include 'partials/_comment.html'%}
+                    {% endfor %}
+                </div>
             </div>
         </div>
         <div class="tck-Ticket_coreInfo col-lg-3">
