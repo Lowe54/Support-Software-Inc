@@ -14,6 +14,13 @@ $(document).ready(function(){
             }
           });
     }
+
+    $(function() {
+        $('.btn-group-fab').on('click', '.btn', function() {
+          $('.btn-group-fab').toggleClass('active');
+        });
+        $('has-tooltip').tooltip();
+      });
 });
 
 $('#toggle_sidebar').on('click', function(){

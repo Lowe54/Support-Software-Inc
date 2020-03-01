@@ -80,13 +80,13 @@
             </div>
              
         </div>
-        <div>
-            <a id="purchase-toggle" class="btn btn-success" href="#">
-                <div class="payment_modal">
-                    <i class="fas fa-pound-sign"> Purchase</i>
-                </div>
-            </a>
-        </div>  
+        <div class="btn-group-fab" role="group" aria-label="FAB Menu">
+            <div>
+                <button type="button" class="btn btn-main btn-primary has-tooltip" data-placement="left" title="Menu"> <i class="fa fa-bars"></i> </button>
+                <button type="button" class="btn btn-sub btn-warning has-tooltip" data-placement="left" title="Email Notification"> <i class="fa fa-envelope"></i> </button>
+                {% block page-fab-buttons %} {% endblock %}
+            </div>
+        </div>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
