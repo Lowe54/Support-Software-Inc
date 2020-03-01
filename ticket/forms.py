@@ -2,6 +2,7 @@
 Forms.py file for Ticket module
 '''
 from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Submit
 from django import forms
 from django.forms import ModelForm
 
@@ -16,8 +17,10 @@ class FilterForm(forms.Form):
     def __init__(self, *args, **kwargs):
         super(FilterForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_method = 'GET'
         self.helper.form_class = 'custom-control custom-checkbox'
-        
+        self.helper.add_input(Submit('submit', 'Submit'))
+
     Keyword = forms.CharField(
         required=False,
         help_text="Enter Keyword to search for"
