@@ -54,6 +54,10 @@
 {% endblock %}
 
 {% block page-fab-buttons %}
+    <button id="add-comment" data-id={{ ticket.id }} type="button" class="btn btn-sub btn-dark has-tooltip" data-placement="left" title="Add Comment">
+        <i class="fas fa-comment"> </i>
+    </button>
+    {% if ticket.status != 'CLS' %}
     <button id="edit-ticket" data-id={{ ticket.id }} type="button" class="btn btn-sub btn-success has-tooltip" data-placement="left" title="Edit Request Details">
         <i class="fas fa-edit"> </i>
     </button>
@@ -61,6 +65,7 @@
     <button id="mark-ticket-closed" data-id= {{ticket.id }} onclick="close_ticket()" type="button" class="btn btn-sub btn-dark has-tooltip" data-placement="left" title="Close Request">
         <i class="fas fa-window-close"> </i>
     </button>
+    {% endif %}
 {% endblock %}
 
 {% block page_js %}
