@@ -35,8 +35,7 @@
         <div class="tck-Ticket_coreInfo col-lg-3">
             {% if ticket.status != 'CLS' %}
             <div class="row">
-                    <a href="#" class="btn btn-success col-lg-6" id="edit-ticket" data-id={{ ticket.id }}><i class="fas fa-edit"> </i>Edit Request Details</a>
-                    <a href="#" class="btn btn-secondary col-lg-6" id="mark-ticket-closed" data-id= {{ticket.id }} onclick="close_ticket()"><i class="fas fa-window-close"> </i>Close Request</a>
+                    
             </div>
             {% endif %}
             <dl class="dl-horizontal">
@@ -52,6 +51,16 @@
     </div>
     </div>
     
+{% endblock %}
+
+{% block page-fab-buttons %}
+    <button id="edit-ticket" data-id={{ ticket.id }} type="button" class="btn btn-sub btn-success has-tooltip" data-placement="left" title="Edit Request Details">
+        <i class="fas fa-edit"> </i>
+    </button>
+    
+    <button id="mark-ticket-closed" data-id= {{ticket.id }} onclick="close_ticket()" type="button" class="btn btn-sub btn-dark has-tooltip" data-placement="left" title="Close Request">
+        <i class="fas fa-window-close"> </i>
+    </button>
 {% endblock %}
 
 {% block page_js %}
