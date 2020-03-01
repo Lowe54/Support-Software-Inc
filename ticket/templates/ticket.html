@@ -16,8 +16,8 @@
                 {% endautoescape %}
             </div>
             <div class="tck-Ticket-CommentSection">
-                <h3 data-toggle="collapse" href="#commentsSectionCollapse" role="button" aria-expanded="false" aria-controls="commentsSectionCollapse">Comments<i class="fas fa-chevron-down"></i></h3>
-                <div id="commentsSectionCollapse" class="collapse">
+                <h3 data-toggle="collapse" href="#commentsSectionCollapse" role="button" aria-expanded="false" aria-controls="commentsSectionCollapse">Comments<i class="fas fa-chevron-up"> </i></h3>
+                <div id="commentsSectionCollapse" class="collapse show">
                     {% for comment in relatedcomments %}
                         {% include 'partials/_comment.html'%}
                     {% endfor %}
