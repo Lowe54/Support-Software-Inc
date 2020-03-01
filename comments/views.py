@@ -22,10 +22,9 @@ def comment_form(request):
 
 def comment(request):
     if request.method == 'POST':
-        print(request.POST)
         user = MyUser.objects.get(user_id=request.user.id)
-        print(request.POST['is_internal_comment'])
-        if request.POST['is_internal_comment']:
+        is_internal = request.POST['is_internal_comment']
+        if is_internal == 'true':
             internal_comment = True
         else:
             internal_comment = False

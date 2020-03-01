@@ -10,18 +10,17 @@ class CommentForm(ModelForm):
         label="Content",
         widget=forms.Textarea()
     )
-    is_internal_comment = forms.NullBooleanField(
+    is_internal_comment = forms.BooleanField(
+        required=False,
         widget=forms.CheckboxInput(
-           attrs={
-               'required': False,
-               'data-toggle': 'toggle',
-               'data-on': 'Yes',
-               'data-off': 'No',
-               'data-onstyle': 'success',
-               'data-offstyle': 'danger',
+            attrs={
+                'data-toggle': 'toggle',
+                'data-on': 'Yes',
+                'data-off': 'No',
+                'data-onstyle': 'success',
+                'data-offstyle': 'danger',
             }
         )
-        
     )
 
     class Meta:
