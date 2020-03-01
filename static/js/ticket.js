@@ -30,6 +30,11 @@ $('#edit-ticket').on('click', function(e){
     get_ticket_information(id=$(this).data('id'))
 })
 
+$('#add-comment').on('click', function(e){
+    e.preventDefault()
+    show_comment_form(id=$(this).data('id'))
+})
+
 $('#mark-ticket-closed').on('click', function(e){
     e.preventDefault()
 })
@@ -121,32 +126,51 @@ function close_ticket(){
       })
 }
 
-
-$('#comment-form').on('submit', function(e){
-    e.preventDefault()
-
+function show_comment_form(id=None){
     $.ajax({
-        url: '/comment/post/',
-        method: 'POST',
-        data: {
-            'comment_content': $('#id_comment_content').val(),
-            'is_internal_comment': $('#id_is_internal_comment').val(),
-            'rel_ticket': $('#id_related_ticket').val()
-        },
+        url: '/comment/new/',
+        type: "POST",
+        data: { 't_id' : id },
         success: function(response){
-            $('.tck-Ticket-CommentSection').append(response)
-            const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 10000,
-                timerProgressBar: true,
-            })
-            Toast.fire(
-                'success',
-                'Comment Posted',
-                'success'
+            $('#comment-modal').remove();
+            $('#content-wrapper').append(response);
+            $('#comment-modal').modal();
+        },
+        error: function(response){
+            Swal.fire(
+                "Uh-Oh, something went wrong",
+                response.status + '</br>' +
+                response.statusText,
+                "error"
             )
         }
-    })
-})
+        })
+    }
+
+
+function post_comment() {
+        $.ajax({
+            url: '/comment/post/',
+            method: 'POST',
+            data: {
+                'comment_content': $('#id_comment_content').val(),
+                'is_internal_comment': $('#id_is_internal_comment').val(),
+                'rel_ticket': $('#id_related_ticket').val()
+            },
+            success: function(response){
+                $('.tck-Ticket-CommentSection').append(response)
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 10000,
+                    timerProgressBar: true,
+                })
+                Toast.fire(
+                    'success',
+                    'Comment Posted',
+                    'success'
+                )
+            }
+        })
+    }

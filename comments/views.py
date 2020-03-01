@@ -1,9 +1,16 @@
-from django.shortcuts import HttpResponse
+from django.shortcuts import render, HttpResponse
 
 from authentication.models import MyUser
 from ticket.models import Ticket
 
 from .models import Comment
+from .forms import CommentForm
+
+
+def comment_form(request):
+    ticketid = request.POST['t_id']
+    commentform = CommentForm()
+    return render(request, 'comment_form.html', {'commentform': commentform, 'ticketid': ticketid})
 
 
 def comment(request):

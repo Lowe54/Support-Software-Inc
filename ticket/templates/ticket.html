@@ -16,20 +16,13 @@
                 {% endautoescape %}
             </div>
             <div class="tck-Ticket-CommentSection">
+                <h3>Comments</h3>
                 {% for comment in relatedcomments %}
                     <div class="comment">
                         <p class="comment-title">{{ comment.posted_by }} posted on {{ comment.date_posted }}</p>
                         <p>{{ comment.comment_content }}
                     </div>
                 {% endfor %}
-            </div>
-            <div class="tck-Ticket_CommentForm">
-                <form id="comment-form" method="POST" action='#'>
-                    {{ commentform | crispy }}
-                    <input type="hidden" id="id_related_ticket" value="{{ticket.id}}"/>
-                    <button type="submit" class="btn btn-secondary">Post comment</button>
-                    {% csrf_token %}
-                </form>
             </div>
         </div>
         <div class="tck-Ticket_coreInfo col-lg-3">
