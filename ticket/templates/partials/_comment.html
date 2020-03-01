@@ -1,0 +1,8 @@
+<div class="card comment border-primary">
+    <div class="card-header">
+        <h4>{{comment.posted_by}} - {{ comment.date_posted }} {% if comment.is_internal_comment %} | INTERNAL {% endif %}</h4>
+    </div>
+    <div class="card-body {% if comment.is_internal_comment %}internal-comment bg-warning {% endif %}">
+        <p>{{ comment.comment_content }}</p>
+    </div>
+</div>
