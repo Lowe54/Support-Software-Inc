@@ -80,17 +80,24 @@ def save_organisation(request, org_id=None, action='create'):
         else:
             edit_org = OrganisationForm(request.POST)
             new_org = edit_org.save()
-            response = '<tr><td>{}</td>\
-                        <td colspan="2">\
-                        <a href="#" class="org-edit btn btn-info"\
-                        data-id="{}">\
-                        Edit</a> <a href="#" class="org-users btn btn-info"\
-                        data-id="{}">Show all Users</a>\
-                        </td></tr>'.format(
-                            new_org.Organisation_Name,
-                            new_org.id,
-                            new_org.id
-                            )
+            response = f'<div class="card-wrapper col-lg-4 col-md-6 col-sm 12">\
+                            <div class="card text-center">\
+                                <div class="card-body">\
+                                    <h5 class="card-title">{new_org.Organisation_Name}</h5>\
+                                </div>\
+                                <div class="card-footer">\
+                                    <a href="#" class="card-link org-edit" data-id="{ new_org.id }">\
+                                        <i class="fas fa-edit"></i>\
+                                        <div>Edit</div>\
+                                    </a>\
+                                    <a href="#" class="card-link org-users" data-id="{ new_org.id }">\
+                                        <i class="fas fa-users"></i>\
+                                        <div class="d-none d-lg-block">Show attached users</div>\
+                                        <div class="d-lg-none">Show users</div>\
+                                    </a>\
+                                </div>\
+                            </div>\
+                        </div>'
             return HttpResponse(response)
 
 

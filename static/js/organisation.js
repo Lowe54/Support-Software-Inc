@@ -75,7 +75,7 @@ function save_organisation() {
                 )
             }
             else {
-                $('table').append(response)
+                $('.cardset-wrapper').append(response)
                 Swal.fire(
                     "Success!",
                     "Organisation has been added",

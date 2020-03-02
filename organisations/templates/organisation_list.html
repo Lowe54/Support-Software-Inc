@@ -14,6 +14,11 @@
     </div>
 {% endblock %}
 
+{% block page-fab-buttons %}
+<button type="button" class="btn btn-sub btn-success has-tooltip addOrg" data-placement="left" title="Add Organisation">
+        <i class="fas fa-plus"> </i>
+</button>
+{% endblock %}
 {% block page_js %}
    <script src="{% static 'js/organisation.js' %} "></script>
 {% endblock %}
