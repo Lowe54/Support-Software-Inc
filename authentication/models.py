@@ -26,7 +26,7 @@ class MyUser(models.Model):
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
-        )
+    )
     role = models.CharField(
         max_length=3,
         choices=ROLE_CHOICES,
@@ -38,6 +38,12 @@ class MyUser(models.Model):
         null=True,
         blank=True,
     )
+
+    is_organisation_admin = models.BooleanField(
+        name="Organisation Admin",
+        default=False,
+    )
+
     organisation = models.ForeignKey(
         Org,
         on_delete=models.SET_NULL,
