@@ -52,3 +52,10 @@ This project has a CI implementation with [Travis CI](https://travis-ci.com/), t
 ##### 3.1-testing
 
 This Branch was created to test a minor Django version upgrade
+
+
+
+### Credits
+
+[Jesse Couch](https://codepen.io/designcouch/pen/Atyop) for the burger bar animation.
+[WebFikirleri](https://codepen.io/WebFikirleri/pen/MLXYKm) for the floating action button
