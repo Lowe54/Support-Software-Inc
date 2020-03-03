@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.6.1/dist/sweetalert2.min.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"/>
         <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'vendor/css/introjs.css' %}" type="text/css"/>
         {% block page_css %} {% endblock %}
     </head>
     <body>
@@ -16,7 +17,7 @@
                 <div id="header" class="col-lg-12">
                    <ul class="nav" role="navigation">
                        <li class="nav-item">
-                           <a class="nav-link" id="toggle_sidebar" href="#">
+                           <a class="nav-link" id="toggle_sidebar" href="#" data-step="1" data-intro="Welcome, click here to open the menu">
                                 <span></span>
                                 <span></span>
                                 <span></span>
@@ -46,7 +47,7 @@
                        {% endif %}
                         <li class="nav-item auth-link d-none d-lg-flex">
                             {% if not request.user.is_authenticated %}
-                                <a class="nav-link" href="{% url 'login' %}">
+                                <a class="nav-link" href="{% url 'login' %}" data-step="3" data-intro="Alternately if you already have an account set up, you can login here">
                                     <span class="fas fa-user-alt"></span>
                                     Login
                                 </a>
@@ -59,7 +60,7 @@
                         </li>
                         {% if not request.user.is_authenticated %}
                             <li class="nav-item auth-link d-none d-lg-flex">
-                                <a class="nav-link" href="{% url 'register' %}">
+                                <a class="nav-link" href="{% url 'register' %}"  data-step="2" data-intro="If you want to register for an account, click here">
                                     <span class="fas fa-sticky-note"></span>
                                     Register
                                 </a>
@@ -82,9 +83,9 @@
         </div>
         <div class="btn-group-fab" role="group" aria-label="FAB Menu">
             <div>
-                <button type="button" class="btn btn-main btn-primary has-tooltip" data-placement="left" title="Menu"> <i class="fa fa-bars"></i> </button>
-                <button id="purchase-toggle" class="btn btn-success btn-sub has-tooltip" data-placement="left" title="Purchase"><i class="fas fa-pound-sign"></i></button>
-                <button type="button" class="btn btn-sub btn-warning has-tooltip" data-placement="left" title="Email Notification"> <i class="fa fa-envelope"></i> </button>
+                <button type="button" class="btn btn-main btn-primary has-tooltip" data-placement="left" title="Menu" data-step="4" data-intro="This button shows a variety of context actions on a particular page"> <i class="fa fa-bars"></i> </button>
+                <button id="purchase-toggle" class="btn btn-success btn-sub has-tooltip" data-placement="left" title="Purchase" data-step="5" data-intro="Click on this button to purchase the software"><i class="fas fa-pound-sign"></i></button>
+                <button type="button" class="btn btn-sub btn-warning has-tooltip" data-placement="left" title="Help" onclick="javascript:introJs().start();" data-step="6" data-intro="Click on this to rerun this introduction"> <i class="fa fa-question"></i> </button>
                 {% block page-fab-buttons %} {% endblock %}
             </div>
         </div>
@@ -95,6 +96,7 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.6.1/dist/sweetalert2.all.min.js"></script>
         <script src="https://js.stripe.com/v3/"></script>
         <script src="{% static 'js/stripe.js' %}"></script>
+        <script src="{% static 'vendor/js/intro.js' %}"></script>
         
 
         {% block page_js %}{% endblock %}
