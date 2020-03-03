@@ -49,8 +49,8 @@
             display: inline-flex;
             color: #fff;
             margin: 5px 0;
-            border: 3px outset lighten($primary, 10%);
-            border-radius: 25px;
+            align-items: center;
+            align-self: center;
             i {
                 display:flex;
                 justify-content: center;
@@ -62,30 +62,11 @@
         @media (min-width: $lg) {
             column-count: 1;
             font-size: 24px;
-
-            a{
-                border:none;
-                div {
-                    text-indent:-500px;
-                    transition-property: all;
-                    transition-duration: 0.5s;
-                    transition-timing-function: ease-in-out;
-                    overflow: hidden; 
-                }
-                
-                &:hover {
-                    text-decoration: none;
-                    div{
-                        transition-property: all;
-                        transition-duration: 0.5s;
-                        transition-timing-function: ease-in-out;
-                        overflow:hidden;
-                        text-indent:0;     
-                        
-                    }
-                }   
-                
+            a {
+                align-self: flex-start;
+                align-items: flex-start;
             }
+
         }
     }
 
