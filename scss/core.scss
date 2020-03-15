@@ -1,5 +1,6 @@
 @import "colors";
 @import "navbar";
+@import "breakpoints";
 
 #header {
   background-color: $primary;
@@ -173,4 +174,34 @@
   span.introjs-helperNumberLayer {
       top: auto;
       left: auto;
+  }
+
+
+  .img-split-left {
+    display:flex;
+    flex-direction:column;
+    margin-top: 24px;
+    margin-bottom: 24px;
+
+    @media (min-width: --md) {
+      flex-direction:row-reverse;
+    }
+    img {
+        width:100%;
+    }
+}
+
+  .img-split-right {
+      display:flex;
+      flex-direction: column;
+
+      margin-top: 24px;
+      margin-bottom: 24px;
+
+      @media (min-width: --md) {
+        flex-direction:row;
+      }
+      img {
+          width:100%;
+      }
   }

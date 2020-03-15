@@ -271,3 +271,53 @@ span.introjs-helperNumberLayer {
   top: auto;
   left: auto;
 }
+
+.img-split-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: --md) {
+  .img-split-left {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+}
+
+.img-split-left img {
+  width: 100%;
+}
+
+.img-split-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: --md) {
+  .img-split-right {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.img-split-right img {
+  width: 100%;
+}

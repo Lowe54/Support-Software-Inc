@@ -1,5 +1,48 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to the next generation of service desk software</h1>
+        <p class="lead">Support Software Inc is leading the charge</p>
+        <hr class="my-4">
+        <p>Fed up of having a separate, functionless mobile app for your support teams?</p>
+        <p>Customers complaining about no easy communication trail?</p>
+        <p class="strong">We have the answer</p> 
+    </div>
+    <div class="img-split-left">
+        <div class="img-splitLeft_Wrapper col-lg-6 col-sm-12">
+            <img class="img-responsive" src="{% static 'images/multi-device-preview.png' %}" alt="Multi Device Preview"/>
+        </div>
+        <div class="content col-lg-6 col-md-4 col-sm-12">
+            <h2>Accessible on any device</h2>
+            <p class="lead">Any device, any time</p>
+            <hr class="my-4">
+            <p>Notify on the go :</p>
+            <ul>
+                <li>Raise Requests</li>
+                <li>Reply to Requests</li>
+                <li>Close Requests</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="img-split-right">
+        <div class="img-splitRight_Wrapper col-lg-6 col-sm-12">
+            <img class="img-responsive" src="{% static 'images/organisation-preview.png' %}" alt="Multi Device Preview"/>
+        </div>
+        <div class="content col-lg-6 col-md-4 col-sm-12">
+            <h2>No Organisations? No problem</h2>
+            <p class="lead">Group your customers</p>
+            <hr class="my-4">
+            <p>Fed up of just having a list of customers with no way of telling who works where?:</p>
+
+            <p>Worry no longer</p>
+            <ul>
+                <li>Add or remove organisations on the go</li>
+                <li>Assign users to an organisation or remove them if not</li>
+                <li>Organisation changed their name? No problem, rename as you go</li>
+            </ul>
+        </div>
+    </div>
 
 {% endblock %}
