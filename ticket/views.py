@@ -191,6 +191,7 @@ def ticket_assign(request, t_id=None):
         if user:
             ticket = Ticket.objects.get(id=request.POST['t_id'])
             if ticket:
+                ticket.raised_on = ticket.raised_on
                 ticket.assigned_to = user
                 ticket.save()
                 response = user.user.username

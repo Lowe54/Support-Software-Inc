@@ -48,7 +48,6 @@ class Ticket(models.Model):
         default='OPN'
     )
     raised_on = models.DateTimeField(
-        auto_now=True,
         null=False,
         blank=False
     )
@@ -88,6 +87,7 @@ class Ticket(models.Model):
 
     )
     updated_on = models.DateField(
+        auto_now=True,
         null=True,
         blank=True
     )
