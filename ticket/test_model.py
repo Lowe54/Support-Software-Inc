@@ -1,6 +1,8 @@
 '''
 Test suite for Ticket Module
 '''
+from datetime import datetime
+
 from django.contrib.auth.models import User
 from django.test import RequestFactory, TestCase
 
@@ -8,7 +10,6 @@ from authentication.models import MyUser
 
 from .models import Ticket
 
-# Create your tests here.
 
 class TestTicketModel(TestCase):
     '''
@@ -37,7 +38,8 @@ class TestTicketModel(TestCase):
         test_ticket = Ticket(
             title='Test',
             description='Test',
-            raised_by=MyUser.objects.get(user_id=self.user.id)
+            raised_by=MyUser.objects.get(user_id=self.user.id),
+            raised_on=datetime.now(),
         )
         test_ticket.save()
 
@@ -50,7 +52,8 @@ class TestTicketModel(TestCase):
         test_ticket = Ticket(
             title='Test',
             description='Test',
-            raised_by=MyUser.objects.get(user_id=self.user.id)
+            raised_by=MyUser.objects.get(user_id=self.user.id),
+            raised_on=datetime.now(),
         )
         test_ticket.save()
 
