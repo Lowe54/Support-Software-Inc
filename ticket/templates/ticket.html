@@ -31,6 +31,7 @@
                 <dt>Raised By:</dt><dd>{{ ticket.raised_by}}</dd>
                 <dt>Assignee:</dt><dd class="ticket-assigned-to">{{ ticket.assigned_to}} {% if ticket.assigned_to != user_profile and user_profile.role == 'AGN' %}<br/><a href="#" id="request-take-me" data-id="{{ticket.id}}" data-user="{{ user_profile.user.id }}">Take it</a> {% endif %} </dd>
             </dl>
+            {% endif %}
         </div>        
         <div class="tck-Ticket_Sidebar">
 
