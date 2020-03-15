@@ -61,7 +61,7 @@ $('#toggle_sidebar').on('click', function(){
     }
 });
 
-$('#purchase-toggle').on('click', function(e){
+$('.purchase-toggle').on('click', function(e){
     e.preventDefault()
 
     $.ajax({

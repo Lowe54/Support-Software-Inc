@@ -204,6 +204,16 @@
   border: 3px inset #257784;
 }
 
+.btn-custom-secondary {
+  background-color: #4ecdc4;
+  border: 3px outset #76d8d1;
+}
+
+.btn-custom-secondary:hover {
+  background-color: #4ecdc4;
+  border: 3px inset #76d8d1;
+}
+
 .btn-group-fab {
   position: fixed;
   width: 50px;
@@ -276,48 +286,54 @@ span.introjs-helperNumberLayer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
   margin-top: 24px;
   margin-bottom: 24px;
-}
-
-@media (min-width: --md) {
-  .img-split-left {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
-  }
 }
 
 .img-split-left img {
   width: 100%;
 }
 
+@media (max-width: 576px) {
+  .img-split-left {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .img-split-right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin-top: 24px;
   margin-bottom: 24px;
 }
 
-@media (min-width: --md) {
+.img-split-right img {
+  width: 100%;
+}
+
+@media (max-width: 576px) {
   .img-split-right {
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
-.img-split-right img {
-  width: 100%;
+.cta {
+  background-color: #1a535c;
+  color: #fff;
+  text-align: center;
 }
