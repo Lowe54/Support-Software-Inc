@@ -33,12 +33,29 @@ Version 5
 
 ### Github Branches
 
+#### Master
+
+This branch contains the live version of the site.
+
 #### Organisation-module
 
 This branch was created to test splitting the 'Organisation' Table into it's own module, which means that it would be seperate and able to have its own set of URL's, instead of sharing the Authentication ones.
 
 
 ### Testing
+
+
+#### Code Testing
+
+##### Python
+
+[Pylint] (https://www.pylint.org/) was used in order to check the conformity of the code to PEP8 standard, as part of this the code report for the site is available [here](pylint.html).
+
+This report is generated via the following commands once the software has been installed
+
+`pylint --output-format=jsonextended authentication core emails organisations payments ticket > pylint.json`
+
+`pylint-json2html -f jsonextended -o pylint.html pylint.json`
 
 #### Automated Testing
 
