@@ -25,7 +25,6 @@ var style = {
 
   form.addEventListener('submit', function(ev) {
     ev.preventDefault();
-    console.log("PaymentForm Submitted")
     const clientSecret  = $('#id_cs').val()
     stripe.confirmCardPayment(clientSecret, {
       payment_method: {
