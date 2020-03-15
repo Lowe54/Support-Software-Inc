@@ -234,6 +234,7 @@ def save_ticket(request, t_id=None):
                 ticket_to_save = AgentTicketForm(request.POST, instance=ticket)
             else:
                 ticket_to_save = UserTicketForm(request.POST, instance=ticket)
+                ticket_to_save.raised_on = ticket.raised_on
             ticket_data = ticket_to_save.save()
             data = {
                 'title': ticket_data.title,
@@ -272,7 +273,8 @@ def add_ticket(request):
                 title=request.POST['title'],
                 description=request.POST['description'],
                 priority=request.POST['priority'],
-                raised_by=MyUser.objects.get(user_id=request.user.id)
+                raised_by=MyUser.objects.get(user_id=request.user.id),
+                raised_on=datetime.now(),
             )
             ticket.save()
             return redirect('dashboard')
