@@ -23,6 +23,11 @@ $(document).ready(function(){
       });
 });
 
+$('#intro-start').on('click', function(){
+    $('.btn-group-fab').toggleClass('active')
+    introJs().start()
+})
+
 $('#toggle_sidebar').on('click', function(){
     let sidebar = $('#sidebar-navigation');
 
@@ -70,6 +75,7 @@ $('#purchase-toggle').on('click', function(e){
         }
     })
 })
+
 
 // CSRF PROTECTION - REQUIRED FOR AJAX CALLS
 

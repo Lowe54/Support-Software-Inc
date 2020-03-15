@@ -31,7 +31,7 @@
                     <ul class="nav ml-sm-auto">
                        {% if request.user.is_authenticated %}
                        <li class="nav-item dropdown auth-link d-none d-lg-flex">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-step="2" data-intro="Click here to access your profile">
                                 {% if user_profile.profile_picture %}
                                     <span class="profile-img img-circle"><img src=""></span>
                                     {{ user_profile }}
@@ -47,12 +47,12 @@
                        {% endif %}
                         <li class="nav-item auth-link d-none d-lg-flex">
                             {% if not request.user.is_authenticated %}
-                                <a class="nav-link" href="{% url 'login' %}" data-step="3" data-intro="Alternately if you already have an account set up, you can login here">
+                                <a class="nav-link" href="{% url 'login' %}" data-step="2" data-intro="If you already have an account set up, you can login here">
                                     <span class="fas fa-user-alt"></span>
                                     Login
                                 </a>
                             {% else %}
-                                <a class="nav-link" href="{% url 'logout' %}">
+                                <a class="nav-link" href="{% url 'logout' %}" data-step="3" data-intro="Click here to logout">
                                     <span class="fas fa-door-open"></span>
                                     Logout
                                 </a>
@@ -60,7 +60,7 @@
                         </li>
                         {% if not request.user.is_authenticated %}
                             <li class="nav-item auth-link d-none d-lg-flex">
-                                <a class="nav-link" href="{% url 'register' %}"  data-step="2" data-intro="If you want to register for an account, click here">
+                                <a class="nav-link" href="{% url 'register' %}" data-step="3" data-intro="If you want to register for an account, click here">
                                     <span class="fas fa-sticky-note"></span>
                                     Register
                                 </a>
@@ -85,7 +85,7 @@
             <div>
                 <button type="button" class="btn btn-main btn-primary has-tooltip" data-placement="left" title="Menu" data-step="4" data-intro="This button shows a variety of context actions on a particular page"> <i class="fa fa-bars"></i> </button>
                 <button id="purchase-toggle" class="btn btn-success btn-sub has-tooltip" data-placement="left" title="Purchase" data-step="5" data-intro="Click on this button to purchase the software"><i class="fas fa-pound-sign"></i></button>
-                <button type="button" class="btn btn-sub btn-warning has-tooltip" data-placement="left" title="Help" onclick="javascript:introJs().start();" data-step="6" data-intro="Click on this to rerun this introduction"> <i class="fa fa-question"></i> </button>
+                <button type="button" id="intro-start" class="btn btn-sub btn-warning has-tooltip" data-placement="left" title="Help" data-step="6" data-intro="Click on this to rerun this introduction"> <i class="fa fa-question"></i> </button>
                 {% block page-fab-buttons %} {% endblock %}
             </div>
         </div>
