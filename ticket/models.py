@@ -1,10 +1,12 @@
+'''
+Model file for ticket(s) table
+'''
+
 import uuid
 
 from django.db import models
 
 from authentication.models import MyUser as Users
-
-# Create your models here.
 
 STATUS_CHOICES = (
     ('OPN', 'Open'),
@@ -93,4 +95,7 @@ class Ticket(models.Model):
     )
 
     def __str__(self):
+        '''
+        Return the ticket title
+        '''
         return self.title
