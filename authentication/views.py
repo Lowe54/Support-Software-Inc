@@ -2,6 +2,8 @@
 Views.py file for authentication app
 
 '''
+import csv
+
 import sweetify
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
@@ -160,3 +162,20 @@ def register(request):
         registration_form = RegisterForm1()
     return render(request, 'register.html', {
         "registration_form": registration_form})
+
+
+@login_required
+def import_user_data(request):
+    with open('MOCK_DATA.csv', 'r') as csvfile:
+        user_import = csv.DictReader(csvfile)
+        for new_user in user_import:
+            user = User.objects.create_user(
+                username=new_user['username'],
+                email=new_user['email'],
+                password=new_user['password']
+            )
+            user.save()
+            MyUser.objects.create(
+                user=User.objects.get(id=user.id),
+                role='USR',
+            )
