@@ -6,7 +6,7 @@ import sweetify
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.shortcuts import (get_object_or_404, HttpResponse, redirect,
+from django.shortcuts import (HttpResponse, get_object_or_404, redirect,
                               render, reverse)
 
 from .forms import LoginForm, ProfileForm, RegisterForm1
