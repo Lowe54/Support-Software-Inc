@@ -11,10 +11,18 @@ from .models import MyUser
 
 
 class UserInline(admin.TabularInline):
+    '''
+    Inline Class for MyUser model
+    '''
     model = MyUser
 
 
 class MyUserAdmin(UA):
+    '''
+    Defines the Admin class for MyUser
+
+    @inline - UserInline
+    '''
     inlines = [
         UserInline
     ]

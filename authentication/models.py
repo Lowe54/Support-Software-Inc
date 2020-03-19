@@ -55,7 +55,13 @@ class MyUser(models.Model):
         return self.user.username
 
     def get_email(self):
+        '''
+        Returns the user's email
+        '''
         return self.user.email
 
     def get_username_and_email(self):
+        '''
+        Returns the user's username and email
+        '''
         return self.user.username + ' (' + self.user.email + ')'

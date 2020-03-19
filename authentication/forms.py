@@ -58,6 +58,16 @@ class RegisterForm1(UserCreationForm):
 
 
 class ProfileForm(ModelForm):
+    '''
+    Form fields that a user can edit from the 'my profile' page
+
+    List
+    -----
+    Email
+    Username
+    First Name
+    Last Name
+    '''
     class Meta:
         model = User
         fields = ['email', 'username', 'first_name', 'last_name']
