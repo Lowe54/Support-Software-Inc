@@ -6,7 +6,7 @@ import sweetify
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.shortcuts import HttpResponse, redirect, render, reverse
+from django.shortcuts import get_object_or_404, HttpResponse, redirect, render, reverse
 
 from .forms import LoginForm, ProfileForm, RegisterForm1
 from .models import MyUser
@@ -91,13 +91,13 @@ def get_profile_edit_form(request):
         user = User.objects.get(id=profile_id)
         profile_form = ProfileForm(instance=user)
         return render(
-                        request,
-                        'profile_form.html',
-                        {
-                            'profile_form': profile_form
-                        }
-                     )
-
+            request,
+            'profile_form.html',
+            {
+                'profile_form': profile_form
+            }
+        )
+    return HttpResponse(status=401)
 
 def save_profile(request):
     '''
@@ -106,7 +106,7 @@ def save_profile(request):
 
     if request.method == 'POST':
         profile_id = request.POST['user_id']
-        user = User.objects.get(id=profile_id)
+        user = get_object_or_404(User, id=profile_id)
         profile = ProfileForm(request.POST, instance=user)
         profile_completed = profile.save()
         response = '<dl class="no-bullet row">\
@@ -151,17 +151,23 @@ def register(request):
                 sweetify.success(
                     request,
                     "You have successfully registered",
+                    icon='success',
+                    timer='5000',
                     button='Ok',
-                    timer=5000
+                    toast='true',
+                    position='top-end',
                 )
                 return redirect(reverse('dashboard'))
-            else:
-                sweetify.error(
-                    request,
-                    "Unable to register at this time",
-                    button='Ok',
-                    timer=5000
-                )
+
+            sweetify.error(
+                request,
+                "Unable to register at this time",
+                icon='error',
+                timer='5000',
+                button='Ok',
+                toast='true',
+                position='top-end',
+            )
     else:
         registration_form = RegisterForm1()
     return render(request, 'register.html', {
