@@ -1,3 +1,10 @@
+'''
+Forms.py file for Organisation
+
+Organisation Form - Used to Add / Edit Organisations
+Un-associated User Form - Shows all unassociated users
+
+'''
 from crispy_forms.helper import FormHelper
 from django import forms
 from django.forms import ModelForm
@@ -8,13 +15,21 @@ from .models import Organisation
 
 
 class OrganisationForm(ModelForm):
+    '''
+    Form that allows addition or editing
+    of an organisation
+    '''
     class Meta:
         model = Organisation
         fields = ['Organisation_Name']
 
 
 class UnassociatedUserForm(forms.Form):
-
+    '''
+    Form that shows all users
+    not associated with an
+    organisation
+    '''
     def __init__(self, *args, **kwargs):
         super(UnassociatedUserForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()

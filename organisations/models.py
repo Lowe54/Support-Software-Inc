@@ -1,3 +1,7 @@
+'''
+Organisation Model.py file
+
+'''
 import uuid
 
 from django.db import models

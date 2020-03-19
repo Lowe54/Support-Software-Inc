@@ -46,7 +46,7 @@ def add_or_edit_organisation(request):
                     'form': form
                 }
             )
-
+    return HttpResponse(status=401)
 
 def get_user_list(request, org_id=None):
     '''
@@ -64,7 +64,7 @@ def get_user_list(request, org_id=None):
                 'user_list': user_list
             }
         )
-
+    return HttpResponse(status=401)
 
 def save_organisation(request, org_id=None, action='create'):
     '''
@@ -77,41 +77,45 @@ def save_organisation(request, org_id=None, action='create'):
             edit_org = OrganisationForm(request.POST, instance=org_ins)
             edit_org.save()
             return HttpResponse(request.POST['Organisation_Name'])
-        else:
-            edit_org = OrganisationForm(request.POST)
-            new_org = edit_org.save()
-            response = f'<div class="card-wrapper col-lg-4 col-md-6 col-sm 12">\
-                            <div class="card text-center">\
-                                <div class="card-body">\
-                                    <h5 class="card-title">{new_org.Organisation_Name}</h5>\
-                                </div>\
-                                <div class="card-footer">\
-                                    <a href="#" class="card-link org-edit" data-id="{ new_org.id }">\
-                                        <i class="fas fa-edit"></i>\
-                                        <div>Edit</div>\
-                                    </a>\
-                                    <a href="#" class="card-link org-users" data-id="{ new_org.id }">\
-                                        <i class="fas fa-users"></i>\
-                                        <div class="d-none d-lg-block">Show attached users</div>\
-                                        <div class="d-lg-none">Show users</div>\
-                                    </a>\
-                                </div>\
-                            </div>\
-                        </div>'
-            return HttpResponse(response)
 
+        edit_org = OrganisationForm(request.POST)
+        new_org = edit_org.save()
+        response = f'<div class="card-wrapper col-lg-4 col-md-6 col-sm 12">\
+                        <div class="card text-center">\
+                            <div class="card-body">\
+                                <h5 class="card-title">{new_org.Organisation_Name}</h5>\
+                            </div>\
+                            <div class="card-footer">\
+                                <a href="#" class="card-link org-edit" data-id="{ new_org.id }">\
+                                    <i class="fas fa-edit"></i>\
+                                    <div>Edit</div>\
+                                </a>\
+                                <a href="#" class="card-link org-users" data-id="{ new_org.id }">\
+                                    <i class="fas fa-users"></i>\
+                                    <div class="d-none d-lg-block">Show attached users</div>\
+                                    <div class="d-lg-none">Show users</div>\
+                                </a>\
+                            </div>\
+                        </div>\
+                    </div>'
+        return HttpResponse(response)
+    return HttpResponse(status=401)
 
 def get_unassociated_users(request):
+    '''
+    Return all users not associated with a user
+    '''
     if request.method == 'POST':
         form = UnassociatedUserForm()
-        # userlist = MyUser.objects.filter(organisation_id=None)
         org_id = request.POST['org_id']
-        print(org_id)
         return render(request, 'unassociated_users.html',
                       {'form': form, 'org_id': org_id})
-
+    return HttpResponse(status=401)
 
 def associate_users(request):
+    '''
+    Associate user(s) to an organisation
+    '''
     if request.method == 'POST':
         organisation_id = request.POST['org_id']
         organisation = Organisation.objects.get(id=organisation_id)
@@ -151,15 +155,19 @@ def associate_users(request):
                         </div>'
             return HttpResponse(content=response, status=200)
         return HttpResponse(status=403)
+    return HttpResponse(status=403)
 
 
 def unassocate_user(request):
+    '''
+    Unassociate a user from a organisation
+    '''
     if request.method == 'POST':
         user_to_be_unassociated = request.POST['user']
         if user_to_be_unassociated:
-            Affected_User = MyUser.objects.get(user_id=user_to_be_unassociated)
-            Affected_User.organisation = None
-            Affected_User.save()
+            affected_user = MyUser.objects.get(user_id=user_to_be_unassociated)
+            affected_user.organisation = None
+            affected_user.save()
 
         return HttpResponse(status=200)
 
