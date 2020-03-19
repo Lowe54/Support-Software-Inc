@@ -37,8 +37,11 @@ def login(request):
                 sweetify.success(
                     request,
                     "You have successfully signed in",
+                    icon='success',
+                    timer='5000',
                     button='Ok',
-                    timer=5000
+                    toast='true',
+                    position='top-end',
                 )
                 return redirect('dashboard')
 
@@ -60,8 +63,11 @@ def logout(request):
     sweetify.success(
         request,
         "You have successfully signed out",
+        icon='success',
+        timer='5000',
         button='Ok',
-        timer=5000
+        toast='true',
+        position='top-end',
     )
     return redirect('/')
 
