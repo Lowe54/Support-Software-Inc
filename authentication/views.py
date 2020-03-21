@@ -37,7 +37,7 @@ def login(request):
                 auth.login(user=user, request=request)
                 sweetify.success(
                     request,
-                    "You have successfully signed in",
+                    "Welcome back " + user.username,
                     icon='success',
                     timer='5000',
                     button='Ok',
