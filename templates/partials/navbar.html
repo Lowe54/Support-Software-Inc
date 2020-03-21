@@ -40,15 +40,15 @@
     </div>
     {% if request.user.is_authenticated %}
         <div class="sidebar-bottom-menu">
-            <h2 class="sidebar-header">Views</h2>
+            <h2 class="sidebar-header">Quick Links</h2>
             <ul>
             {% if user_profile.role == 'USR' %}
-                <li class="nav-item"><a class="btn" href="{% url 'results' %}?raised_by={{request.user.id}}&amp;status=OPN">View my Open requests</a></li>
-                <li class="nav-item"><a class="btn" href="{% url 'results' %}?raised_by={{request.user.id}}&amp;status=PEN">View my Pending requests</a></li>
+                <li class="nav-item"><a class="btn" href="{% url 'results' %}?raised_by={{request.user.id}}&amp;status=OPN">Go to my Open requests</a></li>
+                <li class="nav-item"><a class="btn" href="{% url 'results' %}?raised_by={{request.user.id}}&amp;status=PEN">Go to my Pending requests</a></li>
             {% else %}
-                <li class="nav-item"><a class="btn" href="{% url 'results' %}?assigned_to=-1">View Unassigned</a></li>
-                <li class="nav-item"><a class="btn" href="{% url 'results' %}?assigned_to={{request.user.id}}">View requests assigned to me</a></li>
-                <li class="nav-item"><a class="btn" href="{% url 'results' %}?statusexclude=CLS">View all Open requests</a></li>
+                <li class="nav-item"><a class="btn" href="{% url 'results' %}?assigned_to=-1">Unassigned Requests</a></li>
+                <li class="nav-item"><a class="btn" href="{% url 'results' %}?assigned_to={{request.user.id}}">Requests assigned to me</a></li>
+                <li class="nav-item"><a class="btn" href="{% url 'results' %}?statusexclude=CLS">Open requests</a></li>
             {% endif %}
             </ul>
         </div>

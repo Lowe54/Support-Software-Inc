@@ -47,6 +47,10 @@
   }
 }
 
+#sidebar-navigation .sidebar-bottom-menu ul {
+  padding-left: 0;
+}
+
 #sidebar-navigation li {
   display: -webkit-box;
   display: -ms-flexbox;
