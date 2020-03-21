@@ -292,6 +292,11 @@ span.introjs-helperNumberLayer {
           flex-direction: row-reverse;
   margin-top: 24px;
   margin-bottom: 24px;
+  font-size: 28px;
+}
+
+.img-split-left li {
+  list-style-type: none;
 }
 
 .img-split-left img {
@@ -317,6 +322,11 @@ span.introjs-helperNumberLayer {
           flex-direction: row;
   margin-top: 24px;
   margin-bottom: 24px;
+  font-size: 28px;
+}
+
+.img-split-right li {
+  list-style-type: none;
 }
 
 .img-split-right img {

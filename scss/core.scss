@@ -193,7 +193,11 @@
     flex-direction:row-reverse;
     margin-top: 24px;
     margin-bottom: 24px;
+    font-size: 28px;
 
+    li {
+      list-style-type: none;
+    }
     img {
         width:100%;
     }
@@ -209,6 +213,11 @@
 
       margin-top: 24px;
       margin-bottom: 24px;
+      font-size: 28px;
+
+      li {
+        list-style-type: none;
+      }
 
       img{
           width:100%;
