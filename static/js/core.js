@@ -2,11 +2,13 @@ $(document).ready(function(){
     $('#content-wrapper').addClass('col-lg-12');
     if (!localStorage.getItem('demositeagreed')) {
         Swal.fire({
-            title: 'Demo Site',
             text: 'This is a demo version of the site, emails are DISABLED',
             icon: 'warning',
-            allowOutsideClick: false,
-            confirmButtonText: 'Understood'
+            timer: 5000,
+            confirmButtonText: 'Understood',
+            toast: true,
+            position: 'top-right',
+            show_timer: true,
 
         }).then((result) => {
             if (result.value) {
