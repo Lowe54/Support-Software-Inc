@@ -110,19 +110,12 @@ def save_profile(request):
         user = get_object_or_404(User, id=profile_id)
         profile = ProfileForm(request.POST, instance=user)
         profile_completed = profile.save()
-        response = '<dl class="no-bullet row">\
-                        <dt class="col-sm-3">Username :</dt>\
-                        <dd class="col-sm-9">{}</dd>\
-                        <dt class="col-sm-3">Email :</dt>\
-                        <dd class="col-sm-9">{}</dd>\
-                        <dt class="col-sm-3">First Name :</dt>\
-                        <dd class="col-sm-9">{}</dd>\
-                        <dt class="col-sm-3">Last Name :</dt>\
-                        <dd class="col-sm-9">{}</dd>\
-                    </dl>'.format(profile_completed.username,
-                                  profile_completed.email,
-                                  profile_completed.first_name,
-                                  profile_completed.last_name)
+        response = f'<div class="user-profile-core-info col-lg-6">\
+                    <div><p>Username : { profile_completed.username }</p></div>\
+                    <div><p>Email : { profile_completed.email }</p></div>\
+                    <div><p>First Name : {profile_completed.first_name }</p></div>\
+                    <div><p>Last Name : { profile_completed.last_name }</p></div>\
+                </div>'
         return HttpResponse(status=200, content=response)
 
     return HttpResponse(status=403)

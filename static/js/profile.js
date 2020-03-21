@@ -33,13 +33,15 @@ function save_profile(){
         },
         success: function(response){
             $('#edit-modal').modal('hide');
-            $('.corecol dl').remove()
-            $('.corecol').append(response)
-            Swal.fire(
-                'success',
-                'Profile Updated Successfully',
-                'success'
-            )
+            $('.user-profile-core-info:first').remove()
+            $('.user-profile-secondary-info').parent().prepend(response)
+            Swal.fire({
+                'icon': 'success',
+                'toast': true,
+                'timer': 5000,
+                'position': 'top-right',
+                'text':'Profile Updated Successfully',
+            })
         }
     });
 }
