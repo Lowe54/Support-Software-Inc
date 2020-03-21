@@ -9,18 +9,22 @@ $('#request-take-me').on('click', function(e){
         },
         success: function(response){
             $('.ticket-assigned-to').text(response)
-            Swal.fire(
-                "Success!",
-                "Ticket assigned to you",
-                "success"
-                )
+            Swal.fire({
+                'icon': 'success',
+                'toast': true,
+                'timer': 5000,
+                'position': 'top-right',
+                'text':'Ticket has been assigned to you',
+            })
         },
         error: function(){
-            Swal.fire(
-                "Uh-Oh, something went wrong",
-                "Please reload the page and try again",
-                "error"
-            )
+            Swal.fire({
+                'icon': 'error',
+                'toast': true,
+                'timer': 5000,
+                'position': 'top-right',
+                'text':'Something went wrong, please try again',
+            })
         }
     })
 });
@@ -50,12 +54,13 @@ $.ajax({
         $('#edit-modal').modal();
     },
     error: function(response){
-        Swal.fire(
-            "Uh-Oh, something went wrong",
-            response.status + '</br>' +
-            response.statusText,
-            "error"
-        )
+        Swal.fire({
+            'icon': 'error',
+            'toast': true,
+            'timer': 5000,
+            'position': 'top-right',
+            'text':'Something went wrong, please try again',
+        })
     }
     })
 }
@@ -77,11 +82,13 @@ function save_ticket(){
             let response = data
             $('.ticket-header').text(response.title)
             $('.ticket-description').text(response.description)
-            Swal.fire(
-                "Success!",
-                "Ticket has been updated",
-                "success"
-            )
+            Swal.fire({
+                'icon': 'success',
+                'toast': true,
+                'timer': 5000,
+                'position': 'top-right',
+                'text':'Ticket has been updated',
+            })
            
 
         }
@@ -116,9 +123,11 @@ function close_ticket(){
                         $('.tck-Ticket_Header').prepend('<div id="ticket-closure-banner" class="alert alert-dark">' + response + '</div>')
                         $('#edit-ticket, #mark-ticket-closed').remove()
                         Swal.fire({
-                            title: 'Request closed',
-                            text: response,
-                            confirmButtonText: 'Ok'
+                            'icon': 'success',
+                            'toast': true,
+                            'timer': 5000,
+                            'position': 'top-right',
+                            'text':'Profile Updated Successfully',
                         })
                     }
                 })
@@ -137,12 +146,13 @@ function show_comment_form(id=None){
             $('#comment-modal').modal();
         },
         error: function(response){
-            Swal.fire(
-                "Uh-Oh, something went wrong",
-                response.status + '</br>' +
-                response.statusText,
-                "error"
-            )
+            Swal.fire({
+                'icon': 'error',
+                'toast': true,
+                'timer': 5000,
+                'position': 'top-right',
+                'text':'Something went wrong, please try again',
+            })
         }
         })
     }
