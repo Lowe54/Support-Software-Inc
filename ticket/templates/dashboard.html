@@ -1,32 +1,28 @@
 {% extends 'base.html'%}
 {% load static %}
 
+{% block title %}My Dashboard {% endblock %}
+
 {% block page_css %}
     <link rel="stylesheet" href="{% static 'css/agent.css' %}">
 {% endblock %}
 {% block content %}
 {% if user.role == 'AGN'%}
     <div class="agn-Dashboard">
-        <div class="agn-ContentHeader">
-            <h1>Welcome {{user.user.username}}</h1>
-        </div>
         <div class="agn-TicketStat-Wrapper">
             <div class="agn_Ticketstat--Item">
-                <h2>Unassigned Tickets</h2>
-                    <p class="agn_TicketStat--Count">{{unassigned}}</p>
-                <a class="btn agn_TicketstatLink" href="{% url 'results' %}?assigned_to=-1">View Unassigned</a>
+                <h2>Unassigned Tickets | {{ unassigned }}</h2>
+                <a class="btn btn-secondary" href="{% url 'results' %}?assigned_to=-1">View Unassigned</a>
             </div>
     
             <div class="agn_Ticketstat--Item">
-                <h2>Assigned to You</h2>
-                        <p class="agn_TicketStat--Count">{{assigned}}</p>
-                    <a class="btn agn_TicketstatLink" href="{% url 'results' %}?assigned_to={{request.user.id}}">View Assigned</a>
+                <h2>Assigned to You | {{ assigned }}</h2>
+                <a class="btn btn-secondary" href="{% url 'results' %}?assigned_to={{request.user.id}}">View Assigned</a>
             </div>
                 
             <div class="agn_Ticketstat--Item">
-                <h2>Total Open Tickets</h2>
-                        <p class="agn_TicketStat--Count">{{open_tickets}}</p>
-                    <a class="btn agn_TicketstatLink" href="{% url 'results' %}?statusexclude=CLS">View All Open Tickets</a>
+                <h2>Total Open Tickets | {{ open_tickets }}</h2>
+                <a class="btn btn-secondary" href="{% url 'results' %}?statusexclude=CLS">View All Open Tickets</a>
             </div>
         </div>
     </div>
@@ -37,15 +33,13 @@
         </div>
         <div class="agn-TicketStat-Wrapper">
             <div class="agn_Ticketstat--Item">
-                <h2>My Open Requests</h2>
-                    <p class="agn_TicketStat--Count">{{open_tickets}}</p>
-                <a class="btn agn_TicketstatLink" href="{% url 'results' %}?raised_by={{request.user.id}}&amp;status=OPN">View my Open requestts</a>
+                <h2>My Open Requests | {{ open_tickets }}</h2>
+                <a class="btn btn-secondary" href="{% url 'results' %}?raised_by={{request.user.id}}&amp;status=OPN">View my Open requestts</a>
             </div>
     
             <div class="agn_Ticketstat--Item">
-                <h2>Requests requiring feedback</h2>
-                    <p class="agn_TicketStat--Count">{{tickets_feedback}}</p>
-                <a class="btn agn_TicketstatLink" href="{% url 'results' %}?raised_by={{request.user.id}}&amp;status=PEN">View my requests needing a reply</a>
+                <h2>Requests requiring feedback | {{ tickets_feedback }}</h2>
+                <a class="btn btn-secondary" href="{% url 'results' %}?raised_by={{request.user.id}}&amp;status=PEN">View my requests needing a reply</a>
             </div>
         </div>
     </div>
