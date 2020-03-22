@@ -1,20 +1,19 @@
 # Support Software Inc
+
 ![PyPI - Django Version](https://img.shields.io/badge/Django-3.0.1-green)
 ![Build Status](https://travis-ci.org/Lowe54/Support-Software-Inc.svg?branch=master)
+
+Welcome to the next generation in service desk software,
+
 ## UX/UI Design
 
 ### Wireframes
-All wireframe designs can be found in the [Wireframes Folder](/wireframes)
 
-The desktop wireframes were based off a full HD monitor (1920px x 1080px)
-
-The mobile wireframes were based off the screen size of a iPhone X (375px x 812px Portrait) / (812px x 375px Landscape)
+The initial designs for this software can be found in the [Wireframes Folder](/wireframes), the desktop version of these were based off a full HD monitor with a resolution of 1920 x 1080px while the mobile designs were based off an iPhone X (375px x 812px Portrait) / (812px x 375px Landscape)
 
 ### Database Design
 
-#### User Model
-
-The user model extends the default Django User model, adding on a profile picture and linking to an organisation table, which contains a uuid (Universally Unique Identifier) as the Primary Key for an Organisation, along with the Organisations name.
+#### Versions
 
 Version 1
 ![User Model v1](/wireframes/database_design_v1.png)
@@ -31,6 +30,30 @@ Version 4
 Version 5
 ![User Model v5](/wireframes/db_design_v5.png)
 
+#### Database Models
+
+##### User
+
+The user model extends the default Django User model with a profile picture, user role, their organisation,  if they are an organisation admin and if they can view all their organisations requests.
+
+##### Organisation
+
+The organisation model simply contains the organisations UUID (Universally Unique Identifier), along with the organisation name.
+
+##### Tickets
+
+The tickets table contains all the information relevent to a support request, including who raised the request, the date/time it was raised on, status, priority, any associated users (Who would recieve emails when the request was updated), along with closure details (If the request is closed).
+
+##### Comments
+
+The Comments table links users to various comments, as well as the type of comment (Public or Internal), the date and time the comment was posted, and the ticket the comment was posted on.
+
+##### Purchase
+
+##### Ticket Files
+
+While this remains a feature to be implemented (See Upcoming features), it would link an uploaded file to a request, as well as the type and size of the uploaded file
+
 ### Github Branches
 
 #### Master
@@ -41,15 +64,13 @@ This branch contains the live version of the site.
 
 This branch was created to test splitting the 'Organisation' Table into it's own module, which means that it would be seperate and able to have its own set of URL's, instead of sharing the Authentication ones.
 
-
 ### Testing
-
 
 #### Code Testing
 
 ##### Python
 
-[Pylint] (https://www.pylint.org/) was used in order to check the conformity of the code to PEP8 standard, as part of this the code report for the site is available [here](pylint.html).
+[Pylint] (https://www.pylint.org/) was used in order to check the conformity of the code to PEP8 standard, as part of this the code report for the site is available [here](/pylint.html).
 
 This report is generated via the following commands once the software has been installed
 
@@ -63,14 +84,11 @@ This report is generated via the following commands once the software has been i
 
 This project has a CI implementation with [Travis CI](https://travis-ci.com/), the only enforcement is for the import order, which is determined via the `.travis.yml` file. This is enforced via the `isort --check-only --diff --skip-glob=*/migrations/*` command.
 
-
 #### Github Branches
 
 ##### 3.1-testing
 
 This Branch was created to test a minor Django version upgrade
-
-
 
 ### Credits
 
