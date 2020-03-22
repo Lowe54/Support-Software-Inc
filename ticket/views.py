@@ -57,33 +57,32 @@ def dashboard(request):
                 }
             )
 
-        else:
-            # Try to get a count for each of the 3 counters
-            try:
-                unassigned_tickets = len(Ticket.objects.filter(
-                    assigned_to=None))
-                assigned_tickets = len(Ticket.objects.filter(
-                    assigned_to=MyUser.objects.get(user_id=request.user.id)
-                    ).exclude(status='CLS'))
-                open_tickets = len(Ticket.objects.exclude(
-                    status='CLS'
-                ))
-            # Catch any DoesNotExist errors, which means the count would be 0
-            except Ticket.DoesNotExist:
-                unassigned_tickets = 0
-                assigned_tickets = 0
-                open_tickets = 0
+        # Try to get a count for each of the 3 counters
+        try:
+            unassigned_tickets = len(Ticket.objects.filter(
+                assigned_to=None))
+            assigned_tickets = len(Ticket.objects.filter(
+                assigned_to=MyUser.objects.get(user_id=request.user.id)
+                ).exclude(status='CLS'))
+            open_tickets = len(Ticket.objects.exclude(
+                status='CLS'
+            ))
+        # Catch any DoesNotExist errors, which means the count would be 0
+        except Ticket.DoesNotExist:
+            unassigned_tickets = 0
+            assigned_tickets = 0
+            open_tickets = 0
 
-            return render(
-                request,
-                'dashboard.html',
-                {
-                    'user': custom_user,
-                    'unassigned': unassigned_tickets,
-                    'assigned': assigned_tickets,
-                    'open_tickets': open_tickets
-                }
-            )
+        return render(
+            request,
+            'dashboard.html',
+            {
+                'user': custom_user,
+                'unassigned': unassigned_tickets,
+                'assigned': assigned_tickets,
+                'open_tickets': open_tickets
+            }
+        )
     return redirect('login')
 
 
