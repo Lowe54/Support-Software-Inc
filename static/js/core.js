@@ -12,7 +12,7 @@ $(document).ready(function(){
 
         }).then((result) => {
             if (result.value) {
-              localStorage.setItem('demositeagreed', '1')
+              localStorage.setItem('demositeagreed', '1');
             }
           });
     }
@@ -26,19 +26,19 @@ $(document).ready(function(){
 });
 
 $('#intro-start').on('click', function(){
-    $('.btn-group-fab').toggleClass('active')
-    introJs().start()
-})
+    $('.btn-group-fab').toggleClass('active');
+    introJs().start();
+});
 
 $('#toggle_sidebar').on('click', function(){
     let sidebar = $('#sidebar-navigation');
 
     if (sidebar.hasClass('closed')){
-        $(this).addClass('open')
+        $(this).addClass('open');
         $(sidebar).removeClass('closed');
         $(sidebar).addClass('transition');
-        $('#toggle_sidebar i').addClass('fa-times')
-        $('#toggle_sidebar i').removeClass('fa-bars')
+        $('#toggle_sidebar i').addClass('fa-times');
+        $('#toggle_sidebar i').removeClass('fa-bars');
         $('#content-wrapper').removeClass('col-lg-12').addClass('col-lg-10'); 
                
         setTimeout(function(){
@@ -47,14 +47,14 @@ $('#toggle_sidebar').on('click', function(){
         }, 100);
     }
     else{
-        $(this).removeClass('open')
+        $(this).removeClass('open');
         $(sidebar).removeClass('open');
         $(sidebar).addClass('transition'); 
         setTimeout(function(){
                 $(sidebar).removeClass('transition');
                 $(sidebar).addClass('closed');
-                $('#toggle_sidebar i').addClass('fab fa-bars')
-                $('#toggle_sidebar i').removeClass('fa-times')
+                $('#toggle_sidebar i').addClass('fab fa-bars');
+                $('#toggle_sidebar i').removeClass('fa-times');
                 $('#content-wrapper').removeClass('col-lg-10').addClass('col-lg-12'); 
         }, 500);
         
@@ -64,7 +64,7 @@ $('#toggle_sidebar').on('click', function(){
 });
 
 $('.purchase-toggle').on('click', function(e){
-    e.preventDefault()
+    e.preventDefault();
 
     $.ajax({
         url: '/payment/form/',
@@ -73,10 +73,10 @@ $('.purchase-toggle').on('click', function(e){
             $('#payment-modal').remove();
             $('body').append(response);
             $('#payment-modal').modal();
-            stripe_init()
+            stripe_init();
         }
-    })
-})
+    });
+});
 
 
 // CSRF PROTECTION - REQUIRED FOR AJAX CALLS

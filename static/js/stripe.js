@@ -25,7 +25,7 @@ var style = {
 
   form.addEventListener('submit', function(ev) {
     ev.preventDefault();
-    const clientSecret  = $('#id_cs').val()
+    const clientSecret  = $('#id_cs').val();
     stripe.confirmCardPayment(clientSecret, {
       payment_method: {
         card: card,
@@ -39,7 +39,7 @@ var style = {
           icon: 'error',
           title: 'Uh-Oh',
           html: '<p>'+ result.error.message + '</p>'
-        })
+        });
       } else {
         // The payment has been processed!
         if (result.paymentIntent.status === 'succeeded') {
@@ -59,16 +59,16 @@ var style = {
                     'phone_number': $('#id_phone_number').val()
                 },
                 success: function(){
-                    $('#payment-modal').modal('hide')
+                    $('#payment-modal').modal('hide');
                     Swal.fire({
                         icon: 'success',
                         title: 'Payment completed',
                         html: '<h2>Thank you for purchasing</h2><hr/><p>You can use the link below to download the sofware</p><a class="btn btn-success" href="https://github.com/Lowe54/Support-Software-Inc/archive/master.zip">DOWNLOAD</a>',
-                    })
+                    });
                 }
-            })
+            });
         }
-      };
-  })
-})
+      }
+  });
+});
 }

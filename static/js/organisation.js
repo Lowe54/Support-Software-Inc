@@ -2,18 +2,18 @@ $('.cardset-wrapper').on('click', '.org-edit', function(e) {
     e.preventDefault();
     let id = $(this).data('id');
     get_organisation_info(id);
-})
+});
 
 $('.addOrg').on('click', function(e){
     e.preventDefault();
-    add_organisation_form()
-})
+    add_organisation_form();
+});
 
 $('.cardset-wrapper').on('click', '.org-users', function(e) {
     e.preventDefault();
     let id = $(this).data('id');
     get_organisation_users(id);
-})
+});
 
 function add_organisation_form() {
     $.ajax({
@@ -24,7 +24,7 @@ function add_organisation_form() {
             $('.organisation-content').append(response);
             $('#edit-modal').modal();
         }
-    })
+    });
 }
 
 function get_organisation_info(id=None) {
@@ -37,7 +37,7 @@ function get_organisation_info(id=None) {
             $('.organisation-content').append(response);
             $('#edit-modal').modal();
         }
-    })
+    });
 }
 
 function get_organisation_users(id) {
@@ -50,7 +50,7 @@ function get_organisation_users(id) {
             $('.organisation-content').append(response);
             $('#user-list-modal').modal();
         }
-    })
+    });
 }
 
 function save_organisation() {
@@ -72,15 +72,15 @@ function save_organisation() {
                 "Success!",
                 "Organisation Updated",
                 "success"
-                )
+                );
             }
             else {
-                $('.cardset-wrapper').append(response)
+                $('.cardset-wrapper').append(response);
                 Swal.fire(
                     "Success!",
                     "Organisation has been added",
                     "success"
-                    )
+                    );
                 }
             }
         });
@@ -88,7 +88,7 @@ function save_organisation() {
 
 
 function associate_user_modal(){
-    let org_id = $('#asoc-user').attr('data-id')
+    let org_id = $('#asoc-user').attr('data-id');
     $.ajax({
         url: '/organisations/getunassociated/',
         type: "POST",
@@ -96,15 +96,15 @@ function associate_user_modal(){
             'org_id': org_id
         },
         success: function(response){
-            $('#unassociated-user-list-modal').remove()
-            $('#user-list-modal').append(response)
-            $('#unassociated-user-list-modal').modal()
+            $('#unassociated-user-list-modal').remove();
+            $('#user-list-modal').append(response);
+            $('#unassociated-user-list-modal').modal();
         }
-    })
+    });
 }
 
 function assocate_user(){
-    let organisation_iden = $('#org_ident').val()
+    let organisation_iden = $('#org_ident').val();
     $.ajax({
         url: '/organisations/associate/',
         type: "POST",
@@ -113,20 +113,20 @@ function assocate_user(){
             'users': $('#unassociated_user_form').serialize()
         },
         success: function(response){
-            $('#unassociated-user-list-modal').modal('hide')
-            $('#user-list-modal .modal-body').append(response)
+            $('#unassociated-user-list-modal').modal('hide');
+            $('#user-list-modal .modal-body').append(response);
             Swal.fire(
                 'success',
                 'User\'s associated',
                 'success'
-            )
+            );
         }
-    })
+    });
 }
 
 $('div').on('click', '.modal-remove', function(){
-    let organisation_ident = $(this).data('orgid')
-    let user = $(this).data('id')
+    let organisation_ident = $(this).data('orgid');
+    let user = $(this).data('id');
     $.ajax({
         url: '/organisations/unassociate/',
         type: "POST",
@@ -135,24 +135,19 @@ $('div').on('click', '.modal-remove', function(){
             'user': user
         },
         success: function(){
-            $('#user-'+user).remove()
+            $('#user-'+user).remove();
             const Toast = Swal.mixin({
                 toast: true,
                 position: 'top-end',
                 showConfirmButton: false,
                 timer: 10000,
                 timerProgressBar: true,
-            })
+            });
             Toast.fire(
                 'success',
                 'User disassociated',
                 'success'
-            )
+            );
         }
-    })
-})
-function disassocate_user(){
-    let organisation_iden = $('#org_ident').val()
-    console.log(organisation_iden)
-    
-}
+    });
+});

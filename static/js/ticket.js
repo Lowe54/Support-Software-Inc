@@ -8,14 +8,14 @@ $('#request-take-me').on('click', function(e){
         'assignee': $(this).data('user')
         },
         success: function(response){
-            $('.ticket-assigned-to').text(response)
+            $('.ticket-assigned-to').text(response);
             Swal.fire({
                 'icon': 'success',
                 'toast': true,
                 'timer': 5000,
                 'position': 'top-right',
                 'text':'Ticket has been assigned to you',
-            })
+            });
         },
         error: function(){
             Swal.fire({
@@ -24,24 +24,24 @@ $('#request-take-me').on('click', function(e){
                 'timer': 5000,
                 'position': 'top-right',
                 'text':'Something went wrong, please try again',
-            })
+            });
         }
-    })
+    });
 });
 
 $('#edit-ticket').on('click', function(e){
-    e.preventDefault()
-    get_ticket_information(id=$(this).data('id'))
-})
+    e.preventDefault();
+    get_ticket_information(id=$(this).data('id'));
+});
 
 $('#add-comment').on('click', function(e){
-    e.preventDefault()
-    show_comment_form(id=$(this).data('id'))
-})
+    e.preventDefault();
+    show_comment_form(id=$(this).data('id'));
+});
 
 $('#mark-ticket-closed').on('click', function(e){
-    e.preventDefault()
-})
+    e.preventDefault();
+});
 
 function get_ticket_information(id=None){
 $.ajax({
@@ -60,9 +60,9 @@ $.ajax({
             'timer': 5000,
             'position': 'top-right',
             'text':'Something went wrong, please try again',
-        })
+        });
     }
-    })
+    });
 }
 
 function save_ticket(){
@@ -79,20 +79,20 @@ function save_ticket(){
         },
         success: function(data){
             $('#edit-modal').modal('hide');
-            let response = data
-            $('.ticket-header').text(response.title)
-            $('.ticket-description').text(response.description)
+            let response = data;
+            $('.ticket-header').text(response.title);
+            $('.ticket-description').text(response.description);
             Swal.fire({
                 'icon': 'success',
                 'toast': true,
                 'timer': 5000,
                 'position': 'top-right',
                 'text':'Ticket has been updated',
-            })
+            });
            
 
         }
-    })
+    });
 }
 
 function close_ticket(){
@@ -120,19 +120,19 @@ function close_ticket(){
                         'closure_message': result.value[0]
                     },
                     success: function(response){
-                        $('.tck-Ticket_Header').prepend('<div id="ticket-closure-banner" class="alert alert-dark">' + response + '</div>')
-                        $('#edit-ticket, #mark-ticket-closed').remove()
+                        $('.tck-Ticket_Header').prepend('<div id="ticket-closure-banner" class="alert alert-dark">' + response + '</div>');
+                        $('#edit-ticket, #mark-ticket-closed').remove();
                         Swal.fire({
                             'icon': 'success',
                             'toast': true,
                             'timer': 5000,
                             'position': 'top-right',
                             'text':'Profile Updated Successfully',
-                        })
+                        });
                     }
-                })
+                });
             }
-      })
+      });
 }
 
 function show_comment_form(id=None){
@@ -145,16 +145,16 @@ function show_comment_form(id=None){
             $('#content-wrapper').append(response);
             $('#comment-modal').modal();
         },
-        error: function(response){
+        error: function(){
             Swal.fire({
                 'icon': 'error',
                 'toast': true,
                 'timer': 5000,
                 'position': 'top-right',
                 'text':'Something went wrong, please try again',
-            })
+            });
         }
-        })
+        });
     }
 
 
@@ -162,7 +162,7 @@ function post_comment() {
         let internal_comment;
         
         if ($('#id_is_internal_comment').prop('checked')) {
-            internal_comment = $('#id_is_internal_comment').prop('checked')
+            internal_comment = $('#id_is_internal_comment').prop('checked');
         }
         else {
             internal_comment = false;
@@ -177,19 +177,19 @@ function post_comment() {
                 'rel_ticket': $('#id_related_ticket').val()
             },
             success: function(response){
-                $('.tck-Ticket-CommentSection').append(response)
+                $('.tck-Ticket-CommentSection').append(response);
                 const Toast = Swal.mixin({
                     toast: true,
                     position: 'top-end',
                     showConfirmButton: false,
                     timer: 10000,
                     timerProgressBar: true,
-                })
+                });
                 Toast.fire(
                     'success',
                     'Comment Posted',
                     'success'
-                )
+                );
             }
-        })
+        });
     }

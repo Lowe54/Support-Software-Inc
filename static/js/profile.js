@@ -1,12 +1,12 @@
 $('#edit').on('click', function(e) {
     e.preventDefault();
-    console.log('Editing Profile')
+    console.log('Editing Profile');
     let id = $(this).data('id');
     get_profile(id);
-})
+});
 
 function get_profile(id=None){
-    profile_id = id
+    profile_id = id;
     $.ajax({
         url: 'profile/edit/',
         type: "POST",
@@ -16,7 +16,7 @@ function get_profile(id=None){
             $('.usr-profile-container').append(response);
             $('#edit-modal').modal();
         }
-    })
+    });
 }
 
 function save_profile(){
@@ -33,15 +33,15 @@ function save_profile(){
         },
         success: function(response){
             $('#edit-modal').modal('hide');
-            $('.user-profile-core-info:first').remove()
-            $('.user-profile-secondary-info').parent().prepend(response)
+            $('.user-profile-core-info:first').remove();
+            $('.user-profile-secondary-info').parent().prepend(response);
             Swal.fire({
                 'icon': 'success',
                 'toast': true,
                 'timer': 5000,
                 'position': 'top-right',
                 'text':'Profile Updated Successfully',
-            })
+            });
         }
     });
 }
