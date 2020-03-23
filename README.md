@@ -141,11 +141,19 @@ Undefined Variables Listed
 
 ##### Profile.js
 
+![Core JS Result](/documentation_images/corejs_result.png)
+
 ##### Organisation.js
+
+![Organisation JS Result](/documentation_images/organisationjs_result.png)
 
 ##### Stripe.js
 
+![Stripe JS Result](/documentation_images/stripejs_result.png)
+
 ##### Ticket.js
+
+![Ticket JS Result](/documentation_images/ticketjs_result.png)
 
 #### Python
 
