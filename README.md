@@ -60,13 +60,29 @@ While this remains a feature to be implemented (See Upcoming features), it would
 
 This branch contains the live version of the site.
 
+##### 3.1-testing
+
+This Branch was created to test a minor Django version upgrade
+
 #### Organisation-module
 
 This branch was created to test splitting the 'Organisation' Table into it's own module, which means that it would be seperate and able to have its own set of URL's, instead of sharing the Authentication ones.
 
+#### Feature/Emails
+
+This branch contains future email functionality.
+
+#### Feature/user-import
+
+This branch contains functionality that would allow an admin to import a csv file of users into the system.
+
 ### Testing
 
 #### Code Testing
+
+##### HTML
+
+##### Javascript
 
 ##### Python
 
@@ -83,12 +99,6 @@ This report is generated via the following commands once the software has been i
 ##### Continuous Integration
 
 This project has a CI implementation with [Travis CI](https://travis-ci.com/), the only enforcement is for the import order, which is determined via the `.travis.yml` file. This is enforced via the `isort --check-only --diff --skip-glob=*/migrations/*` command.
-
-#### Github Branches
-
-##### 3.1-testing
-
-This Branch was created to test a minor Django version upgrade
 
 ### Credits
 
