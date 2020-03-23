@@ -126,6 +126,19 @@ All Javascript was tested via [JSHint](https://jshint.com/docs/), the results ag
 
 ##### Core.js
 
+![Core JS Result](/documentation_images/corejs_result.png)
+
+Undefined Variables Listed
+
+- Swal
+  - This is a Sweetalert 2 alert initialisation
+
+- introJS
+  - This is used by IntroJS, which is the guided tooltips that are activated via the 'help' button
+  
+- stripe_init
+  - This is one of the functions defined in stripe.js
+
 ##### Profile.js
 
 ##### Organisation.js
