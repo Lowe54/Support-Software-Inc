@@ -23,6 +23,10 @@ Welcome to the next generation in service desk software,
       - [Comments](#comments)
       - [Purchase](#purchase)
       - [Ticket Files](#ticket-files)
+  - [Features](#features)
+    - [Existing Features](#existing-features)
+    - [Features Left to Implement](#features-left-to-implement)
+  - [Technologies Used](#technologies-used)
   - [Github Branches](#github-branches)
     - [Master](#master)
     - [3.1-testing](#31-testing)
@@ -91,6 +95,47 @@ The Comments table links users to various comments, as well as the type of comme
 #### Ticket Files
 
 While this remains a feature to be implemented (See Upcoming features), it would link an uploaded file to a request, as well as the type and size of the uploaded file
+
+## Features
+
+### Existing Features
+
+- Full login system
+  - Users can register and login, as well as manage their account.
+- Instant Commenting
+  - User's aren't redirected to a seperate page to comment, it is all contained within the ticket page
+- Organisation List
+  - Admin's can manage organisations, associate and disassociate users all from one screen
+- Result filtering
+  - Users can filter their results by keyword, status, and priority
+
+### Features Left to Implement
+
+The following are lists of features that remain to be implemented, along with a brief description of what they entail.
+
+- Emails
+  - Email functionality including, but not limited to:
+    - Sending registration emails
+    - Ticket update emails
+    - Broadcast emails sent by site admin(s)
+
+- User Management
+  - While this is currently possible from the admin site for individual users, this includes the following:
+    - The ability for organisation admins to manage their organisation users
+    - Import and Export of Users (Import functionality limited to administrators only)
+
+## Technologies Used
+
+- [HTML5](https://www.w3.org/standards/webdesign/htmlcss)
+  - **HTML5** is the basic building language of all websites, it allows for structure
+- [CSS3](https://www.w3.org/standards/webdesign/htmlcss#whatcss)
+  - **CSS 3** is used to describe web pages, via color, font and other styling. In the project it is used for styling the elements on the page.
+- [JQuery](https://jquery.com)
+  - The project uses **JQuery** to simplify DOM manipulation.
+- [FontAwesome](https://fontawesome.com/)
+  - The project uses the free version of **FontAwesome** in order to add extra icons to the site
+- [SASS](http://sass-lang.com/)
+  - **SASS** was used to add extra functionality to CSS, it allows for nested statements to be used, which in turn made the files easier to read.
 
 ## Github Branches
 
