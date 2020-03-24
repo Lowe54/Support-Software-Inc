@@ -14,6 +14,7 @@ Welcome to the next generation in service desk software,
   - [Table of Contents](#table-of-contents)
   - [UX/UI Design](#uxui-design)
     - [Wireframes](#wireframes)
+  - [User stories](#user-stories)
   - [Database Design](#database-design)
     - [Versions](#versions)
     - [Database Models](#database-models)
@@ -52,6 +53,8 @@ Welcome to the next generation in service desk software,
 ### Wireframes
 
 The initial designs for this software can be found in the [Wireframes Folder](/wireframes), the desktop version of these were based off a full HD monitor with a resolution of 1920 x 1080px while the mobile designs were based off an iPhone X (375px x 812px Portrait) / (812px x 375px Landscape)
+
+## User stories
 
 ## Database Design
 
