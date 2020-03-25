@@ -1,6 +1,7 @@
 [MASTER]
 load-plugins=pylint_json2html, pylint_django
 ignore=migrations
+disable=too-many-branches
 
 [REPORTS]
 output-format=jsonextended
