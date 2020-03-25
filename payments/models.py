@@ -1,9 +1,16 @@
+'''
+Payment module models file
+'''
 from django.db import models
 
 from authentication.models import MyUser
 
 
 class Order(models.Model):
+    '''
+    Order model to store Orders and Payment confirmation code(s)
+    '''
+
     user = models.ForeignKey(
         to=MyUser,
         on_delete=models.PROTECT,

@@ -14,7 +14,9 @@ from .models import Order
 
 
 def render_payment_form(request):
-
+    '''
+    Render the payment form onscreen
+    '''
     stripe.api_key = os.getenv('STRIPE_SECRET')
 
     intent = stripe.PaymentIntent.create(
@@ -35,6 +37,9 @@ def render_payment_form(request):
 
 
 def add_order(request):
+    '''
+    Add an order to the system
+    '''
     if request.method == 'POST':
         if request.user:
             try:
