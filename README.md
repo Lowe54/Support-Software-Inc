@@ -219,9 +219,13 @@ Undefined Variables Listed
 
 This report is generated via the following commands once the software has been installed
 
-`pylint --output-format=jsonextended authentication core emails organisations payments ticket > pylint.json`
+`pylint --output-format=jsonextended authentication core organisations payments ticket > pylint.json`
 
 `pylint-json2html -f jsonextended -o pylint.html pylint.json`
+
+The final report can be found [here](pylint.html)
+
+The reason for the sole error is that the function controls the result filters.
 
 ### Automated Testing
 
@@ -232,4 +236,5 @@ This project has a CI implementation with [Travis CI](https://travis-ci.com/), t
 ### Credits
 
 [Jesse Couch](https://codepen.io/designcouch/pen/Atyop) for the burger bar animation.
+
 [WebFikirleri](https://codepen.io/WebFikirleri/pen/MLXYKm) for the floating action button

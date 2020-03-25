@@ -1,0 +1,1104 @@
+{
+    "messages": [],
+    "stats": {
+        "by_module": {
+            "authentication": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "authentication.admin": {
+                "statement": 12,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "authentication.apps": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "authentication.context_processors": {
+                "statement": 8,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "authentication.forms": {
+                "statement": 31,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "authentication.models": {
+                "statement": 16,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "authentication.tests": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "authentication.urls": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "authentication.views": {
+                "statement": 62,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "core": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "core.admin": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "core.apps": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "core.models": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "core.tests": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "core.urls": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "core.views": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "organisations": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "organisations.admin": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "organisations.apps": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "organisations.forms": {
+                "statement": 15,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "organisations.models": {
+                "statement": 7,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "organisations.tests": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "organisations.urls": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "organisations.views": {
+                "statement": 77,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "payments": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "payments.admin": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "payments.apps": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "payments.forms": {
+                "statement": 6,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "payments.models": {
+                "statement": 17,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "payments.tests": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "payments.urls": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "payments.views": {
+                "statement": 25,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "ticket": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "ticket.admin": {
+                "statement": 5,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "ticket.apps": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "ticket.forms": {
+                "statement": 27,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "ticket.models": {
+                "statement": 20,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "ticket.test_model": {
+                "statement": 19,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "ticket.test_view": {
+                "statement": 12,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "ticket.urls": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "ticket.views": {
+                "statement": 139,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            }
+        },
+        "by_msg": {},
+        "info": 0,
+        "convention": 0,
+        "refactor": 0,
+        "warning": 0,
+        "error": 0,
+        "fatal": 0,
+        "module": 41,
+        "function": 25,
+        "method": 15,
+        "class": 31,
+        "badname_module": 0,
+        "badname_class": 0,
+        "badname_function": 0,
+        "badname_method": 0,
+        "badname_attr": 0,
+        "badname_const": 0,
+        "badname_variable": 0,
+        "badname_inlinevar": 0,
+        "badname_argument": 0,
+        "badname_class_attribute": 0,
+        "undocumented_module": 0,
+        "undocumented_function": 0,
+        "undocumented_method": 0,
+        "undocumented_class": 7,
+        "nb_duplicated_lines": 0,
+        "percent_duplicated_lines": 0.0,
+        "dependencies": {
+            "django.contrib.admin": [
+                "payments.admin",
+                "ticket.admin",
+                "authentication.admin"
+            ],
+            "django.contrib.auth.admin": [
+                "authentication.admin"
+            ],
+            "django.contrib.auth.models": [
+                "authentication.models",
+                "authentication.views",
+                "ticket.test_view",
+                "authentication.forms",
+                "ticket.test_model",
+                "authentication.admin"
+            ],
+            "organisations.models": [
+                "authentication.models",
+                "organisations.forms",
+                "organisations.views",
+                "authentication.admin"
+            ],
+            "authentication.models": [
+                "authentication.views",
+                "authentication.context_processors",
+                "organisations.forms",
+                "payments.views",
+                "ticket.test_view",
+                "ticket.test_model",
+                "ticket.models",
+                "payments.models",
+                "ticket.views",
+                "organisations.views",
+                "authentication.admin"
+            ],
+            "django.apps": [
+                "core.apps",
+                "payments.apps",
+                "authentication.apps",
+                "organisations.apps",
+                "ticket.apps"
+            ],
+            "django.forms": [
+                "payments.forms",
+                "organisations.forms",
+                "authentication.forms",
+                "ticket.forms"
+            ],
+            "django.contrib.auth.forms": [
+                "authentication.forms"
+            ],
+            "django.db.models": [
+                "authentication.models",
+                "payments.models",
+                "ticket.models",
+                "organisations.models"
+            ],
+            "django.urls": [
+                "ticket.urls",
+                "organisations.urls",
+                "payments.urls",
+                "authentication.urls",
+                "core.urls"
+            ],
+            "authentication.views": [
+                "authentication.urls"
+            ],
+            "sweetify": [
+                "authentication.views"
+            ],
+            "django.contrib.auth": [
+                "authentication.views"
+            ],
+            "django.contrib.messages": [
+                "authentication.views"
+            ],
+            "django.contrib.auth.decorators": [
+                "authentication.views",
+                "ticket.views"
+            ],
+            "django.shortcuts": [
+                "authentication.views",
+                "payments.views",
+                "core.views",
+                "ticket.views",
+                "organisations.views"
+            ],
+            "authentication.forms": [
+                "authentication.views"
+            ],
+            "core.views": [
+                "core.urls"
+            ],
+            "crispy_forms.helper": [
+                "organisations.forms",
+                "ticket.forms"
+            ],
+            "organisations.views": [
+                "organisations.urls"
+            ],
+            "organisations.forms": [
+                "organisations.views"
+            ],
+            "payments.models": [
+                "payments.forms",
+                "payments.views",
+                "payments.admin"
+            ],
+            "payments.views": [
+                "payments.urls"
+            ],
+            "stripe": [
+                "payments.views"
+            ],
+            "payments.forms": [
+                "payments.views"
+            ],
+            "ticket.models": [
+                "ticket.views",
+                "ticket.forms",
+                "ticket.admin",
+                "ticket.test_model"
+            ],
+            "crispy_forms.layout": [
+                "ticket.forms"
+            ],
+            "django.test": [
+                "ticket.test_view",
+                "ticket.test_model"
+            ],
+            "django.test.Client": [
+                "ticket.test_view"
+            ],
+            "ticket.views": [
+                "ticket.urls"
+            ],
+            "django.http": [
+                "ticket.views"
+            ],
+            "comments.models": [
+                "ticket.views"
+            ],
+            "ticket.forms": [
+                "ticket.views"
+            ]
+        },
+        "cycles": [],
+        "statement": 534
+    },
+    "previous": {
+        "by_module": {
+            "authentication": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "authentication.admin": {
+                "statement": 12,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "authentication.apps": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "authentication.context_processors": {
+                "statement": 8,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "authentication.forms": {
+                "statement": 31,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "authentication.models": {
+                "statement": 16,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "authentication.tests": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "authentication.urls": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "authentication.views": {
+                "statement": 62,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "core": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "core.admin": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "core.apps": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "core.models": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "core.tests": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "core.urls": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "core.views": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "organisations": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "organisations.admin": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "organisations.apps": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "organisations.forms": {
+                "statement": 15,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "organisations.models": {
+                "statement": 7,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "organisations.tests": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "organisations.urls": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "organisations.views": {
+                "statement": 77,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "payments": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "payments.admin": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "payments.apps": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "payments.forms": {
+                "statement": 6,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "payments.models": {
+                "statement": 17,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "payments.tests": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "payments.urls": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "payments.views": {
+                "statement": 25,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "ticket": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "ticket.admin": {
+                "statement": 5,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "ticket.apps": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "ticket.forms": {
+                "statement": 27,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "ticket.models": {
+                "statement": 20,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "ticket.test_model": {
+                "statement": 19,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "ticket.test_view": {
+                "statement": 12,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "ticket.urls": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "ticket.views": {
+                "statement": 139,
+                "info": 0,
+                "convention": 0,
+                "refactor": 1,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            }
+        },
+        "by_msg": {
+            "too-many-branches": 1
+        },
+        "info": 0,
+        "convention": 0,
+        "refactor": 1,
+        "warning": 0,
+        "error": 0,
+        "fatal": 0,
+        "module": 41,
+        "function": 25,
+        "method": 15,
+        "class": 31,
+        "badname_module": 0,
+        "badname_class": 0,
+        "badname_function": 0,
+        "badname_method": 0,
+        "badname_attr": 0,
+        "badname_const": 0,
+        "badname_variable": 0,
+        "badname_inlinevar": 0,
+        "badname_argument": 0,
+        "badname_class_attribute": 0,
+        "undocumented_module": 0,
+        "undocumented_function": 0,
+        "undocumented_method": 0,
+        "undocumented_class": 7,
+        "nb_duplicated_lines": 0,
+        "percent_duplicated_lines": 0.0,
+        "dependencies": {
+            "django.contrib.admin": [
+                "payments.admin",
+                "ticket.admin",
+                "authentication.admin"
+            ],
+            "django.contrib.auth.admin": [
+                "authentication.admin"
+            ],
+            "django.contrib.auth.models": [
+                "authentication.models",
+                "authentication.views",
+                "ticket.test_view",
+                "authentication.forms",
+                "ticket.test_model",
+                "authentication.admin"
+            ],
+            "organisations.models": [
+                "authentication.models",
+                "organisations.forms",
+                "organisations.views",
+                "authentication.admin"
+            ],
+            "authentication.models": [
+                "authentication.views",
+                "authentication.context_processors",
+                "ticket.test_view",
+                "payments.views",
+                "organisations.forms",
+                "ticket.test_model",
+                "ticket.models",
+                "payments.models",
+                "ticket.views",
+                "organisations.views",
+                "authentication.admin"
+            ],
+            "django.apps": [
+                "core.apps",
+                "payments.apps",
+                "authentication.apps",
+                "organisations.apps",
+                "ticket.apps"
+            ],
+            "django.forms": [
+                "payments.forms",
+                "organisations.forms",
+                "authentication.forms",
+                "ticket.forms"
+            ],
+            "django.contrib.auth.forms": [
+                "authentication.forms"
+            ],
+            "django.db.models": [
+                "authentication.models",
+                "payments.models",
+                "ticket.models",
+                "organisations.models"
+            ],
+            "django.urls": [
+                "ticket.urls",
+                "payments.urls",
+                "authentication.urls",
+                "organisations.urls",
+                "core.urls"
+            ],
+            "authentication.views": [
+                "authentication.urls"
+            ],
+            "sweetify": [
+                "authentication.views"
+            ],
+            "django.contrib.auth": [
+                "authentication.views"
+            ],
+            "django.contrib.messages": [
+                "authentication.views"
+            ],
+            "django.contrib.auth.decorators": [
+                "authentication.views",
+                "ticket.views"
+            ],
+            "django.shortcuts": [
+                "authentication.views",
+                "payments.views",
+                "core.views",
+                "ticket.views",
+                "organisations.views"
+            ],
+            "authentication.forms": [
+                "authentication.views"
+            ],
+            "core.views": [
+                "core.urls"
+            ],
+            "crispy_forms.helper": [
+                "organisations.forms",
+                "ticket.forms"
+            ],
+            "organisations.views": [
+                "organisations.urls"
+            ],
+            "organisations.forms": [
+                "organisations.views"
+            ],
+            "payments.models": [
+                "payments.forms",
+                "payments.views",
+                "payments.admin"
+            ],
+            "payments.views": [
+                "payments.urls"
+            ],
+            "stripe": [
+                "payments.views"
+            ],
+            "payments.forms": [
+                "payments.views"
+            ],
+            "ticket.models": [
+                "ticket.views",
+                "ticket.test_model",
+                "ticket.admin",
+                "ticket.forms"
+            ],
+            "crispy_forms.layout": [
+                "ticket.forms"
+            ],
+            "django.test": [
+                "ticket.test_view",
+                "ticket.test_model"
+            ],
+            "django.test.Client": [
+                "ticket.test_view"
+            ],
+            "ticket.views": [
+                "ticket.urls"
+            ],
+            "django.http": [
+                "ticket.views"
+            ],
+            "comments.models": [
+                "ticket.views"
+            ],
+            "ticket.forms": [
+                "ticket.views"
+            ]
+        },
+        "cycles": [],
+        "statement": 534,
+        "global_note": 9.9812734082397
+    }
+}
