@@ -38,6 +38,10 @@ class FilterForm(forms.Form):
 
 
 class AgentTicketForm(ModelForm):
+    '''
+    Define the fields that an agent can update
+    when editing a ticket
+    '''
     class Meta:
         model = Ticket
         fields = (['title', 'description', 'status',
@@ -45,12 +49,19 @@ class AgentTicketForm(ModelForm):
 
 
 class UserTicketForm(ModelForm):
+    '''
+    Define the fields that an end user can update
+    when editing a ticket
+    '''
     class Meta:
         model = Ticket
         fields = (['title', 'description'])
 
 
 class AddTicketForm(ModelForm):
+    '''
+    Define the fields present in the 'add ticket' form
+    '''
     class Meta:
         model = Ticket
         fields = (['title', 'description', 'priority'])

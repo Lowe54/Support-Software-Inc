@@ -166,6 +166,10 @@ def results(request):
 
 @login_required
 def ticket_detail(request, t_id):
+    '''
+    Get ticket information and comments
+    relating to a specific ID
+    '''
     ticket = Ticket.objects.get(id=t_id)
     user_profile = MyUser.objects.get(user_id=request.user.id)
     if user_profile.role == 'USR':
@@ -185,6 +189,9 @@ def ticket_detail(request, t_id):
 
 
 def ticket_assign(request, t_id=None):
+    '''
+    Assign a ticket to a specific agent
+    '''
     if request.method == 'POST':
         user = MyUser.objects.get(user_id=request.POST['assignee'])
         if user:
@@ -225,6 +232,9 @@ def edit_ticket(request, t_id=None):
 
 
 def save_ticket(request, t_id=None):
+    '''
+    Save a ticket to the database
+    '''
     if request.method == 'POST':
         user_profile = MyUser.objects.get(user_id=request.user.id)
         ticket = Ticket.objects.get(id=request.POST['t_id'])
@@ -242,9 +252,13 @@ def save_ticket(request, t_id=None):
                 'priority': ticket_data.get_priority_display(),
             }
             return JsonResponse(data)
+    return HttpResponse(status=400)
 
 
 def close_ticket(request, t_id=None):
+    '''
+    Close a ticket
+    '''
     if request.method == 'POST':
         ticket = Ticket.objects.get(id=request.POST['t_id'])
         if ticket:
@@ -265,6 +279,9 @@ def close_ticket(request, t_id=None):
 
 @login_required
 def add_ticket(request):
+    '''
+    Save the ticket from the 'add ticket' form
+    '''
     if request.method == 'POST':
         ticket_form = AddTicketForm(request.POST)
         if ticket_form.is_valid():

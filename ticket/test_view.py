@@ -1,3 +1,6 @@
+'''
+Test file for Ticket views
+'''
 from django.contrib.auth.models import User
 from django.test import Client, TestCase
 
@@ -31,5 +34,9 @@ class TestTicketViews(TestCase):
     #####################
 
     def test_get_dashboard_not_logged_in(self):
+        '''
+        Ensure that the return code for the dashboard
+        is 302 if the user is not signed in
+        '''
         page = self.client.get("/dashboard")
         self.assertEqual(page.status_code, 302)

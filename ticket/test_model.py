@@ -1,5 +1,5 @@
 '''
-Test suite for Ticket Module
+Test page for the Ticket Model
 '''
 from datetime import datetime
 
