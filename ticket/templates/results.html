@@ -11,13 +11,11 @@
     <div class="res_ResultWrapper">
         <div class="res_TicketResultWrapper row">
             <div class="res_Filters col-lg-4 col-sm-12">
-                <h3 data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a class="resultDropdownToggle" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                     Filter By <i class="fas fa-chevron-down"></i>
-                </h3>
+                </a>
                 <div class="collapse" id="collapseExample">
-                    <form method="GET" action="{% url 'results' %}">
-                        {% crispy filter_form filter_form.helper %}
-                    </form>
+                    {% crispy filter_form filter_form.helper %}   
                 </div>
             </div>
 

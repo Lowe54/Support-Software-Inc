@@ -1,4 +1,5 @@
 {% load static %}
+<!DOCTYPE html>
 <html lang=en>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,10 +16,12 @@
         <div class="container-fluid">
             <div id="top-navbar-wrapper" class="row">
                 <div id="header" class="col-lg-12">
-                   <ul class="nav" role="navigation">
+                   <ul class="nav" role="menu">
                        <li class="nav-item">
+                       <p class="sr-only">Open the side menu</p>
                            <a class="nav-link" id="toggle_sidebar" href="#" data-step="1" data-intro="Welcome, click here to open the menu" title="Click here to open the menu" >
-                                <span><p class="sr-only">Open the side menu</p></span>
+                                
+                                <span></span>
                                 <span></span>
                                 <span></span>
                                 <span></span>
@@ -27,46 +30,47 @@
                        <li class="brand navbar-brand">
                             Support Software Inc
                        </li>
-                    
-                    <ul class="nav ml-sm-auto">
-                       {% if request.user.is_authenticated %}
-                       <li class="nav-item dropdown auth-link d-none d-lg-flex">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-step="2" data-intro="Click here to access your profile">
-                                {% if user_profile.profile_picture %}
-                                    <span class="profile-img img-circle"><img src=""></span>
-                                    {{ user_profile }}
-                                {% else %}
-                                    <span class="fas fa-user-circle"></span>
-                                    {{ user_profile }}
+                        <li>
+                            <ul class="nav ml-sm-auto">
+                                {% if request.user.is_authenticated %}
+                                    <li class="nav-item dropdown auth-link d-none d-lg-flex">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-step="2" data-intro="Click here to access your profile">
+                                            {% if user_profile.profile_picture %}
+                                                <span class="profile-img img-circle"><img src=""></span>
+                                                {{ user_profile }}
+                                            {% else %}
+                                                <span class="fas fa-user-circle"></span>
+                                                {{ user_profile }}
+                                            {% endif %}
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
+                                        </div>
+                                    </li>
                                 {% endif %}
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
-                            </div>
+                                <li class="nav-item auth-link d-none d-lg-flex">
+                                    {% if not request.user.is_authenticated %}
+                                        <a class="nav-link" href="{% url 'login' %}" data-step="2" data-intro="If you already have an account set up, you can login here">
+                                            <span class="fas fa-user-alt"></span>
+                                            Login
+                                        </a>
+                                    {% else %}
+                                        <a class="nav-link" href="{% url 'logout' %}" data-step="3" data-intro="Click here to logout">
+                                            <span class="fas fa-door-open"></span>
+                                            Logout
+                                        </a>
+                                    {% endif %}
+                                </li>
+                                {% if not request.user.is_authenticated %}
+                                    <li class="nav-item auth-link d-none d-lg-flex">
+                                        <a class="nav-link" href="{% url 'register' %}" data-step="3" data-intro="If you want to register for an account, click here">
+                                            <span class="fas fa-sticky-note"></span>
+                                            Register
+                                        </a>
+                                    </li>
+                                {% endif %} 
+                            </ul>
                         </li>
-                       {% endif %}
-                        <li class="nav-item auth-link d-none d-lg-flex">
-                            {% if not request.user.is_authenticated %}
-                                <a class="nav-link" href="{% url 'login' %}" data-step="2" data-intro="If you already have an account set up, you can login here">
-                                    <span class="fas fa-user-alt"></span>
-                                    Login
-                                </a>
-                            {% else %}
-                                <a class="nav-link" href="{% url 'logout' %}" data-step="3" data-intro="Click here to logout">
-                                    <span class="fas fa-door-open"></span>
-                                    Logout
-                                </a>
-                            {% endif %}
-                        </li>
-                        {% if not request.user.is_authenticated %}
-                            <li class="nav-item auth-link d-none d-lg-flex">
-                                <a class="nav-link" href="{% url 'register' %}" data-step="3" data-intro="If you want to register for an account, click here">
-                                    <span class="fas fa-sticky-note"></span>
-                                    Register
-                                </a>
-                            </li>
-                        {% endif %} 
-                    </ul>
                 </ul>   
                 </div>
             </div>

@@ -110,6 +110,7 @@
 
 #header .brand {
   margin-left: auto;
+  margin-right: auto;
 }
 
 #header #toggle_sidebar {
@@ -350,4 +351,14 @@ span.introjs-helperNumberLayer {
   background-color: #1a535c;
   color: #fff;
   text-align: center;
+}
+
+.CommentSectionToggle {
+  font-size: 28px;
+  color: #000;
+}
+
+.CommentSectionToggle:hover {
+  color: #000;
+  text-decoration: none;
 }
