@@ -178,6 +178,18 @@ This branch contains functionality that would allow an admin to import a csv fil
 
 #### HTML
 
+| Page              | Template file                              | Result | Confirmation link (If PASS) | Notes                                        |
+|-------------------|--------------------------------------------|--------|-----------------------------|----------------------------------------------|
+| Home page         | core/templates/index.html                  | PASS   |                             |                                              |
+| Result            | ticket/templates/results.html              | FAIL   |                             | Fails due to how crispy forms renders labels |
+| Add Form          | ticket/templates/add_ticket.html           | PASS   |                             |                                              |
+| Dashboard         | ticket/templates/dashboard.html            | PASS   |                             |                                              |
+| Organisation List | organisations/templates/organisation_list  | PASS   |                             |                                              |
+| My Profile Page   | authentication/templates/profile_view.html | PASS   |                             |                                              |
+| Ticket            | ticket/templates/ticket.html               | PASS   |                             |                                              |
+| Login             | authentication/templates/login.html        | PASS   |                             |                                              |
+| Register          | authentication/templates/register.html     | PASS   |                             |                                              |
+
 #### Javascript
 
 All Javascript was tested via [JSHint](https://jshint.com/docs/), the results against each of the js files within the software can be found below
