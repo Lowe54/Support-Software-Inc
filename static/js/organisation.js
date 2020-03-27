@@ -68,19 +68,23 @@ function save_organisation() {
             $('#edit-modal').modal('hide');
             if (action === 'update'){
             $('a[data-id="'+org_id+'"]').parent().parent().find('.card-title').text(response);
-            Swal.fire(
-                "Success!",
-                "Organisation Updated",
-                "success"
-                );
+            Swal.fire({
+                'icon': 'success',
+                'toast': true,
+                'timer': 5000,
+                'position': 'top-right',
+                'text':'Organisation Updated',
+            });
             }
             else {
                 $('.cardset-wrapper').append(response);
-                Swal.fire(
-                    "Success!",
-                    "Organisation has been added",
-                    "success"
-                    );
+                Swal.fire({
+                    'icon': 'success',
+                    'toast': true,
+                    'timer': 5000,
+                    'position': 'top-right',
+                    'text':'Organisation added',
+                });
                 }
             }
         });
@@ -115,11 +119,13 @@ function assocate_user(){
         success: function(response){
             $('#unassociated-user-list-modal').modal('hide');
             $('#user-list-modal .modal-body').append(response);
-            Swal.fire(
-                'success',
-                'User\'s associated',
-                'success'
-            );
+            Swal.fire({
+                'icon': 'success',
+                'toast': true,
+                'timer': 5000,
+                'position': 'top-right',
+                'text':'User\'s associated',
+            });
         }
     });
 }
