@@ -32,7 +32,13 @@
 
     ul {
         &.sidebar-top-menu {
-            column-count: 2;
+            &.twoColumnLayout {
+                column-count: 2;
+
+                @media (min-width: $lg) {
+                    column-count: 1;
+                }
+            }
             padding-left: 0;
 
             @media (min-width: $lg) {
@@ -63,8 +69,11 @@
                 height: 36px;
             }
         }
-        @media (min-width: $lg) {
+        @media (min-width: $lg){
             column-count: 1;
+            font-size:20px;
+        }
+        @media (min-width: $xl) {
             font-size: 24px;
             a {
                 align-self: flex-start;

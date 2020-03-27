@@ -9,26 +9,26 @@
                 <li class="nav-item"><a  href="{% url 'show_organisation_list' %} "><i class="fas fa-building"></i><div>Organisations</div></a></li>
                 <li class="nav-item"><a  href="#"><i class="fas fa-users"></i><div>Users</div></a></li>
             {% endif %}
-            <li class="nav-item d-sm-flex d-md-none">
+            <li class="nav-item d-sm-flex d-lg-none">
                 <a href="{% url 'logout' %}">
                     <i class="fas fa-door-open"></i><div>Logout</div>
                 </a>
             </li>
-            <li class="nav-item d-sm-flex d-md-none">
+            <li class="nav-item d-sm-flex d-lg-none">
                 <a href="{% url 'profile' %}">
                     <i class="fas fa-user-circle"></i><div>My Profile</div>
                 </a>
             </li>  
             {% else %}
                 <li class="nav-item"><a href="{% url 'index' %}"><i class="fas fa-home"></i><div>Home</div></a></li>
-                <li class="nav-item d-sm-flex d-md-none">
+                <li class="nav-item d-sm-flex d-lg-none">
                     <a class="btn" href="{% url 'login' %}">
-                        <i class="fas fa-user-alt"> Login</i>
+                        <i class="fas fa-user-alt"></i><div>Login</div>
                     </a>
                 </li> 
-                <li class="nav-item d-sm-flex d-md-none">
+                <li class="nav-item d-sm-flex d-lg-none">
                     <a class="btn" href="{% url 'register' %}">
-                        <i class="fas fa-sticky-note"> Register</i>
+                        <i class="fas fa-sticky-note"></i><div>Register</div>
                     </a>
                 </li>   
             {% endif %}

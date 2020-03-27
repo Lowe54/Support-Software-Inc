@@ -63,6 +63,10 @@ $('#toggle_sidebar').on('click', function(){
     }
 });
 
+if ($('.sidebar-top-menu .nav-item').length > 4) {
+    $('.sidebar-top-menu').addClass('twoColumnLayout');
+}
+
 $('.purchase-toggle').on('click', function(e){
     e.preventDefault();
 
