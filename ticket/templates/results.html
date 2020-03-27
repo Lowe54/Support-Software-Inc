@@ -3,6 +3,7 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+{% block title %}{% if ticket_list|length > 0 %} {{ ticket_list|length }} results {% else %} No Results Found {% endif %} {% endblock %}
 {% block page_css %}
     <link rel="stylesheet" href="{% static 'css\results.css' %}" type="text/css"/>
 {% endblock %}
@@ -20,7 +21,19 @@
             </div>
 
             <div class="res_Results col-lg-8">
-                <h2>Found {{ticket_list|length}} {% if ticket_list|length > 1 %} ticket's {% else %} ticket {% endif %}</h2>
+                <h2>
+                    {% if ticket_list|length > 0 %}
+                        {{ticket_list|length}}
+                        {% if ticket_list|length > 1 %}
+                            Ticket's
+                        {% else %}
+                            Ticket
+                        {% endif %}
+                        Found
+                    {% else %}
+                        No Results Found
+                    {% endif %}
+                    </h2>
                 {% for t in ticket_list %}
                     {% include 'partials/_result_hit.html' %}
                 {% endfor %}
