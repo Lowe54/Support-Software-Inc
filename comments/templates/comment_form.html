@@ -15,8 +15,8 @@
         </div>
         <div class="modal-footer">
             <input type="hidden" id="id_related_ticket" name="t_id" value="{{ ticketid }}"/>
-            <button type="button" onclick="post_comment()" class="btn btn-primary">Post Comment</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" onclick="post_comment()" class="btn btn-secondary">Post Comment</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
       </form>
     </div>
@@ -24,5 +24,5 @@
 </div>
 
 {% block page_js %}
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 {% endblock %}

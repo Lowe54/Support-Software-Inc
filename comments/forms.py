@@ -1,3 +1,6 @@
+'''
+Comments module forms.py file
+'''
 from django import forms
 from django.forms import ModelForm
 
@@ -5,6 +8,9 @@ from .models import Comment
 
 
 class AgentCommentForm(ModelForm):
+    '''
+    Define the agent's version of the comment form
+    '''
 
     comment_content = forms.CharField(
         label="Content",
@@ -16,10 +22,11 @@ class AgentCommentForm(ModelForm):
         widget=forms.CheckboxInput(
             attrs={
                 'data-toggle': 'toggle',
-                'data-on': 'Yes',
-                'data-off': 'No',
+                'data-size': 'md',
                 'data-onstyle': 'success',
                 'data-offstyle': 'danger',
+                'data-on': 'Yes',
+                'data-off': 'No',
             }
         )
     )
@@ -30,12 +37,13 @@ class AgentCommentForm(ModelForm):
 
 
 class UserCommentForm(ModelForm):
-    
+    '''
+    Define the end user comment form
+    '''
     comment_content = forms.CharField(
         label="Content",
         widget=forms.Textarea()
     )
-    
     class Meta:
         model = Comment
         fields = ['comment_content']

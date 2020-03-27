@@ -119,6 +119,36 @@
   }
 }
 
+.modal-header,
+.modal-footer {
+  color: #fff;
+  background: #1a535c;
+}
+
+.btn-secondary {
+  background-color: #4ecdc4;
+  color: #000;
+  border: 3px outset #9ee3df;
+}
+
+.btn-secondary:hover {
+  background-color: #4ecdc4;
+  color: #000;
+  border: 3px inset #9ee3df;
+}
+
+.btn-remove {
+  background-color: #ff6b6b;
+  color: #000;
+  border: 3px outset #ff0505;
+}
+
+.btn-remove:hover {
+  background-color: #ff6b6b;
+  color: #000;
+  border: 3px inset #ff0505;
+}
+
 #header {
   background-color: #1a535c;
   color: #fff;
