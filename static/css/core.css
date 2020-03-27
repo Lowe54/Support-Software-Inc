@@ -354,7 +354,7 @@ span.introjs-helperNumberLayer {
   width: 100%;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .img-split-left {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -384,7 +384,7 @@ span.introjs-helperNumberLayer {
   width: 100%;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .img-split-right {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -407,4 +407,8 @@ span.introjs-helperNumberLayer {
 .CommentSectionToggle:hover {
   color: #000;
   text-decoration: none;
+}
+
+.hasBottomBorder {
+  border-bottom: 1px solid #808080;
 }

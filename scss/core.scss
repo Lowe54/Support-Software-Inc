@@ -204,7 +204,7 @@
         width:100%;
     }
 
-    @media(max-width: $sm) {
+    @media(max-width: $md) {
         flex-direction: column;
     }
 }
@@ -225,7 +225,7 @@
           width:100%;
       }
 
-      @media(max-width: $sm) {
+      @media(max-width: $md) {
           flex-direction: column;
       }
   }
@@ -243,4 +243,8 @@
         color:#000;
         text-decoration: none;
     }
+}
+
+.hasBottomBorder {
+  border-bottom: 1px solid #808080;
 }

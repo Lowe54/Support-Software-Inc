@@ -4,20 +4,19 @@
 {% block content %}
     <div class="jumbotron">
         <h1 class="display-4">Welcome to the next generation of service desk software</h1>
-        <p class="lead">Support Software Inc is leading the charge</p>
-        <hr class="my-4">
+        <p class="lead hasBottomBorder">Support Software Inc is leading the charge</p>
         <p>Fed up of having a separate, functionless mobile app for your support teams?</p>
         <p>Customers complaining about no easy communication trail?</p>
         <p class="strong">We have the answer</p> 
     </div>
-    <div class="img-split-left">
+
+    <div class="img-split-left row">
         <div class="img-splitLeft_Wrapper col-lg-6 col-sm-12">
-            <img class="img-responsive" src="{% static 'images/multi-device-preview.png' %}" alt="Multi Device Preview"/>
+            <img class="img-fluid" src="{% static 'images/multi-device-preview.png' %}" alt="Multi Device Preview"/>
         </div>
-        <div class="content col-lg-6 col-md-4 col-sm-12">
+        <div class="content col-lg-6 col-sm-12">
             <h2>Accessible on any device</h2>
-            <p class="lead">Any device, any time</p>
-            <hr class="my-4">
+            <p class="lead hasBottomBorder">Any device, any time</p>
             <p>Notify on the go :</p>
             <ul>
                 <li><i class="fas fa-chevron-right">&nbsp;</i>Raise Requests</li>
@@ -27,14 +26,13 @@
         </div>
     </div>
 
-    <div class="img-split-right">
+    <div class="img-split-right row">
         <div class="img-splitRight_Wrapper col-lg-6 col-sm-12">
-            <img class="img-responsive" src="{% static 'images/organisation-preview.png' %}" alt="Organisation Preview"/>
+            <img class="img-fluid" src="{% static 'images/organisation-preview.png' %}" alt="Organisation Preview"/>
         </div>
-        <div class="content col-lg-6 col-md-4 col-sm-12">
+        <div class="content col-lg-6 col-sm-12">
             <h2>No Organisations? No problem</h2>
-            <p class="lead">Group your customers</p>
-            <hr class="my-4">
+            <p class="lead hasBottomBorder">Group your customers</p>
             <p>Fed up of just having a list of customers with no way of telling who works where?</p>
 
             <p>Worry no longer</p>
@@ -48,9 +46,9 @@
 
     <div class="jumbotron cta">
         <h1 class="display-4">The future is here</h1>
-        <p class="lead">Purchase Now for £30, lifetime license</p>
-        <hr class="my-4">
-        <button class="btn btn-success btn-sub has-tooltip purchase-toggle" data-placement="left" title="Purchase" data-step="5" data-intro="Click on this button to purchase the software"><i class="fas fa-pound-sign"> PURCHASE NOW</i></button> 
+        <p class="lead hasBottomBorder">Purchase Now for £30, lifetime license</p>
+       
+        <button class="btn btn-success btn-sub has-tooltip purchase-toggle" data-placement="left" title="Purchase" data-step="5" data-intro="Click on this button to purchase the software"><i class="fas fa-pound-sign"></i> PURCHASE NOW</button> 
     </div>
 
 {% endblock %}

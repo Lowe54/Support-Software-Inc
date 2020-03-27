@@ -63,7 +63,7 @@ var style = {
                     Swal.fire({
                         icon: 'success',
                         title: 'Payment completed',
-                        html: '<h2>Thank you for purchasing</h2><hr/><p>You can use the link below to download the sofware</p><a class="btn btn-success" href="https://github.com/Lowe54/Support-Software-Inc/archive/master.zip">DOWNLOAD</a>',
+                        html: '<h2 class="hasBottomBorder">Thank you for purchasing</h2><p>You can use the link below to download the sofware</p><a class="btn btn-success" href="https://github.com/Lowe54/Support-Software-Inc/archive/master.zip">DOWNLOAD</a>',
                     });
                 }
             });
