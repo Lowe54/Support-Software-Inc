@@ -41,6 +41,7 @@ Welcome to the next generation in service desk software,
     - [IMPORTANT NOTICE](#important-notice)
     - [Local Deployment](#local-deployment)
     - [Heroku Deployment](#heroku-deployment)
+    - [Stripe Deployment](#stripe-deployment)
     - [Setting up Amazon Web Services (AWS)](#setting-up-amazon-web-services-aws)
   - [Testing](#testing)
     - [Credits](#credits)
@@ -254,6 +255,27 @@ You need to add the following variables
 | STRIPE_SECRET         | Stripe's Secret Key                                                                        | Supplied by Stripe | See Stripe Deployment                                                            |
 
 <!-- markdown-enable-->
+
+### Stripe Deployment
+
+**Notice: Only test keys are used in this software, if you wish to use live keys,
+you will need to activate your Stripe account, and use the live keys in place
+of the test ones**
+
+[StripeKeys]: documentationImages/stripe/keys.png
+
+If you already have a Stripe account, please sign in [here](https://dashboard.stripe.com/login), then go to step 3
+
+1) Go to https://dashboard.stripe.com/register
+2) Fill out the register form
+3) Once on the dashboard, click on the tab marked 'Your Test Keys'
+
+![StripeKeys]
+
+<!-- markdownlint-disable MD029 -->
+4) Copy the Publishable key to the variable on line 2 in [stripe.js](static/js/stripe.js)
+5) Click on the 'eye' icon next to the secret key, then copy the resulting key to the 'STRIPE_SECRET' in your environment variables in Heroku
+
 ### Setting up Amazon Web Services (AWS)
 
 ## Testing
