@@ -149,6 +149,7 @@ The following are lists of features that remain to be implemented, along with a 
 - [Popper JS](https://popper.js.org/)
   - Popper JS is used to position tooltips
 - [Bootstrap](https://getbootstrap.com/)
+  - Bootstrap is used for general grid layout + layout utilities
 - [SASS](http://sass-lang.com/)
   - **SASS** was used to add extra functionality to CSS, it allows for nested statements to be used, which in turn made the files easier to read.
 
