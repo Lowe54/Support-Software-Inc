@@ -37,6 +37,11 @@ Welcome to the next generation in service desk software,
     - [~~Organisation-module~~](#sorganisation-modules)
     - [Feature/Emails](#featureemails)
     - [Feature/user-import](#featureuser-import)
+  - [Deployment](#deployment)
+    - [IMPORTANT NOTICE](#important-notice)
+    - [Local Deployment](#local-deployment)
+    - [Heroku Deployment](#heroku-deployment)
+    - [Setting up Amazon Web Services (AWS)](#setting-up-amazon-web-services-aws)
   - [Testing](#testing)
     - [Credits](#credits)
 
@@ -179,6 +184,77 @@ This branch contains future email functionality.
 ### Feature/user-import
 
 This branch contains functionality that would allow an admin to import a csv file of users into the system.
+
+## Deployment
+
+### IMPORTANT NOTICE
+
+These deployment steps are intented for a windows operating system, if your OS is different, please lookup the instructions for your OS
+
+### Local Deployment
+
+### Heroku Deployment
+
+[AppOverview]: documentationImages/heroku/app_overview.png
+[AppCreate]: documentationImages/heroku/app_create.png
+[AppAutoDeploy]: documentationImages/heroku/app_automatic_deploy.png
+[AppManualDeploy]: documentationImages/heroku/app-manual-deployment.png
+[AppSettingsLink]: documentationImages/heroku/app_Settings_link.png
+[AppConfigVars]: documentationImages/heroku/app_config_var_button.png
+
+1) If you already have an heroku account, please go to step 4 after signing in
+2) Go to [https://signup.heroku.com/](https://signup.heroku.com/)
+3) Fill out the registration form
+4) Once on the app overview (See below), click on 'New -> Create new app'
+![AppOverview]
+
+5) Enter an app-name and choose the region, then click on 'Create App'
+
+![AppCreate]
+<!-- markdownlint-disable MD029 -->
+6) Now choose the deployment method, there are 3 options
+<!-- markdownlint-enable-->
+  a) Heroku CLI (Command Line Interface)
+
+  b) GitHub Deployment
+
+  c) Container Registry (Docker)
+
+For option 'a', follow the instructions given, for 'b', you will be asked to
+link to a github account and for 'c', again follow the instructions given.
+
+For this project, I went with the github deployment for simplicity, as it only
+meant one push per deployment.
+
+Once linked, You can enable automatic deploys based off a branch
+![AppAutoDeploy]
+Or perform a manual deployment
+![AppManualDeploy]
+
+In order for the app to run however, certain environment variables need to be set.
+
+From the application overview page, click on 'Settings'
+
+![AppSettingsLink]
+
+Then click on 'Reveal Config Vars'
+
+![AppConfigVars]
+
+You need to add the following variables
+<!--markdownlint-disable MD013 MD034 -->
+| Config var name       | Purpose                                                                                    | Available Options  | Notes                                                                            |
+|-----------------------|--------------------------------------------------------------------------------------------|--------------------|----------------------------------------------------------------------------------|
+| AWS                   | If set to 1, will use AWS to serve styling and javascript                                  | 1 = Yes, 0 = No    |                                                                                  |
+| AWS_ACCESS_KEY_ID     | Amazon Web Services Access Key                                                             | Supplied by AWS    | See AWS Deployment                                                               |
+| AWS_SECRET_ACCESS_KEY | Amazon Web Services Secret Access Key                                                      | Supplied by AWS    | See AWS Deployment                                                               |
+| DATABASE_URL          | Postgres DB URL, Auto populated once postgres is added to the Heroku App (See steps below) | Auto-Populated     | You can populate with your own database URL if it's hosted seperately.           |
+| DEV                   | Development mode                                                                           | 1 = Yes, 0 = No    | DO NOT ENABLE IN PRODUCTION                                                      |
+| SECRET_KEY            | Django Secret Key                                                                          |                    | https://miniwebtool.com/django-secret-key-generator/ recommended to generate one |
+| STRIPE_SECRET         | Stripe's Secret Key                                                                        | Supplied by Stripe | See Stripe Deployment                                                            |
+
+<!-- markdown-enable-->
+### Setting up Amazon Web Services (AWS)
 
 ## Testing
 
