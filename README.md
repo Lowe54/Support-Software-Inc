@@ -30,22 +30,11 @@ Welcome to the next generation in service desk software,
   - [Technologies Used](#technologies-used)
   - [Github Branches](#github-branches)
     - [Master](#master)
-    - [3.1-testing](#31-testing)
-    - [Organisation-module](#organisation-module)
+    - [~~3.1-testing~~](#s31-testings)
+    - [~~Organisation-module~~](#sorganisation-modules)
     - [Feature/Emails](#featureemails)
     - [Feature/user-import](#featureuser-import)
   - [Testing](#testing)
-    - [Code Testing](#code-testing)
-      - [HTML](#html)
-      - [Javascript](#javascript)
-        - [Core.js](#corejs)
-        - [Profile.js](#profilejs)
-        - [Organisation.js](#organisationjs)
-        - [Stripe.js](#stripejs)
-        - [Ticket.js](#ticketjs)
-      - [Python](#python)
-    - [Automated Testing](#automated-testing)
-      - [Continuous Integration](#continuous-integration)
     - [Credits](#credits)
 
 ## UX/UI Design
@@ -139,9 +128,9 @@ The following are lists of features that remain to be implemented, along with a 
 
 ## Technologies Used
 
-- [HTML5](https://www.w3.org/standards/webdesign/htmlcss)
+- [HTML](https://www.w3.org/standards/webdesign/htmlcss)
   - **HTML5** is the basic building language of all websites, it allows for structure
-- [CSS3](https://www.w3.org/standards/webdesign/htmlcss#whatcss)
+- [CSS](https://www.w3.org/standards/webdesign/htmlcss#whatcss)
   - **CSS 3** is used to describe web pages, via color, font and other styling. In the project it is used for styling the elements on the page.
 - [JQuery](https://jquery.com)
   - The project uses **JQuery** to simplify DOM manipulation.
@@ -156,13 +145,13 @@ The following are lists of features that remain to be implemented, along with a 
 
 This branch contains the live version of the site.
 
-### 3.1-testing
+### ~~3.1-testing~~
 
-This Branch was created to test a minor Django version upgrade
+This Branch was created to test a minor Django version upgrade, it has been merged into the master branch
 
-### Organisation-module
+### ~~Organisation-module~~
 
-This branch was created to test splitting the 'Organisation' Table into it's own module, which means that it would be seperate and able to have its own set of URL's, instead of sharing the Authentication ones.
+This branch was created to test splitting the 'Organisation' Table into it's own module, which means that it would be seperate and able to have its own set of URL's, instead of sharing the Authentication ones. This branch has been merged into the master branch
 
 ### Feature/Emails
 
@@ -174,76 +163,7 @@ This branch contains functionality that would allow an admin to import a csv fil
 
 ## Testing
 
-### Code Testing
-
-#### HTML
-
-| Page              | Template file                              | Result | Confirmation link (If PASS) | Notes                                        |
-|-------------------|--------------------------------------------|--------|-----------------------------|----------------------------------------------|
-| Home page         | core/templates/index.html                  | PASS   |                             |                                              |
-| Result            | ticket/templates/results.html              | FAIL   |                             | Fails due to how crispy forms renders labels |
-| Add Form          | ticket/templates/add_ticket.html           | PASS   |                             |                                              |
-| Dashboard         | ticket/templates/dashboard.html            | PASS   |                             |                                              |
-| Organisation List | organisations/templates/organisation_list  | PASS   |                             |                                              |
-| My Profile Page   | authentication/templates/profile_view.html | PASS   |                             |                                              |
-| Ticket            | ticket/templates/ticket.html               | PASS   |                             |                                              |
-| Login             | authentication/templates/login.html        | PASS   |                             |                                              |
-| Register          | authentication/templates/register.html     | PASS   |                             |                                              |
-
-#### Javascript
-
-All Javascript was tested via [JSHint](https://jshint.com/docs/), the results against each of the js files within the software can be found below
-
-##### Core.js
-
-![Core JS Result](/documentation_images/corejs_result.png)
-
-Undefined Variables Listed
-
-- Swal
-  - This is a Sweetalert 2 alert initialisation
-
-- introJS
-  - This is used by IntroJS, which is the guided tooltips that are activated via the 'help' button
-  
-- stripe_init
-  - This is one of the functions defined in stripe.js
-
-##### Profile.js
-
-![Core JS Result](/documentation_images/corejs_result.png)
-
-##### Organisation.js
-
-![Organisation JS Result](/documentation_images/organisationjs_result.png)
-
-##### Stripe.js
-
-![Stripe JS Result](/documentation_images/stripejs_result.png)
-
-##### Ticket.js
-
-![Ticket JS Result](/documentation_images/ticketjs_result.png)
-
-#### Python
-
-[Pylint](https://www.pylint.org/) was used in order to check the conformity of the code to PEP8 standard, as part of this the code report for the site is available [here](pylint.html).
-
-This report is generated via the following commands once the software has been installed
-
-`pylint --output-format=jsonextended authentication core organisations payments ticket > pylint.json`
-
-`pylint-json2html -f jsonextended -o pylint.html pylint.json`
-
-The final report can be found [here](pylint.html)
-
-The reason for the sole error is that the function controls the result filters.
-
-### Automated Testing
-
-#### Continuous Integration
-
-This project has a CI implementation with [Travis CI](https://travis-ci.com/), the only enforcement is for the import order, which is determined via the `.travis.yml` file. This is enforced via the `isort --check-only --diff --skip-glob=*/migrations/*` command.
+For all testing ran on this site, please refer to [TESTING.md](TESTING.md)
 
 ### Credits
 
