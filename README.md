@@ -44,7 +44,7 @@ Welcome to the next generation in service desk software,
     - [Stripe Deployment](#stripe-deployment)
     - [Setting up Amazon Web Services (AWS)](#setting-up-amazon-web-services-aws)
   - [Testing](#testing)
-    - [Credits](#credits)
+  - [Credits](#credits)
 
 ## UX/UI Design
 
@@ -282,7 +282,7 @@ If you already have a Stripe account, please sign in [here](https://dashboard.st
 
 For all testing ran on this site, please refer to [TESTING.md](TESTING.md)
 
-### Credits
+## Credits
 
 [Jesse Couch](https://codepen.io/designcouch/pen/Atyop) for the burger bar animation.
 
