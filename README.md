@@ -56,13 +56,13 @@ The initial designs for this software can be found in the [Wireframes Folder](/w
 
 | User story # | What am I looking for?                                                                                                             |
 |--------------|------------------------------------------------------------------------------------------------------------------------------------|
-| 1            | I am an end user who wants to be able to see all updates to a request                                                              |
-| 2            | I am an employee who wants to be able to respond to requests without constantly being redirected to a seperate page                |
-| 3            | I am an employee who wants to be able to search for a particular request, without having to go through each and every one          |
-| 4            | I am an end user who wants to see all of my open requests, without having to select multiple filters                               |
-| 5            | I am an end user who wants to be able to fix errors in my name or email, without having to contact the support company             |
-| 6            | I am an end user who wants to be able to see all requests that need my reply, without having to filter all my requests             |
-| 7            | I am an employee who wants to be able to associate multiple users to an organisation, without having to select each user each time |
+| 1            | As a end user I want to be able to see all updates to a request                                                              |
+| 2            | As an employee user I want to be able to respond to requests without constantly being redirected to a seperate page                |
+| 3            | As an employee user I want to bee able to search for a particular request, without having to go through each and every one          |
+| 4            | As a end user I want to see all of my open requests, without having to select multiple filters                               |
+| 5            | As a end user I want to be able to fix errors in my name or email, without having to contact the support company             |
+| 6            | As a end user I want to be able to see all requests that need my reply, without having to filter all my requests             |
+| 7            | As an employee user I want to be able to associate multiple users to an organisation, without having to select each user each time |
 
 ## Database Design
 
