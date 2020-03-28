@@ -27,7 +27,10 @@ Welcome to the next generation in service desk software,
   - [Features](#features)
     - [Existing Features](#existing-features)
     - [Features Left to Implement](#features-left-to-implement)
-  - [Technologies Used](#technologies-used)
+  - [Technology, Frameworks and Tools Used](#technology-frameworks-and-tools-used)
+    - [Languages](#languages)
+    - [Frameworks and Libaries](#frameworks-and-libaries)
+    - [Tools](#tools)
   - [Github Branches](#github-branches)
     - [Master](#master)
     - [~~3.1-testing~~](#s31-testings)
@@ -126,18 +129,33 @@ The following are lists of features that remain to be implemented, along with a 
     - The ability for organisation admins to manage their organisation users
     - Import and Export of Users (Import functionality limited to administrators only)
 
-## Technologies Used
+## Technology, Frameworks and Tools Used
+
+### Languages
 
 - [HTML](https://www.w3.org/standards/webdesign/htmlcss)
-  - **HTML5** is the basic building language of all websites, it allows for structure
 - [CSS](https://www.w3.org/standards/webdesign/htmlcss#whatcss)
-  - **CSS 3** is used to describe web pages, via color, font and other styling. In the project it is used for styling the elements on the page.
+- [Python](https://www.python.org/)
+- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+### Frameworks and Libaries
+
 - [JQuery](https://jquery.com)
   - The project uses **JQuery** to simplify DOM manipulation.
+- [Django](https://www.djangoproject.com/)
+  - Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
 - [FontAwesome](https://fontawesome.com/)
   - The project uses the free version of **FontAwesome** in order to add extra icons to the site
+- [Popper JS](https://popper.js.org/)
+  - Popper JS is used to position tooltips
+- [Bootstrap](https://getbootstrap.com/)
 - [SASS](http://sass-lang.com/)
   - **SASS** was used to add extra functionality to CSS, it allows for nested statements to be used, which in turn made the files easier to read.
+
+### Tools
+
+- [DB Diagram](https://dbdiagram.io/home)
+  - DB Diagram is a free tool that was used to design the database
 
 ## Github Branches
 
