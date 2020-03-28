@@ -43,7 +43,6 @@ var style = {
       } else {
         // The payment has been processed!
         if (result.paymentIntent.status === 'succeeded') {
-            console.info(result.paymentIntent);
             $.ajax({
                 url: '/payment/orderconfirmed/',
                 type: "POST",
