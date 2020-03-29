@@ -39,6 +39,8 @@ Welcome to the next generation in service desk software,
     - [Feature/user-import](#featureuser-import)
   - [Deployment](#deployment)
     - [IMPORTANT NOTICE](#important-notice)
+    - [Github Repository](#github-repository)
+      - [Github Cloning](#github-cloning)
     - [Local Deployment](#local-deployment)
     - [Heroku Deployment](#heroku-deployment)
     - [Stripe Deployment](#stripe-deployment)
@@ -192,7 +194,34 @@ This branch contains functionality that would allow an admin to import a csv fil
 
 These deployment steps are intented for a windows operating system, if your OS is different, please lookup the instructions for your OS
 
+### Github Repository
+
+- In a terminal, the git repository was initiated via the `git init` command
+  e repository was linked to a .git file on github via
+  - `git remote add origin https://github.com/Lowe54/supportsoftwareinc.git`
+  - `git push -u origin master`
+
+- After each change, the following commands were used to push the changes to the git repository
+  - `git add *` - This adds all changed files to staging
+  - `git commit -m "MESSAGE HERE"` - Commits the work with a brief message as to what has changed
+  - `git push` - This pushes the work to the git repository, after entering your github username and password
+
+#### Github Cloning
+
+- In order to clone the github repository, type the following command in a terminal
+  - `git clone https://github.com/Lowe54/Support-Software-Inc`
+- If you wish to change the default directory to where the project is checked out to, use the following command
+  - `git clone https://github.com/Lowe54/Support-Software-Inc *FolderName*`
+
 ### Local Deployment
+
+1) Clone the repository using the commands in the Github Cloning section above
+2) This project in windows runs on a virtual environment, in order to create one, use the following command
+  `python3 -m venv .venv`
+3)Once the virtual environment has been created, active the virtual environment with `source *path-to-virtual-environment*Scripts/activate`
+4)Run `pip install -r requirements.txt`
+
+Follow the steps for Heroku, Stripe and Amazon Web Services Deployment
 
 ### Heroku Deployment
 
@@ -333,7 +362,7 @@ If you already have a Stripe account, please sign in [here](https://dashboard.st
   **Please make a note of the ARN Number, as you will need this later**
 
   ![AWSBucketPolicyDetail]
-  
+
 12) Go to the Cors Config, and paste the content from [CORS Config](documentationImages/aws/CorsConfig.txt)
 
 13) Navigate to the AWS dashboard, and search for IAM (Identity and Access Management)
