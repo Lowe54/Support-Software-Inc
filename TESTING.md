@@ -60,22 +60,23 @@
 ## Code Validation
 
 ### HTML
-
-| Page              | Template file                              | Result | Confirmation link (If PASS) | Notes                                        |
-|-------------------|--------------------------------------------|--------|-----------------------------|----------------------------------------------|
-| Home page         | core/templates/index.html                  | PASS   |                             |                                              |
-| Result            | ticket/templates/results.html              | FAIL   |                             | Fails due to how crispy forms renders labels |
-| Add Form          | ticket/templates/add_ticket.html           | PASS   |                             |                                              |
-| Dashboard         | ticket/templates/dashboard.html            | PASS   |                             |                                              |
-| Organisation List | organisations/templates/organisation_list  | PASS   |                             |                                              |
-| My Profile Page   | authentication/templates/profile_view.html | PASS   |                             |                                              |
-| Ticket            | ticket/templates/ticket.html               | PASS   |                             |                                              |
-| Login             | authentication/templates/login.html        | PASS   |                             |                                              |
-| Register          | authentication/templates/register.html     | PASS   |                             |                                              |
-
+<!-- markdownlint-disable MD034-->
+| Page              | Template file                              | Result | Confirmation link / How it was validated                                                                                            | Notes                                                                              |
+|-------------------|--------------------------------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+| Home page         | core/templates/index.html                  | PASS   | https://validator.w3.org/nu/?doc=https%3A%2F%2Fsupportsoftwareinc.herokuapp.com%2F                                                  |                                                                                    |
+| Result            | ticket/templates/results.html              | FAIL   | Manually entered page source of https://supportsoftwareinc.herokuapp.com/results into validator                                     | Fails because Crispy Forms is adding blank `<div id="" class="">`  around the labels |
+| Add Form          | ticket/templates/add_ticket.html           | PASS   | Manually entered page source of https://supportsoftwareinc.herokuapp.com/ticket/add/ into validator                                 | Link not provided as the validator cannot check pages that require a login         |
+| Dashboard         | ticket/templates/dashboard.html            | PASS   | Manually entered page source of https://supportsoftwareinc.herokuapp.com/dashboard into validator                                   | Link not provided as the validator cannot check pages that require a login         |
+| Organisation List | organisations/templates/organisation_list  | PASS   | Manually entered page source of https://supportsoftwareinc.herokuapp.com/organisations/list into validator                          | Link not provided as the validator cannot check pages that require a login         |
+| My Profile Page   | authentication/templates/profile_view.html | PASS   | Manually entered page source of https://supportsoftwareinc.herokuapp.com/auth/profile into validator                                | Link not provided as the validator cannot check pages that require a login         |
+| Ticket            | ticket/templates/ticket.html               | PASS   | Manually entered page source of https://supportsoftwareinc.herokuapp.com/ticket/86ba6d9c-c748-4398-9f24-5fba4c1a2de8 into validator | Link not provided as the validator cannot check pages that require a login         |
+| Login             | authentication/templates/login.html        | PASS   | https://validator.w3.org/nu/?doc=https%3A%2F%2Fsupportsoftwareinc.herokuapp.com%2Fauth%2Flogin                                      |                                                                                    |
+| Register          | authentication/templates/register.html     | PASS   | https://validator.w3.org/nu/?doc=https%3A%2F%2Fsupportsoftwareinc.herokuapp.com%2Fauth%2Fregister                                   |                                                                                    |                                                                   |
+<!-- markdownlint-enable-->
 ### Javascript
 
-All Javascript was tested via [JSHint](https://jshint.com/docs/), the results against each of the js files within the software can be found below
+All Javascript was tested via [JSHint](https://jshint.com/docs/), the results
+against each of the js files within the software can be found below
 
 #### Core.js
 
