@@ -5,7 +5,9 @@
 
 ## Introduction
 
-Welcome to the next generation in service desk software,
+Welcome to the next generation in service desk software, Support software Inc aims to be the go-to for your next
+service desk software. Your agents can respond to requests without navigating off the page, while having an easy to follow comment trail
+for your customers who want to see the latest on their request.
 
 ## Table of Contents
 
@@ -80,7 +82,6 @@ The initial designs for this software can be found in the [Wireframes Folder](/w
 | 4              | Ticket file table linked to table (Not implemented at this time (See Features left to implement) |
 | 5              | Ticket comment table added and linked to ticket and user tables                                  |
 | 6              | Payments table added                                                                             |
-
 
 Version 1
 ![User Model v1](/wireframes/database_design_v1.png)
@@ -177,6 +178,8 @@ The following are lists of features that remain to be implemented, along with a 
   - Bootstrap is used for general grid layout + layout utilities
 - [SASS](http://sass-lang.com/)
   - **SASS** was used to add extra functionality to CSS, it allows for nested statements to be used, which in turn made the files easier to read.
+- [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)
+  - Crispy forms was used to help manage the forms within the software
 
 ### Tools
 
