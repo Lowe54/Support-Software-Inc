@@ -2,12 +2,12 @@
 @import "breakpoints";
 @import "mixins";
 
-.agn-ContentHeader h1{
+.ContentHeader h1{
     background-color: $secondary;
     padding-bottom: 1vh;
     margin: 0;
 }
-.agn-TicketStat-Wrapper{
+.TicketStatWrapper{
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
@@ -17,7 +17,7 @@
         flex-direction: column;
     }
 }
-.agn_TicketStat--Item{
+.TicketStatItem{
     color: $--Color_SugarCane;
     background-color: $primary;
     padding: 30px;

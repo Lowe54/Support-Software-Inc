@@ -9,18 +9,18 @@
 {% block content %}
 {% if user.role == 'AGN'%}
     <div class="agn-Dashboard">
-        <div class="agn-TicketStat-Wrapper">
-            <div class="agn_Ticketstat--Item">
+        <div class="TicketStatWrapper">
+            <div class="TicketStatItem">
                 <h2>Unassigned Tickets | {{ unassigned }}</h2>
                 <a class="btn btn-secondary" href="{% url 'results' %}?assigned_to=-1">View Unassigned</a>
             </div>
     
-            <div class="agn_Ticketstat--Item">
+            <div class="TicketStatItem">
                 <h2>Assigned to You | {{ assigned }}</h2>
                 <a class="btn btn-secondary" href="{% url 'results' %}?assigned_to={{request.user.id}}">View Assigned</a>
             </div>
                 
-            <div class="agn_Ticketstat--Item">
+            <div class="TicketStatItem">
                 <h2>Total Open Tickets | {{ open_tickets }}</h2>
                 <a class="btn btn-secondary" href="{% url 'results' %}?statusexclude=CLS">View All Open Tickets</a>
             </div>
@@ -28,13 +28,13 @@
     </div>
 {% else %}
     <div class="agn-Dashboard">
-        <div class="agn-TicketStat-Wrapper">
-            <div class="agn_Ticketstat--Item">
+        <div class="TicketStatWrapper">
+            <div class="TicketStatItem">
                 <h2>My Open Requests | {{ open_tickets }}</h2>
                 <a class="btn btn-secondary" href="{% url 'results' %}?raised_by={{request.user.id}}&amp;status=OPN">View my Open requests</a>
             </div>
     
-            <div class="agn_Ticketstat--Item">
+            <div class="TicketStatItem">
                 <h2>Requests requiring feedback | {{ tickets_feedback }}</h2>
                 <a class="btn btn-secondary" href="{% url 'results' %}?raised_by={{request.user.id}}&amp;status=PEN">View my requests needing a reply</a>
             </div>
