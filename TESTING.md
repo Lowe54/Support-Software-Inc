@@ -3,6 +3,7 @@
 - [Testing File](#testing-file)
   - [Manual Testing](#manual-testing)
   - [Known Bugs](#known-bugs)
+  - [User story testing](#user-story-testing)
   - [Code Validation](#code-validation)
     - [HTML](#html)
     - [Javascript](#javascript)
@@ -56,6 +57,18 @@
 ## Known Bugs
 
 1) After closing a ticket, until the page is refreshed comments can still be added
+
+## User story testing
+
+| User story number | How it was achieved                                                                                                                      |
+|-------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| 1                 | Once signed in, Click into the request, all updates are present at the bottom                                                            |
+| 2                 | Once signed in and within a request, click on the bottom menu, add a comment, this is then added to the request without being redirected |
+| 3                 | There is a search form on the results page that allows for this filtering                                                                |
+| 4                 | Once signed in, Open the side menu, and click on 'all my open requests'                                                                  |
+| 5                 | Once signed in, click on your username and go to 'My Profile' -> Edit button on the right                                                |
+| 6                 | Once signed in, open the side menu and click on 'View my Pending request'                                                                |
+| 7                 | Once signed in, in the associate user form, you can select multiple users to associate to an organisation                                |
 
 ## Code Validation
 
