@@ -76,7 +76,12 @@ This report is generated via the following commands once the software has been i
 
 The final report can be found [here](pylint.html)
 
-The reason for the sole error is that the function controls the result filters.
+Two refactor codes have been suppressed, the codes and the reasons for suppression are listed in the below table
+
+| Code                  | Reason for suppression                          |
+|-----------------------|-------------------------------------------------|
+| too-many-branches     | Function contains the filter functionality      |
+| simplify-if-statement | See Known Bugs / Issues in main Readme.md File  |
 
 ## Automated Testing
 
