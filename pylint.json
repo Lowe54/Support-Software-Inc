@@ -1,5 +1,17 @@
 {
-    "messages": [],
+    "messages": [
+        {
+            "type": "refactor",
+            "module": "comments.views",
+            "obj": "comment",
+            "line": 41,
+            "column": 8,
+            "path": "comments\\views.py",
+            "symbol": "simplifiable-if-statement",
+            "message": "The if statement can be replaced with 'var = bool(test)'",
+            "message-id": "R1703"
+        }
+    ],
     "stats": {
         "by_module": {
             "authentication": {
@@ -12,7 +24,7 @@
                 "fatal": 0
             },
             "authentication.admin": {
-                "statement": 12,
+                "statement": 10,
                 "info": 0,
                 "convention": 0,
                 "refactor": 0,
@@ -146,6 +158,78 @@
                 "error": 0,
                 "fatal": 0
             },
+            "comments": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "comments.admin": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "comments.apps": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "comments.forms": {
+                "statement": 14,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "comments.models": {
+                "statement": 13,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "comments.tests": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "comments.urls": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "comments.views": {
+                "statement": 29,
+                "info": 0,
+                "convention": 0,
+                "refactor": 1,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
             "organisations": {
                 "statement": 0,
                 "info": 0,
@@ -156,7 +240,7 @@
                 "fatal": 0
             },
             "organisations.admin": {
-                "statement": 0,
+                "statement": 3,
                 "info": 0,
                 "convention": 0,
                 "refactor": 0,
@@ -372,17 +456,19 @@
                 "fatal": 0
             }
         },
-        "by_msg": {},
+        "by_msg": {
+            "simplifiable-if-statement": 1
+        },
         "info": 0,
         "convention": 0,
-        "refactor": 0,
+        "refactor": 1,
         "warning": 0,
         "error": 0,
         "fatal": 0,
-        "module": 41,
-        "function": 25,
-        "method": 15,
-        "class": 31,
+        "module": 49,
+        "function": 27,
+        "method": 16,
+        "class": 37,
         "badname_module": 0,
         "badname_class": 0,
         "badname_function": 0,
@@ -396,57 +482,57 @@
         "undocumented_module": 0,
         "undocumented_function": 0,
         "undocumented_method": 0,
-        "undocumented_class": 7,
+        "undocumented_class": 9,
         "nb_duplicated_lines": 0,
         "percent_duplicated_lines": 0.0,
         "dependencies": {
             "django.contrib.admin": [
-                "payments.admin",
+                "authentication.admin",
                 "ticket.admin",
-                "authentication.admin"
+                "comments.admin",
+                "organisations.admin",
+                "payments.admin"
             ],
             "django.contrib.auth.admin": [
                 "authentication.admin"
             ],
             "django.contrib.auth.models": [
+                "authentication.admin",
                 "authentication.models",
                 "authentication.views",
-                "ticket.test_view",
                 "authentication.forms",
                 "ticket.test_model",
-                "authentication.admin"
-            ],
-            "organisations.models": [
-                "authentication.models",
-                "organisations.forms",
-                "organisations.views",
-                "authentication.admin"
+                "ticket.test_view"
             ],
             "authentication.models": [
-                "authentication.views",
+                "comments.views",
                 "authentication.context_processors",
-                "organisations.forms",
-                "payments.views",
-                "ticket.test_view",
-                "ticket.test_model",
-                "ticket.models",
-                "payments.models",
-                "ticket.views",
+                "authentication.admin",
                 "organisations.views",
-                "authentication.admin"
+                "ticket.views",
+                "organisations.forms",
+                "authentication.views",
+                "payments.models",
+                "ticket.test_model",
+                "comments.models",
+                "ticket.models",
+                "payments.views",
+                "ticket.test_view"
             ],
             "django.apps": [
                 "core.apps",
-                "payments.apps",
                 "authentication.apps",
+                "ticket.apps",
+                "payments.apps",
                 "organisations.apps",
-                "ticket.apps"
+                "comments.apps"
             ],
             "django.forms": [
+                "comments.forms",
                 "payments.forms",
+                "ticket.forms",
                 "organisations.forms",
-                "authentication.forms",
-                "ticket.forms"
+                "authentication.forms"
             ],
             "django.contrib.auth.forms": [
                 "authentication.forms"
@@ -454,15 +540,22 @@
             "django.db.models": [
                 "authentication.models",
                 "payments.models",
+                "comments.models",
                 "ticket.models",
                 "organisations.models"
             ],
+            "organisations.models": [
+                "authentication.models",
+                "organisations.forms",
+                "organisations.views",
+                "organisations.admin"
+            ],
             "django.urls": [
-                "ticket.urls",
                 "organisations.urls",
-                "payments.urls",
+                "ticket.urls",
                 "authentication.urls",
-                "core.urls"
+                "core.urls",
+                "payments.urls"
             ],
             "authentication.views": [
                 "authentication.urls"
@@ -481,11 +574,12 @@
                 "ticket.views"
             ],
             "django.shortcuts": [
-                "authentication.views",
-                "payments.views",
+                "comments.views",
                 "core.views",
                 "ticket.views",
-                "organisations.views"
+                "organisations.views",
+                "authentication.views",
+                "payments.views"
             ],
             "authentication.forms": [
                 "authentication.views"
@@ -493,9 +587,32 @@
             "core.views": [
                 "core.urls"
             ],
+            "comments.models": [
+                "comments.admin",
+                "comments.forms",
+                "comments.views",
+                "ticket.views"
+            ],
+            "ticket.models": [
+                "comments.views",
+                "ticket.admin",
+                "ticket.forms",
+                "ticket.test_model",
+                "comments.models",
+                "ticket.views"
+            ],
+            "django.conf.urls": [
+                "comments.urls"
+            ],
+            "comments.views": [
+                "comments.urls"
+            ],
+            "comments.forms": [
+                "comments.views"
+            ],
             "crispy_forms.helper": [
-                "organisations.forms",
-                "ticket.forms"
+                "ticket.forms",
+                "organisations.forms"
             ],
             "organisations.views": [
                 "organisations.urls"
@@ -504,9 +621,9 @@
                 "organisations.views"
             ],
             "payments.models": [
+                "payments.admin",
                 "payments.forms",
-                "payments.views",
-                "payments.admin"
+                "payments.views"
             ],
             "payments.views": [
                 "payments.urls"
@@ -517,18 +634,12 @@
             "payments.forms": [
                 "payments.views"
             ],
-            "ticket.models": [
-                "ticket.views",
-                "ticket.forms",
-                "ticket.admin",
-                "ticket.test_model"
-            ],
             "crispy_forms.layout": [
                 "ticket.forms"
             ],
             "django.test": [
-                "ticket.test_view",
-                "ticket.test_model"
+                "ticket.test_model",
+                "ticket.test_view"
             ],
             "django.test.Client": [
                 "ticket.test_view"
@@ -539,15 +650,12 @@
             "django.http": [
                 "ticket.views"
             ],
-            "comments.models": [
-                "ticket.views"
-            ],
             "ticket.forms": [
                 "ticket.views"
             ]
         },
         "cycles": [],
-        "statement": 534
+        "statement": 600
     },
     "previous": {
         "by_module": {
@@ -561,7 +669,7 @@
                 "fatal": 0
             },
             "authentication.admin": {
-                "statement": 12,
+                "statement": 10,
                 "info": 0,
                 "convention": 0,
                 "refactor": 0,
@@ -695,6 +803,78 @@
                 "error": 0,
                 "fatal": 0
             },
+            "comments": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "comments.admin": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "comments.apps": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "comments.forms": {
+                "statement": 14,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "comments.models": {
+                "statement": 13,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "comments.tests": {
+                "statement": 0,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "comments.urls": {
+                "statement": 3,
+                "info": 0,
+                "convention": 0,
+                "refactor": 0,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
+            "comments.views": {
+                "statement": 29,
+                "info": 0,
+                "convention": 1,
+                "refactor": 1,
+                "warning": 0,
+                "error": 0,
+                "fatal": 0
+            },
             "organisations": {
                 "statement": 0,
                 "info": 0,
@@ -705,7 +885,7 @@
                 "fatal": 0
             },
             "organisations.admin": {
-                "statement": 0,
+                "statement": 3,
                 "info": 0,
                 "convention": 0,
                 "refactor": 0,
@@ -915,25 +1095,26 @@
                 "statement": 139,
                 "info": 0,
                 "convention": 0,
-                "refactor": 1,
+                "refactor": 0,
                 "warning": 0,
                 "error": 0,
                 "fatal": 0
             }
         },
         "by_msg": {
-            "too-many-branches": 1
+            "line-too-long": 1,
+            "simplifiable-if-statement": 1
         },
         "info": 0,
-        "convention": 0,
+        "convention": 1,
         "refactor": 1,
         "warning": 0,
         "error": 0,
         "fatal": 0,
-        "module": 41,
-        "function": 25,
-        "method": 15,
-        "class": 31,
+        "module": 49,
+        "function": 27,
+        "method": 16,
+        "class": 37,
         "badname_module": 0,
         "badname_class": 0,
         "badname_function": 0,
@@ -947,57 +1128,57 @@
         "undocumented_module": 0,
         "undocumented_function": 0,
         "undocumented_method": 0,
-        "undocumented_class": 7,
+        "undocumented_class": 9,
         "nb_duplicated_lines": 0,
         "percent_duplicated_lines": 0.0,
         "dependencies": {
             "django.contrib.admin": [
-                "payments.admin",
+                "authentication.admin",
                 "ticket.admin",
-                "authentication.admin"
+                "comments.admin",
+                "organisations.admin",
+                "payments.admin"
             ],
             "django.contrib.auth.admin": [
                 "authentication.admin"
             ],
             "django.contrib.auth.models": [
+                "authentication.admin",
                 "authentication.models",
                 "authentication.views",
-                "ticket.test_view",
                 "authentication.forms",
                 "ticket.test_model",
-                "authentication.admin"
-            ],
-            "organisations.models": [
-                "authentication.models",
-                "organisations.forms",
-                "organisations.views",
-                "authentication.admin"
+                "ticket.test_view"
             ],
             "authentication.models": [
-                "authentication.views",
-                "authentication.context_processors",
-                "ticket.test_view",
-                "payments.views",
-                "organisations.forms",
-                "ticket.test_model",
-                "ticket.models",
-                "payments.models",
+                "comments.views",
                 "ticket.views",
+                "authentication.context_processors",
+                "authentication.admin",
                 "organisations.views",
-                "authentication.admin"
+                "organisations.forms",
+                "authentication.views",
+                "payments.models",
+                "ticket.test_model",
+                "comments.models",
+                "ticket.models",
+                "payments.views",
+                "ticket.test_view"
             ],
             "django.apps": [
                 "core.apps",
-                "payments.apps",
                 "authentication.apps",
+                "ticket.apps",
+                "payments.apps",
                 "organisations.apps",
-                "ticket.apps"
+                "comments.apps"
             ],
             "django.forms": [
+                "comments.forms",
                 "payments.forms",
+                "ticket.forms",
                 "organisations.forms",
-                "authentication.forms",
-                "ticket.forms"
+                "authentication.forms"
             ],
             "django.contrib.auth.forms": [
                 "authentication.forms"
@@ -1005,15 +1186,22 @@
             "django.db.models": [
                 "authentication.models",
                 "payments.models",
+                "comments.models",
                 "ticket.models",
                 "organisations.models"
             ],
+            "organisations.models": [
+                "organisations.admin",
+                "authentication.models",
+                "organisations.forms",
+                "organisations.views"
+            ],
             "django.urls": [
-                "ticket.urls",
-                "payments.urls",
-                "authentication.urls",
                 "organisations.urls",
-                "core.urls"
+                "ticket.urls",
+                "authentication.urls",
+                "core.urls",
+                "payments.urls"
             ],
             "authentication.views": [
                 "authentication.urls"
@@ -1032,11 +1220,12 @@
                 "ticket.views"
             ],
             "django.shortcuts": [
-                "authentication.views",
-                "payments.views",
+                "comments.views",
                 "core.views",
-                "ticket.views",
-                "organisations.views"
+                "payments.views",
+                "organisations.views",
+                "authentication.views",
+                "ticket.views"
             ],
             "authentication.forms": [
                 "authentication.views"
@@ -1044,9 +1233,32 @@
             "core.views": [
                 "core.urls"
             ],
+            "comments.models": [
+                "comments.admin",
+                "comments.forms",
+                "comments.views",
+                "ticket.views"
+            ],
+            "ticket.models": [
+                "comments.views",
+                "ticket.admin",
+                "ticket.forms",
+                "ticket.test_model",
+                "comments.models",
+                "ticket.views"
+            ],
+            "django.conf.urls": [
+                "comments.urls"
+            ],
+            "comments.views": [
+                "comments.urls"
+            ],
+            "comments.forms": [
+                "comments.views"
+            ],
             "crispy_forms.helper": [
-                "organisations.forms",
-                "ticket.forms"
+                "ticket.forms",
+                "organisations.forms"
             ],
             "organisations.views": [
                 "organisations.urls"
@@ -1055,9 +1267,9 @@
                 "organisations.views"
             ],
             "payments.models": [
+                "payments.admin",
                 "payments.forms",
-                "payments.views",
-                "payments.admin"
+                "payments.views"
             ],
             "payments.views": [
                 "payments.urls"
@@ -1068,18 +1280,12 @@
             "payments.forms": [
                 "payments.views"
             ],
-            "ticket.models": [
-                "ticket.views",
-                "ticket.test_model",
-                "ticket.admin",
-                "ticket.forms"
-            ],
             "crispy_forms.layout": [
                 "ticket.forms"
             ],
             "django.test": [
-                "ticket.test_view",
-                "ticket.test_model"
+                "ticket.test_model",
+                "ticket.test_view"
             ],
             "django.test.Client": [
                 "ticket.test_view"
@@ -1090,15 +1296,12 @@
             "django.http": [
                 "ticket.views"
             ],
-            "comments.models": [
-                "ticket.views"
-            ],
             "ticket.forms": [
                 "ticket.views"
             ]
         },
         "cycles": [],
-        "statement": 534,
-        "global_note": 9.9812734082397
+        "statement": 600,
+        "global_note": 9.966666666666667
     }
 }
