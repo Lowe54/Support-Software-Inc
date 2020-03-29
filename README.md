@@ -278,6 +278,110 @@ If you already have a Stripe account, please sign in [here](https://dashboard.st
 
 ### Setting up Amazon Web Services (AWS)
 
+[AWSConfigOptions]: documentationImages/aws/AWS_s3_ConfigOptions.png
+[AWSCreateBucket]: documentationImages/aws/AWS_s3_CreateBucket.png
+[AWSCreateBucketModalP4]: documentationImages/aws/AWS_s3_CreateBucket_Modal_P4.png
+[AWSSetPermissions]: documentationImages/aws/AWS_s3_SetPermissions.png
+
+[AWSBucketDashboard]: documentationImages/aws/AWS_s3_Step2_BucketDashboard.png
+[AWSBucketPolicy]: documentationImages/aws/AWS_s3_Step2_PermissionTab_BucketPolicy.png
+[AWSBucketPolicyDetail]: documentationImages/aws/AWS_s3_Step2_PermissionTab_BucketPolicy_DetailScreen.png
+
+[AWSIAMCreateGroup]: documentationImages/aws/AWS_s3_Step3_CreateGroupButton.png
+[AWSIAMCreatePolicy]: documentationImages/aws/AWS_s3_Step3_CreatePolicyButton.png
+[AWSIAMImportPolicy]: documentationImages/aws/AWS_s3_Step3_ImportPolicy.png
+[AWSIAMImportPolicyJSON]: documentationImages/aws/AWS_s3_Step3_PolicyJsonScreen.png
+[AWSIAMReviewPolicy]: documentationImages/aws/AWS_s3_Step3_ReviewPolicyScreen.png
+
+[AWSIAMGroupAttachPolicy]: documentationImages/aws/AWS_s3_Step4_GroupAttachPolicyScreen.png
+[AWSIAMGroupSearchPolicy]: documentationImages/aws/AWS_s3_Step4_PolicySearchScreen.png
+
+[AWSIAMUserStep1]: documentationImages/aws/AWS_s3_Step5_NewUser_substep1.png
+[AWSIAMUserStep2]: documentationImages/aws/AWS_s3_Step5_NewUser_substep2.png
+[AWSIAMDownloadCredentials]: documentationImages/aws/AWS_s3_Step5_DownloadCSV.png
+
+<!-- markdownlint-disable MD012 MD032 MD036-->
+1) Go to [aws.amazon.com](https://aws.amazon.com/)
+2) If you already have an account, please sign in and go to step 4, otherwise click on 'Create an AWS Account
+3) Complete the registration process
+4) Once signed in, search for 'S3'
+5) Click on 'Create Bucket', then enter a name and region
+
+  ![AWSCreateBucket]
+
+6) Leave the second screen as-is
+
+  ![AWSConfigOptions]
+
+7) On the third screen, untick all options but leave the system permissions as-is
+
+  ![AWSSetPermissions]
+
+8) Click on Create Bucket
+
+  ![AWSCreateBucketModalP4]
+
+9) On the Bucket Dashboard, click on the newly created bucket
+
+  ![AWSBucketDashboard]
+
+10) Click on Permissions -> 'Bucket Policy'
+
+  ![AWSBucketPolicy]
+
+11) In this editor, copy the config found in [Bucket Policy](documentationImages/aws/BucketPolicy.txt).
+  **Please make a note of the ARN Number, as you will need this later**
+
+  ![AWSBucketPolicyDetail]
+  
+12) Go to the Cors Config, and paste the content from [CORS Config](documentationImages/aws/CorsConfig.txt)
+
+13) Navigate to the AWS dashboard, and search for IAM (Identity and Access Management)
+14) Click on Groups -> Create Group
+
+  *Best practice here is to keep in theme with the Bucket name*
+
+  ![AWSIAMCreateGroup]
+
+  
+
+15) Proceed through all the steps, do not change anything
+16) Now Click on Policies -> Create Policy
+  ![AWSIAMCreatePolicy]
+
+17) Click on JSON -> Import Managed Policy
+18) Search for S3, and click on the 'Full Access' -> Import
+
+  ![AWSIAMImportPolicy]
+
+19) Replace the JSON with the text in [policyjson.txt](documentationImages/aws/PolicyJSON.txt)
+  ![AWSIAMImportPolicyJSON]
+
+20) Click on 'Review Policy'
+21) Enter the policy name e.g (bucket-milestone-policy)
+22) Click on Create Policy
+  ![AWSIAMReviewPolicy]
+
+23) Now go back to 'groups' and click on the group you created
+24) Click on Permissions -> Attach Policy
+  ![AWSIAMGroupAttachPolicy]
+
+25) Search for the policy you just created, tick the box next to it, and click on 'Attach'
+  ![AWSIAMGroupSearchPolicy]
+
+26) Now Go to the Users, and click on 'Add User'
+27) Enter the User's name
+28) Set their permissions to 'Programmatic Access'
+  ![AWSIAMUserStep1]
+
+29) Tag them to the created policy, then click on 'Next'
+30) Do not enter any, tags, click on 'Review'
+31) Click on 'Create User'
+32) Download the csv containing the credentials
+  ![AWSIAMDownloadCredentials]
+
+33) Set the AWS_ACCESS_KEY and AWS_ACCESS_SECRET_KEY in the environment vars in Heroku
+
 ## Testing
 
 For all testing ran on this site, please refer to [TESTING.md](TESTING.md)
