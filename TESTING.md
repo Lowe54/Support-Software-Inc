@@ -87,4 +87,19 @@ Two refactor codes have been suppressed, the codes and the reasons for suppressi
 
 ### Continuous Integration
 
-This project has a CI implementation with [Travis CI](https://travis-ci.com/), the only enforcement is for the import order, which is determined via the `.travis.yml` file. This is enforced via the `isort --check-only --diff --skip-glob=*/migrations/*` command.
+This project has a CI implementation with [Travis CI](https://travis-ci.com/), the only enforcement is for the import order, which is determined via the `.travis.yml` file. This is enforced via the `isort --check-only --diff --skip-glob=*/migrations/*` command. In addition it also runs all tests present (See below table)
+<!-- markdownlint-disable MD013 MD036-->
+**NOTE: While the status checked for is 302, it actually redirects the user to the login page**
+
+| Test Number | Module         | What is it testing?                                                                  |
+|-------------|----------------|--------------------------------------------------------------------------------------|
+| 1           | Authentication | Testing that the login page returns status 200                                       |
+| 2           | Authentication | Testing that the register page returns status 200                                    |
+| 3           | Core           | Testing that the index page returns status 200                                       |
+| 4           | Organisation   | Checks to see if the organisation list page returns 302 if the user is NOT logged in |
+| 5           | Organisation   | Checks to see if the organisation list page loads if the user is logged in           |
+| 6           | Ticket         | Confirms the default status of a new ticket is Open (OPN in the DB)                  |
+| 7           | Ticket         | Confirms the default priority of a new ticket is Low                                 |
+| 8           | Ticket         | Tests that the dashboard returns 302 if the user is not signed in                    |
+| 9           | Ticket         | Tests that the dashboard returns 200 if the user is signed in                        |
+<!-- markdownlint-enable-->
