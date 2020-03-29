@@ -1,6 +1,8 @@
-# Testing.md File
+# Testing File
 
-- [Testing.md File](#testingmd-file)
+- [Testing File](#testing-file)
+  - [Manual Testing](#manual-testing)
+  - [Known Bugs](#known-bugs)
   - [Code Validation](#code-validation)
     - [HTML](#html)
     - [Javascript](#javascript)
@@ -12,6 +14,48 @@
     - [Python](#python)
   - [Automated Testing](#automated-testing)
     - [Continuous Integration](#continuous-integration)
+
+## Manual Testing
+
+| Test Number | Section of Site         | What is the test                                                                        | What Should Happen                                                                         | What Actually Happened         | Actions to take (If applicable)                          |
+|-------------|-------------------------|-----------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|--------------------------------|----------------------------------------------------------|
+| 1           | Side Menu Functionality | Click on 'Burger Bar'                                                                   | Side menu should open                                                                      | Side menu opened               | N/A                                                      |
+| 2           | Side Menu Functionality | Click on 'Cross'                                                                        | Side menu should close                                                                     | Side menu closed               | N/A                                                      |
+| 3           | Side Menu Links         | Not Signed in - click on 'Home'                                                         | Redirect to Index page                                                                     | Redirected to index page       | N/A                                                      |
+| 4           | Top Menu Links          | Not Signed in - click on 'Login'                                                        | Redirect to Login page                                                                     | Redirected to Login page       | N/A                                                      |
+| 5           | Top Menu Links          | Not Signed in - click on 'Register'                                                     | Redirect to Register page                                                                  | Redirected to Register page    | N/A                                                      |
+| 6           | Side Menu Links         | Signed In - Click on 'Dashboard'                                                        | Redirect to Dashboard page                                                                 | Redirected to dashboard page   | N/A                                                      |
+| 7           | Side Menu Links         | Signed In - Click on 'Add Ticket'                                                       | Redirect to Add Ticket page                                                                | Sent to add ticket page        | N/A                                                      |
+| 8           | Side Menu Links         | Signed In - Click on 'Organisations'                                                    | Redirect to Organisation List                                                              | Sent to Organisation list      | N/A                                                      |
+| 9           | Side Menu Links         | Signed In - Click on 'Admin'                                                            | User sent to admin site                                                                    | Sent to admin site             | N/A                                                      |
+| 10          | Side Menu Links         | Quick links (Agent User) - Click on 'Unassigned Requests'                               | User should be sent to results page containing all unassigned requests                     | Sent to correct results page   | N/A                                                      |
+| 11          | Side Menu Links         | Quick links (Agent User) - Click on 'Requests assigned to me'                           | User should be sent to results page containing all requests assigned to the logged in user | Sent to correct results page   | N/A                                                      |
+| 12          | Side Menu Links         | Quick links (Agent User) - Click on 'Open Requests'                                     | User should be sent to results page containing all open requests                           | Sent to correct results page   | N/A                                                      |
+| 13          | Top Links               | Signed in - Click on Username -> My Profile                                             | Redirect to My Profile page                                                                | Sent to my profile page        | N/A                                                      |
+| 14          | Add Ticket page         | Add a new request                                                                       | New ticket should be saved to database                                                     | Ticket saved                   | N/A                                                      |
+| 15          | Request List            | Enter 'Test' in the keyword search box and filter                                       | Requests that contain 'Test' in the title should be returned                               | Correct results returned       | N/A                                                      |
+| 16          | Request List            | Filter by 'Open' Status                                                                 | Requests that have a status of 'Open' should be returned                                   | Correct results returned       | N/A                                                      |
+| 17          | Request List            | Filter by 'Low' Priority                                                                | Requests that have a priority of 'Low' should be returned                                  | Correct results returned       | N/A                                                      |
+| 18          | Request List            | Enter 'Test' in the keyword search box and select 'Closed' in the status filter         | Requests that contain 'Test in the title and have a status of 'closed' should be returned  | Correct results returned       | N/A                                                      |
+| 19          | Ticket                  | (Agent User) - Click on Menu (Bottom Left) -> Edit Request Details and change a value   | Request details should be changed                                                          | Request updated                | N/A                                                      |
+| 20          | Ticket                  | (Agent User) - Click on Menu (Bottom Left) -> Add comment , set Internal comment to yes | Comment set as internal should be added                                                    | Internal comment added         | N/A                                                      |
+| 21          | Ticket                  | (Agent User) - Click on Menu (Bottom Left) -> Add comment , set Internal comment to no  | Comment set as public should be added                                                      | Public comment added           | N/A                                                      |
+| 22          | Ticket                  | (Agent User) - Click on Menu (Bottom Left) -> Close request                             | Request closure popup should be shown, on completion request should be closed              | Comment closed on completion   | Known bug following on from this, see known bugs section |
+| 23          | Ticket                  | (Agent User) - Unassigned request - Click on 'take it'                                  | Request should be assigned to logged in user                                               | Request assigned               | N/A                                                      |
+| 24          | Ticket                  | (End User) - Click on Menu (Bottom Left) -> Add comment                                 | Comment should be added                                                                    | Comment added                  | N/A                                                      |
+| 25          | Ticket                  | (End User) - Click on Menu (Bottom Left) -> Edit Request Details                        | Request details should be altered                                                          | Request Updated                | N/A                                                      |
+| 26          | Organisation            | Click on Menu (Bottom Left) -> Add Organisation                                         | New organisation entered should be added                                                   | Organisation Added             | N/A                                                      |
+| 27          | Organisation            | Click on Edit Organisation -> Enter value in popup box                                  | Organisation name should be updated to value entered                                       | Title updated                  | N/A                                                      |
+| 28          | Organisation            | Click on Attached Users -> Associate a user -> tick Unassociated user -> Associate      | User should be associated                                                                  | User associated                | N/A                                                      |
+| 29          | Organisation            | Click on Attached Users -> Remove from organisation below a user                        | User should removed from organisation                                                      | User removed from organisation | N/A                                                      |
+| 30          | Request list            | (End User Only) - Filter by Open requests                                               | Requests that the logged in user has raised and has a status of  'Open' should be returned | Correct results returned       | N/A                                                      |
+| 31          | Request list            | (End User Only) On load with no filters applied                                         | Only requests that the logged in user has raised should be returned                        | Correct results returned       | N/A                                                      |
+| 32          | Dashboard               | (End User) - Click on 'View my open requests'                                           | Redirect to results page showing all logged in users open requests                         | Correct results returned       | N/A                                                      |
+| 33          | Dashboard               | (End User) - Click on 'View my requests needing a reply'                                | Redirect to results page showing all logged in users pending requests                      | Correct results returned       | N/A                                                      |
+
+## Known Bugs
+
+1) After closing a ticket, until the page is refreshed comments can still be added
 
 ## Code Validation
 
