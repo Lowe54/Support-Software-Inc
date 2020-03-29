@@ -58,6 +58,7 @@
 
 1) After closing a ticket, until the page is refreshed comments can still be added
 2) Purchases are currently not being linked to a user (If they are logged in)
+3) Sidebar menu height doesn't extend down the full height of the page
 
 ## User story testing
 
