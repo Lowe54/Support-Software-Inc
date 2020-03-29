@@ -182,6 +182,10 @@ The following are lists of features that remain to be implemented, along with a 
 
 - [DB Diagram](https://dbdiagram.io/home)
   - DB Diagram is a free tool that was used to design the database
+- [Pylint](https://www.pylint.org/)
+  - Pylint was used to ensure python file compliance with PEP8
+- [JSHint](https://jshint.com/docs/)
+  - JSHint was used to ensure there were no errors with the javascript files
 
 ## Github Branches
 
