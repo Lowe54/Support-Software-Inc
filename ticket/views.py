@@ -8,6 +8,8 @@ Ticket_View
 
 Edit_Ticket
 '''
+import sweetify
+
 from datetime import datetime
 
 from django.contrib.auth.decorators import login_required
@@ -170,7 +172,19 @@ def ticket_detail(request, t_id):
     Get ticket information and comments
     relating to a specific ID
     '''
-    ticket = Ticket.objects.get(id=t_id)
+    try:
+        ticket = Ticket.objects.get(id=t_id)
+    except Ticket.DoesNotExist:
+        sweetify.error(
+            request,
+            'No ticket found for id {}'.format(t_id),
+            icon='error',
+            timer='5000',
+            button='Ok',
+            toast='true',
+            position='top-end',
+        )
+        return redirect('dashboard')
     user_profile = MyUser.objects.get(user_id=request.user.id)
     if user_profile.role == 'USR':
         related_comments = Comment.objects.filter(
