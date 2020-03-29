@@ -5,8 +5,6 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as UA
 from django.contrib.auth.models import User
 
-from organisations.models import Organisation
-
 from .models import MyUser
 
 
@@ -35,4 +33,3 @@ admin.site.unregister(User)
 
 # Then re-register them both
 admin.site.register(User, MyUserAdmin)
-admin.site.register(Organisation)
