@@ -57,6 +57,7 @@
 ## Known Bugs
 
 1) After closing a ticket, until the page is refreshed comments can still be added
+2) Purchases are currently not being linked to a user (If they are logged in)
 
 ## User story testing
 

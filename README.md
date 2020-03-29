@@ -16,7 +16,7 @@ Welcome to the next generation in service desk software,
     - [Wireframes](#wireframes)
   - [User stories](#user-stories)
   - [Database Design](#database-design)
-    - [Versions](#versions)
+    - [History](#history)
     - [Database Models](#database-models)
       - [User](#user)
       - [Organisation](#organisation)
@@ -70,7 +70,17 @@ The initial designs for this software can be found in the [Wireframes Folder](/w
 
 ## Database Design
 
-### Versions
+### History
+
+| Version Number | What Changed                                                                                     |
+|----------------|--------------------------------------------------------------------------------------------------|
+| 1              | Initial Version- User and Organisation table                                                     |
+| 2              | More fields added to User table                                                                  |
+| 3              | Ticket table added                                                                               |
+| 4              | Ticket file table linked to table (Not implemented at this time (See Features left to implement) |
+| 5              | Ticket comment table added and linked to ticket and user tables                                  |
+| 6              | Payments table added                                                                             |
+
 
 Version 1
 ![User Model v1](/wireframes/database_design_v1.png)
