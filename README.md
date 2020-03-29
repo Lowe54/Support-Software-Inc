@@ -117,6 +117,8 @@ The Comments table links users to various comments, as well as the type of comme
 
 #### Purchase
 
+The Purchase table holds information entered into the  'purchase form', there is a known bug linking the logged in user to a purchase (See Known Bugs / Issues in [testing.md](TESTING.md))
+
 #### Ticket Files
 
 While this remains a feature to be implemented (See Upcoming features), it would link an uploaded file to a request, as well as the type and size of the uploaded file
@@ -148,6 +150,9 @@ The following are lists of features that remain to be implemented, along with a 
   - While this is currently possible from the admin site for individual users, this includes the following:
     - The ability for organisation admins to manage their organisation users
     - Import and Export of Users (Import functionality limited to administrators only)
+
+- Minor Bugs
+  - Linking a logged in user to a purchase
 
 ## Technology, Frameworks and Tools Used
 
