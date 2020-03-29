@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'supportsoftwareinc.wsgi.application'
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = [
     '--with-coverage',
-    '--cover-package=ticket',
+    '--cover-package=authentication, comments, core, organisations, payments, ticket',
     '--cover-html',
 ]
 
