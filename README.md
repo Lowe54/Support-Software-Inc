@@ -1,7 +1,7 @@
 # Support Software Inc
 
 ![PyPI - Django Version](https://img.shields.io/badge/Django-3.0.1-green)
-![Build Status](https://travis-ci.org/Lowe54/Support-Software-Inc.svg?branch=master)
+![Build Status](https://travis-ci.com/Lowe54/Support-Software-Inc.svg?branch=master)
 
 ## Introduction
 
