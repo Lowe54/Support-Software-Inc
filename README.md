@@ -454,14 +454,17 @@ For all testing ran on this site, please refer to [TESTING.md](TESTING.md)
 
 Use the following credentials to test the site
 
-Agent User
+**Agent User**
+
 
 username: agent
+
 password: !234ag1enT
 
-End User
+**End User**
 
 username: demo
+
 password: !123demo123!
 
 ## Credits
