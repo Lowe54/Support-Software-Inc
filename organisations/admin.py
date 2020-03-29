@@ -2,6 +2,7 @@
 Admin.py file for organisation module
 '''
 from django.contrib import admin
+
 from .models import Organisation
 
 admin.site.register(Organisation)

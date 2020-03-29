@@ -9,6 +9,7 @@ from authentication.models import MyUser
 from .forms import OrganisationForm, UnassociatedUserForm
 from .models import Organisation
 
+
 @login_required
 def show_organisation_list(request):
     '''
