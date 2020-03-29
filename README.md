@@ -262,7 +262,7 @@ You need to add the following variables
 you will need to activate your Stripe account, and use the live keys in place
 of the test ones**
 
-[StripeKeys]: documentationImages/stripe/keys.png
+[StripeKeys]: documentationImages/stripe/Keys.png
 
 If you already have a Stripe account, please sign in [here](https://dashboard.stripe.com/login), then go to step 3
 
