@@ -1,6 +1,7 @@
 '''
 Organisation model views.py
 '''
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import HttpResponse, render
 
 from authentication.models import MyUser
@@ -8,7 +9,7 @@ from authentication.models import MyUser
 from .forms import OrganisationForm, UnassociatedUserForm
 from .models import Organisation
 
-
+@login_required
 def show_organisation_list(request):
     '''
     View that returns a list of all organisations
