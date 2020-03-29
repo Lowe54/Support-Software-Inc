@@ -98,6 +98,8 @@ Version 4
 Version 5
 ![User Model v5](/wireframes/db_design_v5.png)
 
+Version 6
+![DB Design v6](/wireframes/DB_Version6.png)
 ### Database Models
 
 #### User
