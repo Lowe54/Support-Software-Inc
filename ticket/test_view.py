@@ -40,3 +40,12 @@ class TestTicketViews(TestCase):
         '''
         page = self.client.get("/dashboard")
         self.assertEqual(page.status_code, 302)
+
+    def test_get_dashboard_logged_in(self):
+        '''
+        Ensure that the return code for the dashboard
+        is 200 if the user is signed in
+        '''
+        self.client.login(username='jacob', password='top_secret')
+        page = self.client.get("/dashboard")
+        self.assertEqual(page.status_code, 200)
