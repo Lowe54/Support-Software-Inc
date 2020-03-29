@@ -5,9 +5,8 @@
 
 ## Introduction
 
-Welcome to the next generation in service desk software, Support software Inc aims to be the go-to for your next
-service desk software. Your agents can respond to requests without navigating off the page, while having an easy to follow comment trail
-for your customers who want to see the latest on their request.
+Welcome to the next generation in service desk software, are you fed up of customers complaining that they cannot see where your agents have replied?
+Well, Support software Inc aims to be the go-to for your next service desk software. Your agents can respond to requests without navigating off the page, while having an easy to follow comment trail for your customers who want to see the latest on their request.
 
 ## Table of Contents
 
@@ -161,6 +160,9 @@ The following are lists of features that remain to be implemented, along with a 
   - While this is currently possible from the admin site for individual users, this includes the following:
     - The ability for organisation admins to manage their organisation users
     - Import and Export of Users (Import functionality limited to administrators only)
+
+- Result page pagination
+  - At the moment there is no active pagination on the results page, this would include a custom number of results per page
 
 - Minor Bugs
   - Linking a logged in user to a purchase
