@@ -47,6 +47,8 @@ Welcome to the next generation in service desk software,
     - [Setting up Amazon Web Services (AWS)](#setting-up-amazon-web-services-aws)
   - [Testing](#testing)
   - [Credits](#credits)
+    - [Content](#content)
+    - [Acknowledgements](#acknowledgements)
 
 ## UX/UI Design
 
@@ -417,6 +419,16 @@ For all testing ran on this site, please refer to [TESTING.md](TESTING.md)
 
 ## Credits
 
+### Content
+
 [Jesse Couch](https://codepen.io/designcouch/pen/Atyop) for the burger bar animation.
 
 [WebFikirleri](https://codepen.io/WebFikirleri/pen/MLXYKm) for the floating action button
+
+[Django Secret KeyGen](https://miniwebtool.com/django-secret-key-generator/) - Used to generate a new secret key for deployment
+
+[Vitor Freitas](https://simpleisbetterthancomplex.com/tutorial/2016/08/29/how-to-work-with-ajax-request-with-django.html) - The code snippet in core.js at the bottom relating to CSRF tokens being passed for AJAX requests
+
+### Acknowledgements
+
+Many thanks to my mentor Simen Daehlin for all the support and advice he has given during the course of this project
