@@ -47,7 +47,7 @@ class TestTicketModel(TestCase):
 
     def test_initial_priority(self):
         '''
-        Does the initial priority default to 'OPN'
+        Does the initial priority default to 'LOW'
         '''
         test_ticket = Ticket(
             title='Test',
