@@ -82,6 +82,9 @@ $('.purchase-toggle').on('click', function(e){
     });
 });
 
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+});
 
 // CSRF PROTECTION - REQUIRED FOR AJAX CALLS
 

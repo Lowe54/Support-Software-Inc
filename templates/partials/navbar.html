@@ -7,7 +7,7 @@
             <li class="nav-item"><a href="{% url 'results' %}"><i class="fas fa-file"></i> <div>Request List</div></a></li>
             {% if user_profile.role == 'AGN' or user_profile.is_organisation_admin %}
                 <li class="nav-item"><a  href="{% url 'show_organisation_list' %} "><i class="fas fa-building"></i><div>Organisations</div></a></li>
-                <li class="nav-item"><a  href="#"><i class="fas fa-users"></i><div>Users</div></a></li>
+                <li class="nav-item"><a class="strikethrough" data-toggle="tooltip" data-placement="right" title="Not available in current version"><i class="fas fa-users"></i><div>Users</div></a></li>
             {% endif %}
             <li class="nav-item d-sm-flex d-lg-none">
                 <a href="{% url 'logout' %}">

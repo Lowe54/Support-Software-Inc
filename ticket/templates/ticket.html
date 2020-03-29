@@ -43,15 +43,15 @@
 {% block page-fab-buttons %}
     
     {% if ticket.status != 'CLS'%}
-    <button id="add-comment" data-id={{ ticket.id }} type="button" class="btn btn-sub btn-dark has-tooltip" data-placement="left" title="Add Comment">
+    <button id="add-comment" data-id={{ ticket.id }} type="button" data-toggle="tooltip" class="btn btn-sub btn-dark has-tooltip" data-placement="left" title="Add Comment">
         <i class="fas fa-comment"> </i>
     </button>
     
-    <button id="edit-ticket" data-id={{ ticket.id }} type="button" class="btn btn-sub btn-success has-tooltip" data-placement="left" title="Edit Request Details">
+    <button id="edit-ticket" data-id={{ ticket.id }} type="button" data-toggle="tooltip" class="btn btn-sub btn-success has-tooltip" data-placement="left" title="Edit Request Details">
         <i class="fas fa-edit"> </i>
     </button>
         {% if user_profile.role == 'AGN' %}
-            <button id="mark-ticket-closed" data-id= {{ticket.id }} onclick="close_ticket()" type="button" class="btn btn-sub btn-dark has-tooltip" data-placement="left" title="Close Request">
+            <button id="mark-ticket-closed" data-id= {{ticket.id }} onclick="close_ticket()" type="button" data-toggle="tooltip" class="btn btn-sub btn-dark has-tooltip" data-placement="left" title="Close Request">
                 <i class="fas fa-window-close"> </i>
             </button>
         {% endif %}

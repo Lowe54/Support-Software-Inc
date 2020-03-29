@@ -412,3 +412,12 @@ span.introjs-helperNumberLayer {
 .hasBottomBorder {
   border-bottom: 1px solid #808080;
 }
+
+.strikethrough {
+  text-decoration: line-through;
+  color: #808080;
+}
+
+.strikethrough a {
+  color: #808080;
+}
