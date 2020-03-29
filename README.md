@@ -48,6 +48,7 @@ for your customers who want to see the latest on their request.
     - [Stripe Deployment](#stripe-deployment)
     - [Setting up Amazon Web Services (AWS)](#setting-up-amazon-web-services-aws)
   - [Testing](#testing)
+    - [Test Credentials](#test-credentials)
   - [Credits](#credits)
     - [Content](#content)
     - [Acknowledgements](#acknowledgements)
@@ -100,6 +101,7 @@ Version 5
 
 Version 6
 ![DB Design v6](/wireframes/DB_Version6.png)
+
 ### Database Models
 
 #### User
@@ -244,8 +246,9 @@ These deployment steps are intented for a windows operating system, if your OS i
 1) Clone the repository using the commands in the Github Cloning section above
 2) This project in windows runs on a virtual environment, in order to create one, use the following command
   `python3 -m venv .venv`
-3)Once the virtual environment has been created, active the virtual environment with `source *path-to-virtual-environment*Scripts/activate`
-4)Run `pip install -r requirements.txt`
+3) Once the virtual environment has been created, active the virtual environment with `source *path-to-virtual-environment*Scripts/activate`
+4) Run `pip install -r requirements.txt`
+5) Start the server with `./manage.py runserver`
 
 Follow the steps for Heroku, Stripe and Amazon Web Services Deployment
 
@@ -440,6 +443,20 @@ If you already have a Stripe account, please sign in [here](https://dashboard.st
 ## Testing
 
 For all testing ran on this site, please refer to [TESTING.md](TESTING.md)
+
+### Test Credentials
+
+Use the following credentials to test the site
+
+Agent User
+
+username: agent
+password: !234ag1enT
+
+End User
+
+username: demo
+password: !123demo123!
 
 ## Credits
 
