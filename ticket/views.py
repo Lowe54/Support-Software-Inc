@@ -11,7 +11,6 @@ Edit_Ticket
 from datetime import datetime
 
 import sweetify
-
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import HttpResponse, redirect, render
