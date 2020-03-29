@@ -8,9 +8,9 @@ Ticket_View
 
 Edit_Ticket
 '''
-import sweetify
-
 from datetime import datetime
+
+import sweetify
 
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
