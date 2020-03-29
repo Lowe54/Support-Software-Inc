@@ -85,21 +85,27 @@ The initial designs for this software can be found in the [Wireframes Folder](/w
 | 6              | Payments table added                                                                             |
 
 Version 1
+
 ![User Model v1](/wireframes/database_design_v1.png)
 
 Version 2
+
 ![User Model v2](/wireframes/db_design_v2.png)
 
 Version 3
+
 ![User Model v3](/wireframes/db_design_v3.png)
 
 Version 4
+
 ![User Model v4](/wireframes/db_design_v4.png)
 
 Version 5
+
 ![User Model v5](/wireframes/db_design_v5.png)
 
 Version 6
+
 ![DB Design v6](/wireframes/DB_Version6.png)
 
 ### Database Models
