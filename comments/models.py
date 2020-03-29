@@ -1,3 +1,6 @@
+'''
+Comments module model file
+'''
 import uuid
 
 from django.db import models
@@ -7,6 +10,9 @@ from ticket.models import Ticket
 
 
 class Comment(models.Model):
+    '''
+    Define a Comment
+    '''
     comment_id = models.UUIDField(
         'Issue ID',
         primary_key=True,

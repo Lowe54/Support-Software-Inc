@@ -1,3 +1,6 @@
+'''
+Comment module Views file
+'''
 from django.shortcuts import HttpResponse, render
 
 from authentication.models import MyUser
@@ -8,6 +11,10 @@ from .models import Comment
 
 
 def comment_form(request):
+    '''
+    Return the comment form, taking into account
+    the logged in user's role
+    '''
     user_profile = MyUser.objects.get(user_id=request.user.id)
     ticketid = request.POST['t_id']
     if user_profile.role == 'AGN':
@@ -25,6 +32,9 @@ def comment_form(request):
 
 
 def comment(request):
+    '''
+    Save the comment to the database
+    '''
     if request.method == 'POST':
         user = MyUser.objects.get(user_id=request.user.id)
         is_internal = request.POST['is_internal_comment']
@@ -42,16 +52,17 @@ def comment(request):
 
         if new_comment.is_internal_comment:
             comment_header = f'<h4>{new_comment.posted_by} -\
-            { new_comment.date_posted } | Internal </h4>'
+            { new_comment.date_posted } |\
+            <span class="badge badge-warning">INTERNAL</span> </h4>'
 
-            comment_classes = 'internal-comment bg-warning'
+            comment_classes = 'internal-comment border-warning'
         else:
             comment_header = f'<h4>{new_comment.posted_by} -\
             { new_comment.date_posted }'
 
-            comment_classes = ''
+            comment_classes = 'border-primary'
 
-        response = f'<div class="card comment border-primary">\
+        response = f'<div class="card comment {comment_classes}">\
                         <div class="card-header">\
                             {comment_header}\
                         </div>\

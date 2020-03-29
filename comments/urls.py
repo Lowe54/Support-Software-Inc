@@ -1,3 +1,6 @@
+'''
+Comment module URL file
+'''
 from django.conf.urls import url
 
 from .views import comment, comment_form
